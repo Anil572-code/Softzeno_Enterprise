@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+coverage/
+
+# Local environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Tool caches
+.eslintcache
+*.tsbuildinfo
+.vite/
+
+# Editors and operating systems
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+.cache/
+*.bak
+*.backup
+*.before-*

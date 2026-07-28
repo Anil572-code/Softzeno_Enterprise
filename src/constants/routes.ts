@@ -1,0 +1,15 @@
+export const ROUTE_PATHS = {
+  home: '/',
+  about: '/about',
+  solutions: '/solutions',
+  features: '/features',
+  industries: '/industries',
+  howItWorks: '/how-it-works',
+  demo: '/demo',
+  caseStudies: '/case-studies',
+  resources: '/resources',
+  team: '/team',
+  faq: '/faq',
+  contact: '/contact',
+  privacy: '/privacy-policy',
+} as const;

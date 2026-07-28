@@ -1,0 +1,205 @@
+SARAS Enterprise Website v1.0.0
+
+[F] .editorconfig
+[F] .env.example
+[F] .gitignore
+[F] .nvmrc
+[F] .prettierignore
+[F] .prettierrc.json
+[D] .vscode
+  [F] extensions.json
+  [F] settings.json
+[F] FOUNDATION-VALIDATION.md
+[F] README.md
+[F] SHA256SUMS.txt
+[F] TREE.txt
+[F] WEBSITE-VALIDATION.md
+[D] docs
+  [F] ARCHITECTURE.md
+  [F] DEVELOPMENT.md
+  [F] FINAL-WEBSITE.md
+  [F] FOLDER-STRUCTURE.md
+[F] eslint.config.js
+[F] index.html
+[F] package-lock.json
+[F] package.json
+[D] public
+  [D] brand
+    [F] saras-icon-192.png
+    [F] saras-icon-512.png
+  [F] robots.txt
+  [F] site.webmanifest
+[D] scripts
+  [F] Print-ProjectTree.ps1
+  [F] Setup-Foundation.ps1
+  [F] Validate-Foundation.ps1
+  [F] clean.mjs
+[D] src
+  [D] animations
+    [F] index.ts
+    [F] presets.ts
+  [D] app
+    [F] App.tsx
+    [D] providers
+      [F] AppProviders.tsx
+  [D] assets
+    [F] README.md
+    [D] brand
+      [F] saras-logo-reference.png
+  [D] components
+    [D] cards
+      [F] README.md
+      [F] index.ts
+    [D] footer
+      [F] SiteFooter.tsx
+      [F] index.ts
+    [D] forms
+      [F] ContactForm.tsx
+      [F] DemoRequestForm.tsx
+      [F] FormError.tsx
+      [F] FormField.tsx
+      [F] index.ts
+    [F] index.ts
+    [D] layout
+      [F] Container.tsx
+      [F] SectionWrapper.tsx
+      [F] index.ts
+    [D] marketing
+      [F] Brand.tsx
+      [F] CtaBanner.tsx
+      [F] FeatureCard.tsx
+      [F] PageHero.tsx
+      [F] Reveal.tsx
+      [F] SectionHeading.tsx
+      [F] index.ts
+    [D] navigation
+      [F] PrimaryNavigation.tsx
+      [F] ScrollToTop.tsx
+      [F] SiteHeader.tsx
+      [F] SkipLink.tsx
+      [F] index.ts
+    [D] ui
+      [F] Button.tsx
+      [F] LoadingScreen.tsx
+      [F] ThemeToggle.tsx
+      [F] VisuallyHidden.tsx
+      [F] index.ts
+  [D] constants
+    [F] http.ts
+    [F] index.ts
+    [F] routes.ts
+    [F] site.ts
+  [D] context
+    [F] index.ts
+    [D] theme
+      [F] ThemeProvider.tsx
+      [F] index.ts
+      [F] theme-context.ts
+      [F] theme-storage.ts
+      [F] useTheme.ts
+  [D] data
+    [F] index.ts
+    [F] navigation.ts
+    [F] siteContent.ts
+  [D] hooks
+    [F] index.ts
+    [F] useMediaQuery.ts
+    [F] useZodForm.ts
+  [D] layout
+    [F] EmptyLayout.tsx
+    [F] ErrorLayout.tsx
+    [F] MainLayout.tsx
+    [F] SharedPageLayout.tsx
+    [F] index.ts
+  [F] main.tsx
+  [D] pages
+    [F] README.md
+    [D] marketing
+      [F] AboutPage.tsx
+      [F] CaseStudiesPage.tsx
+      [F] ContactPage.tsx
+      [F] DemoPage.tsx
+      [F] FaqPage.tsx
+      [F] FeaturesPage.tsx
+      [F] HomePage.tsx
+      [F] HowItWorksPage.tsx
+      [F] IndustriesPage.tsx
+      [F] NotFoundPage.tsx
+      [F] PrivacyPolicyPage.tsx
+      [F] ResourcesPage.tsx
+      [F] SolutionsPage.tsx
+      [F] TeamPage.tsx
+      [F] index.ts
+    [D] system
+      [F] DeferredRoutePage.tsx
+      [F] createDeferredRouteComponent.tsx
+      [F] index.ts
+  [D] routes
+    [F] RouteErrorBoundary.tsx
+    [F] index.ts
+    [D] modules
+      [F] about.route.tsx
+      [F] case-studies.route.tsx
+      [F] contact.route.tsx
+      [F] demo.route.tsx
+      [F] faq.route.tsx
+      [F] features.route.tsx
+      [F] home.route.tsx
+      [F] how-it-works.route.tsx
+      [F] industries.route.tsx
+      [F] not-found.route.tsx
+      [F] privacy-policy.route.tsx
+      [F] resources.route.tsx
+      [F] solutions.route.tsx
+      [F] team.route.tsx
+    [F] routeDefinitions.ts
+    [F] router.tsx
+  [D] sections
+    [F] README.md
+    [F] index.ts
+  [D] seo
+    [F] BreadcrumbSchema.tsx
+    [F] OrganizationSchema.tsx
+    [F] Seo.tsx
+    [F] StructuredData.tsx
+    [F] index.ts
+  [D] services
+    [F] env.ts
+    [D] http
+      [F] ApiError.ts
+      [F] httpClient.ts
+      [F] index.ts
+    [F] index.ts
+  [D] styles
+    [D] components
+      [F] footer.css
+      [F] forms.css
+      [F] marketing.css
+      [F] navigation.css
+    [F] globals.css
+    [F] index.css
+    [F] reset.css
+    [F] tailwind-theme.css
+    [F] utilities.css
+  [D] theme
+    [F] index.ts
+    [F] motion.ts
+    [F] tokens.css
+    [F] tokens.ts
+  [D] types
+    [F] http.ts
+    [F] index.ts
+    [F] navigation.ts
+    [F] routes.ts
+    [F] seo.ts
+    [F] theme.ts
+  [D] utils
+    [F] assertNever.ts
+    [F] cn.ts
+    [F] index.ts
+    [F] urls.ts
+  [F] vite-env.d.ts
+[F] tsconfig.app.json
+[F] tsconfig.json
+[F] tsconfig.node.json
+[F] vite.config.ts

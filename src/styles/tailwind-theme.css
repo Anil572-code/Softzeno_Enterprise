@@ -1,0 +1,38 @@
+@theme inline {
+  --color-primary: var(--saras-colour-primary);
+  --color-secondary: var(--saras-colour-secondary);
+  --color-accent: var(--saras-colour-accent);
+  --color-background: var(--saras-colour-background);
+  --color-surface: var(--saras-colour-surface);
+  --color-on-primary: var(--saras-colour-on-primary);
+  --color-foreground: var(--saras-colour-text);
+  --color-muted-foreground: var(--saras-colour-text-muted);
+  --color-border: var(--saras-colour-border);
+  --color-success: var(--saras-colour-success);
+  --color-warning: var(--saras-colour-warning);
+  --color-danger: var(--saras-colour-danger);
+
+  --font-sans: var(--saras-font-family-sans);
+
+  --text-caption: var(--saras-font-size-caption);
+  --text-body: var(--saras-font-size-body);
+  --text-heading-3: var(--saras-font-size-h3);
+  --text-heading-2: var(--saras-font-size-h2);
+  --text-heading-1: var(--saras-font-size-h1);
+  --text-hero: var(--saras-font-size-hero);
+
+  --radius-sm: var(--saras-radius-sm);
+  --radius-md: var(--saras-radius-md);
+  --radius-lg: var(--saras-radius-lg);
+
+  --shadow-sm: var(--saras-shadow-sm);
+  --shadow-md: var(--saras-shadow-md);
+  --shadow-lg: var(--saras-shadow-lg);
+
+  --breakpoint-xs: 20rem;
+  --breakpoint-sm: 23.4375rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}

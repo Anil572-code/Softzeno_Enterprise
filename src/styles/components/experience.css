@@ -1,0 +1,393 @@
+/*
+ * SARAS premium experience layer.
+ * Motion is contextual, crisp and finite: no animated blur or constant floating.
+ */
+
+body::before {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: var(--saras-z-toast);
+  inline-size: 100%;
+  block-size: 0.2rem;
+  background: var(--saras-gradient-brand);
+  box-shadow: 0 0 1rem rgb(37 99 235 / 0.35);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  body::before {
+    animation: saras-scroll-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+.site-header {
+  transition:
+    border-color var(--saras-duration-normal) var(--saras-ease-standard),
+    background var(--saras-duration-normal) var(--saras-ease-standard),
+    box-shadow var(--saras-duration-normal) var(--saras-ease-standard);
+}
+
+.site-header__inner {
+  position: relative;
+  z-index: 3;
+}
+
+.brand__mark {
+  object-fit: contain;
+  filter: drop-shadow(0 0.3rem 0.58rem rgb(23 55 131 / 0.18));
+  transition:
+    filter var(--saras-duration-normal) var(--saras-ease-standard),
+    transform var(--saras-duration-normal) var(--saras-ease-standard);
+}
+
+.brand:hover .brand__mark {
+  filter: drop-shadow(0 0.42rem 0.72rem rgb(37 99 235 / 0.24));
+  transform: translateY(-0.08rem);
+}
+
+.brand__copy strong {
+  background: linear-gradient(105deg, var(--saras-colour-primary), var(--saras-colour-secondary));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navigation-link::after {
+  position: absolute;
+  inset-inline: 0.72rem;
+  inset-block-end: 0.25rem;
+  block-size: 0.125rem;
+  border-radius: var(--saras-radius-full);
+  background: var(--saras-gradient-brand);
+  content: '';
+  opacity: 0;
+  transform: scaleX(0.25);
+  transition:
+    opacity var(--saras-duration-fast) var(--saras-ease-standard),
+    transform var(--saras-duration-normal) var(--saras-ease-standard);
+}
+
+.navigation-link:hover::after,
+.navigation-link.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+body:has(.site-header__navigation--open) {
+  overflow: hidden;
+}
+
+.site-header__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  padding: 0;
+  border: 0;
+  background: rgb(8 17 31 / 0.52);
+  backdrop-filter: blur(0.18rem);
+  cursor: default;
+  animation: saras-backdrop-in 150ms ease-out both;
+}
+
+.button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.button::before {
+  position: absolute;
+  inset: -40% auto -40% -55%;
+  z-index: -1;
+  inline-size: 38%;
+  will-change: transform, opacity;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.3), transparent);
+  content: '';
+  opacity: 0;
+  transform: translate3d(0, 0, 0) skewX(-18deg);
+  transition:
+    transform 520ms var(--saras-ease-standard),
+    opacity var(--saras-duration-fast) ease;
+}
+
+.button--primary:hover::before,
+.button--light:hover::before {
+  opacity: 1;
+  transform: translate3d(480%, 0, 0) skewX(-18deg);
+}
+
+.button svg {
+  transition: transform var(--saras-duration-normal) var(--saras-ease-standard);
+}
+
+.button:hover svg {
+  transform: translate3d(0.16rem, 0, 0);
+}
+
+.page-hero__progress span,
+.preview-progress span {
+  animation: saras-progress-grow 620ms 180ms var(--saras-ease-standard) both;
+  transform-origin: left center;
+}
+
+.mini-bars span,
+.outcome-chart span {
+  animation: saras-bar-rise 500ms var(--saras-ease-standard) both;
+  transform-origin: bottom center;
+}
+
+.mini-bars span:nth-child(2),
+.outcome-chart span:nth-child(2) {
+  animation-delay: 45ms;
+}
+
+.mini-bars span:nth-child(3),
+.outcome-chart span:nth-child(3) {
+  animation-delay: 90ms;
+}
+
+.mini-bars span:nth-child(4),
+.outcome-chart span:nth-child(4) {
+  animation-delay: 135ms;
+}
+
+.outcome-chart span:nth-child(5) {
+  animation-delay: 180ms;
+}
+
+.outcome-chart span:nth-child(6) {
+  animation-delay: 225ms;
+}
+
+.outcome-chart span:nth-child(7) {
+  animation-delay: 270ms;
+}
+
+.feature-card,
+.industry-card,
+.solution-card,
+.process-card,
+.case-study-card,
+.resource-card,
+.team-function-card,
+.form-card,
+.faq-item,
+.outcome-dashboard,
+.story-panel,
+.vision-card,
+.benefit-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.feature-card::after,
+.industry-card::after,
+.solution-card::after,
+.process-card::after,
+.case-study-card::after,
+.resource-card::after,
+.team-function-card::after,
+.form-card::after,
+.faq-item::after,
+.outcome-dashboard::after,
+.story-panel::after,
+.vision-card::after,
+.benefit-panel::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle at 18% 0%, rgb(96 165 250 / 0.12), transparent 42%);
+  content: '';
+  opacity: 0;
+  transition: opacity var(--saras-duration-normal) var(--saras-ease-standard);
+}
+
+.feature-card:hover::after,
+.industry-card:hover::after,
+.solution-card:hover::after,
+.process-card:hover::after,
+.case-study-card:hover::after,
+.resource-card:hover::after,
+.team-function-card:hover::after,
+.form-card:hover::after,
+.faq-item:hover::after,
+.outcome-dashboard:hover::after,
+.story-panel:hover::after,
+.vision-card:hover::after,
+.benefit-panel:hover::after {
+  opacity: 1;
+}
+
+.feature-card:hover,
+.industry-card:hover,
+.solution-card:hover,
+.process-card:hover,
+.case-study-card:hover,
+.resource-card:hover,
+.team-function-card:hover {
+  border-color: color-mix(in srgb, var(--saras-colour-secondary) 34%, var(--saras-colour-border));
+  transform: translate3d(0, -0.2rem, 0);
+}
+
+.cta-banner {
+  box-shadow:
+    0 2rem 5rem rgb(23 55 131 / 0.2),
+    inset 0 1px 0 rgb(255 255 255 / 0.18);
+}
+
+.site-footer__group a {
+  position: relative;
+  width: fit-content;
+}
+
+.site-footer__group a::after {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: -0.2rem;
+  inline-size: 100%;
+  block-size: 0.0625rem;
+  background: #93c5fd;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--saras-duration-normal) var(--saras-ease-standard);
+}
+
+.site-footer__group a:hover::after {
+  transform: scaleX(1);
+}
+
+@media (min-width: 68.001rem) and (max-width: 84rem) {
+  .site-header__inner {
+    grid-template-columns: minmax(11.25rem, 1fr) auto minmax(11.25rem, 1fr);
+    gap: 0.65rem;
+  }
+
+  .navigation-link {
+    padding-inline: 0.54rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 68rem) {
+  .site-header__navigation {
+    z-index: 4;
+    transform-origin: top center;
+  }
+
+  .site-header__navigation--open {
+    animation: saras-menu-enter 190ms var(--saras-ease-standard) both;
+  }
+
+  .site-header__menu-button {
+    position: relative;
+    z-index: 5;
+  }
+
+  .site-header__backdrop {
+    inset-block-start: 4.35rem;
+  }
+
+  .primary-navigation li {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+    animation: saras-menu-item 220ms var(--saras-ease-standard) forwards;
+  }
+
+  .primary-navigation li:nth-child(2) {
+    animation-delay: 25ms;
+  }
+  .primary-navigation li:nth-child(3) {
+    animation-delay: 50ms;
+  }
+  .primary-navigation li:nth-child(4) {
+    animation-delay: 75ms;
+  }
+  .primary-navigation li:nth-child(5) {
+    animation-delay: 100ms;
+  }
+  .primary-navigation li:nth-child(6) {
+    animation-delay: 125ms;
+  }
+  .primary-navigation li:nth-child(7) {
+    animation-delay: 150ms;
+  }
+
+  .navigation-link::after {
+    display: none;
+  }
+}
+
+@keyframes saras-scroll-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes saras-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes saras-menu-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -0.4rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes saras-menu-item {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes saras-progress-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes saras-bar-rise {
+  from {
+    opacity: 0;
+    transform: scaleY(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    display: none;
+  }
+
+  .page-hero__progress span,
+  .preview-progress span,
+  .mini-bars span,
+  .outcome-chart span,
+  .site-header__navigation--open,
+  .primary-navigation li {
+    animation: none !important;
+  }
+}
