@@ -53,7 +53,7 @@ export const routeDefinitions = {
   },
   caseStudies: {
     key: 'caseStudies',
-    label: 'Case Studies',
+    label: 'Use Cases',
     path: ROUTE_PATHS.caseStudies,
     seoTitle: 'Case Studies',
     description: 'Softzeno Tech customer and workplace safety training case studies.',

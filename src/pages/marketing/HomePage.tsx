@@ -33,9 +33,9 @@ const rolePreviews: Record<
 > = {
   learner: {
     eyebrow: 'Learner workspace',
-    title: 'A focused path through assigned safety learning.',
+    title: 'A focused path through role-based safety learning.',
     description:
-      'Learners see what is assigned, continue interactive scenarios and understand what is complete without unnecessary complexity.',
+      'Learners see their current learning, continue interactive scenarios and understand what is complete without unnecessary complexity.',
     primaryLabel: 'Current module',
     primaryValue: 'Hazard awareness',
     secondaryLabel: 'Progress',
@@ -47,7 +47,7 @@ const rolePreviews: Record<
     title: 'Coordinate training without losing visibility.',
     description:
       'Training coordinators can organise learning activity, follow completion and keep teams moving through a consistent programme.',
-    primaryLabel: 'Assigned learning',
+    primaryLabel: 'Active learning',
     primaryValue: '12 modules',
     secondaryLabel: 'Completion view',
     secondaryValue: 'Team level',
@@ -270,7 +270,7 @@ export function HomePage() {
           <Reveal className="home-role-preview" delay={0.06}>
             <div className="home-role-preview__topbar">
               <span>{activePreview.eyebrow}</span>
-              <span>Illustrative demo data</span>
+              <span>Sample workspace data</span>
             </div>
 
             <div className="home-role-preview__body" key={previewRole}>

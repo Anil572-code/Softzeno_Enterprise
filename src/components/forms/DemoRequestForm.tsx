@@ -52,8 +52,8 @@ export function DemoRequestForm() {
         <CheckCircle2 aria-hidden="true" size={34} />
         <h2>Request received</h2>
         <p>
-          Thank you. This demonstration form is currently running in website-preview mode, so no
-          data has been transmitted. Connect the form service before production launch.
+          Online submission is currently unavailable, so no information was transmitted. Secure
+          enquiry delivery will be enabled before live requests are accepted through this form.
         </p>
         <Button onClick={() => setSubmitted(false)} variant="secondary">
           Submit another request

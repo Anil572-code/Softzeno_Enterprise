@@ -19,8 +19,8 @@ const solutionAreas = [
     icon: ClipboardList,
     title: 'Training coordination',
     description:
-      'Give coordinators a clear way to organise assignments, participation and completion.',
-    points: ['Team organisation', 'Learning assignments', 'Certificate records'],
+      'Give coordinators a clear way to organise learning delivery, participation and completion.',
+    points: ['Team organisation', 'Role-based learning plans', 'Certificate records'],
   },
   {
     icon: Eye,

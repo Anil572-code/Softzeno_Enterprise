@@ -63,7 +63,7 @@ export const platformFeatures = [
     icon: UsersRound,
     title: 'Administrator dashboard',
     description:
-      'Coordinate learners, assignments and training activity from a focused management workspace.',
+      'Coordinate learners, training activity and completion from a focused management workspace.',
   },
   {
     icon: Cloud,
@@ -127,7 +127,7 @@ export const processSteps = [
   },
   {
     number: '02',
-    title: 'Assign relevant learning',
+    title: 'Deliver relevant learning',
     description:
       'Match interactive modules and assessments to the people, roles and risks that matter most.',
   },
@@ -198,12 +198,12 @@ export const faqs = [
   {
     question: 'Can training be managed across multiple teams?',
     answer:
-      'Yes. The platform is designed around an administrator experience that can support learner organisation, training assignment, completion tracking and reporting across teams and locations.',
+      'Yes. The platform is designed around an administrator experience that can support learner organisation, role-based learning delivery, completion tracking and reporting across teams and locations.',
   },
   {
     question: 'Does the Softzeno platform provide training certificates?',
     answer:
-      'Yes. Certificate support is part of the planned platform capability, helping organisations maintain clear evidence of completed learning.',
+      'Yes. Certificate support is part of the platform capability set, helping organisations maintain clear evidence of completed learning.',
   },
   {
     question: 'Is the platform cloud based?',
@@ -213,7 +213,7 @@ export const faqs = [
   {
     question: 'Will the Softzeno platform support virtual reality?',
     answer:
-      'Future VR support is part of the product direction. The current promotional website focuses on the interactive digital platform and its scalable learning foundation.',
+      'VR support is part of the product roadmap. The current platform focuses on interactive digital learning and a scalable foundation for future immersive experiences.',
   },
   {
     question: 'How can our organisation see the platform?',
@@ -251,21 +251,21 @@ export const caseStudyCards = [
     sector: 'Warehousing',
     title: 'Creating a consistent hazard-awareness journey',
     description:
-      'A model implementation showing how a multi-shift warehouse could standardise induction and refresher learning.',
-    result: 'Illustrative implementation model',
+      'A practical use case for standardising induction and refresher learning across a multi-shift warehouse.',
+    result: 'Operational use case',
   },
   {
     sector: 'Manufacturing',
     title: 'Making critical procedures easier to remember',
     description:
-      'A concept case study exploring interactive scenarios for machinery, restricted areas and safe decision making.',
-    result: 'Concept case study',
+      'A practical use case for interactive scenarios around machinery, restricted areas and safe decision making.',
+    result: 'Scenario-based use case',
   },
   {
     sector: 'Logistics',
     title: 'Supporting distributed teams with one learning standard',
     description:
-      'A future-facing example of how cloud-based learning can connect drivers, coordinators and site teams.',
+      'A practical use case for connecting drivers, coordinators and site teams through one cloud-based learning standard.',
     result: 'Platform use case',
   },
 ];

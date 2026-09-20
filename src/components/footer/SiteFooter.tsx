@@ -21,7 +21,7 @@ const footerGroups = [
     links: [
       { label: 'About Us', href: ROUTE_PATHS.about },
       { label: 'Our Team', href: ROUTE_PATHS.team },
-      { label: 'Case studies', href: ROUTE_PATHS.caseStudies },
+      { label: 'Use cases', href: ROUTE_PATHS.caseStudies },
       { label: 'Contact', href: ROUTE_PATHS.contact },
     ],
   },

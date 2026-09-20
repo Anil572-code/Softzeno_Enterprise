@@ -35,7 +35,7 @@ export function ContactForm() {
     <form className="enterprise-form" noValidate onSubmit={handleSubmit(onSubmit)}>
       {sent ? (
         <div className="inline-success" role="status">
-          Message prepared successfully. Connect the production email service before launch.
+          Online message delivery is currently unavailable, so no information was transmitted.
         </div>
       ) : null}
       <div className="form-grid form-grid--two">

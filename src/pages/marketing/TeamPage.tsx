@@ -1,4 +1,4 @@
-﻿import aakritiPhoto from '@/assets/team/aakriti-bhusal.png';
+import aakritiPhoto from '@/assets/team/aakriti-bhusal.png';
 import prajwalPhoto from '@/assets/team/prajwal-sharma.png';
 import sarinaPhoto from '@/assets/team/sarina-basnet.png';
 import subasnaPhoto from '@/assets/team/subasna-chhetri.png';
@@ -12,7 +12,7 @@ const teamMembers = [
     key: 'aakriti',
     name: 'Aakriti Bhusal',
     role: 'Project Manager & Requirements Lead',
-    description: 'Coordinates project scope, requirements and delivery priorities across the team.',
+    description: 'Coordinates product scope, stakeholder requirements and delivery priorities across the team.',
     photo: aakritiPhoto,
   },
   {
@@ -20,7 +20,7 @@ const teamMembers = [
     name: 'Prajwal Sharma',
     role: 'System Analysis & Technical Lead',
     description:
-      'Leads system analysis, technical direction and implementation decisions for the project.',
+      'Leads system analysis, technical direction and implementation decisions across the platform.',
     photo: prajwalPhoto,
   },
   {
@@ -28,14 +28,14 @@ const teamMembers = [
     name: 'Sarina Basnet',
     role: 'UX/UI & Marketing Lead',
     description:
-      'Leads the user experience, interface direction and product communication for the project.',
+      'Leads the user experience, interface direction and product communication across the platform.',
     photo: sarinaPhoto,
   },
   {
     key: 'subasna',
     name: 'Subasna Chhetri',
-    role: 'Documentation, Planning & Presentation Lead',
-    description: 'Leads project documentation, planning discipline and presentation readiness.',
+    role: 'Documentation & Delivery Operations Lead',
+    description: 'Leads product documentation, delivery planning and release readiness.',
     photo: subasnaPhoto,
   },
 ] as const;
@@ -44,7 +44,7 @@ const teamPrinciples = [
   {
     number: '01',
     title: 'Requirements clarity',
-    description: 'Project scope, operational context and delivery goals stay aligned from the start.',
+    description: 'Product scope, operational context and delivery goals stay aligned from the start.',
   },
   {
     number: '02',
@@ -59,7 +59,7 @@ const teamPrinciples = [
   {
     number: '04',
     title: 'Delivery readiness',
-    description: 'Documentation, planning and presentation support dependable rollout and review.',
+    description: 'Documentation, delivery planning and operational coordination support dependable releases.',
   },
 ] as const;
 
@@ -67,7 +67,7 @@ export function TeamPage() {
   return (
     <main className="internal-page internal-page--editorial internal-page--team-premium" id="main-content">
       <Seo
-        description="Meet the project team behind Softzeno Tech and the workplace safety learning experience."
+        description="Meet the multidisciplinary team behind Softzeno Tech and the workplace safety learning experience."
         path={ROUTE_PATHS.team}
         title="Our Team | Softzeno Tech"
       />
@@ -111,8 +111,8 @@ export function TeamPage() {
 
           <Reveal delay={0.06}>
             <p className="team-premium-profiles__description">
-              The people behind Softzeno Tech â€” a focused multidisciplinary team delivering planning,
-              analysis, experience design and presentation readiness.
+              The people behind Softzeno Tech — a focused multidisciplinary team delivering planning,
+              analysis, experience design and delivery readiness.
             </p>
           </Reveal>
         </Container>
@@ -126,8 +126,8 @@ export function TeamPage() {
               <h2>One team. Clear responsibilities. Shared delivery quality.</h2>
               <p>
                 Each role has a clear area of ownership, but decisions stay connected across the
-                full delivery journey â€” from requirements and technical direction through to
-                experience design, documentation and presentation.
+                full delivery journey — from requirements and technical direction through to
+                experience design, documentation and release delivery.
               </p>
             </div>
           </Reveal>

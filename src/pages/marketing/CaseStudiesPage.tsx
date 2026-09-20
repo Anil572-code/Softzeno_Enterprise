@@ -11,19 +11,19 @@ export function CaseStudiesPage() {
   return (
     <main id="main-content">
       <Seo
-        description="Explore illustrative Softzeno Tech workplace safety learning use cases across operational industries."
+        description="Explore Softzeno Tech workplace safety learning use cases across operational industries."
         path={ROUTE_PATHS.caseStudies}
-        title="Case Studies"
+        title="Industry Use Cases"
       />
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },
-          { name: 'Case Studies', path: '/case-studies' },
+          { name: 'Use Cases', path: '/case-studies' },
         ]}
       />
       <PageHero
-        description="Explore practical examples of how organisations could use interactive learning to strengthen consistency, engagement and visibility."
-        eyebrow="Case studies"
+        description="Explore practical examples of how organisations can use interactive learning to strengthen consistency, engagement and visibility."
+        eyebrow="Use cases"
         visual="caseStudies"
         title={
           <>
@@ -37,14 +37,14 @@ export function CaseStudiesPage() {
           <div className="notice-card">
             <Info aria-hidden="true" size={21} />
             <p>
-              These are illustrative concept studies prepared for the promotional website. They do
-              not claim live customer deployments or measured production results.
+              These use cases describe representative operating scenarios and show how the platform can
+              support different environments. They are not presented as named customer deployments or measured customer results.
             </p>
           </div>
           <SectionHeading
             align="centre"
-            description="Each example demonstrates a potential application of the platform without presenting fictional customer outcomes as fact."
-            eyebrow="Illustrative applications"
+            description="Each use case shows a practical application of the platform around a clear workplace training need."
+            eyebrow="Operational applications"
             title="See how Softzeno Tech can adapt to different training priorities."
           />
           <div className="case-study-grid">

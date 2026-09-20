@@ -1,6 +1,6 @@
-# Softzeno Interactive Safety Platform — Promotional Website
+# Softzeno Tech — Interactive Safety Platform Website
 
-Production-quality React promotional website for **Softzeno Tech — Technology for Safer Workplaces.** The website markets the separate Softzeno Interactive Safety Platform and directs organisations towards a tailored product demonstration.
+Production-quality React product website for **Softzeno Tech — Technology for Safer Workplaces.** The website markets the separate Softzeno Interactive Safety Platform and directs organisations towards a tailored product demonstration.
 
 ## Included pages
 
@@ -47,7 +47,7 @@ Requirements:
     $ErrorActionPreference = "Stop"
 
     $ProjectRoot = `
-        "C:\Users\Lenovo\Desktop\saras-enterprise-website-foundation"
+        "C:\Users\Lenovo\Desktop\Softzeno_Enterprise"
 
     Set-Location `
         -LiteralPath `
@@ -96,17 +96,15 @@ npm run validate
 
 See `docs/FINAL-WEBSITE.md` and `docs/ARCHITECTURE.md` for more detail.
 
-## Production integration tasks
+## Production operations checklist
 
-The visual website and frontend interaction flows are complete. Before a real public launch:
+The visual website and frontend interaction flows are complete. For production operation:
 
 1. Connect the demo and contact forms to an approved backend or form service.
 2. Add verified public office and direct contact details when approved.
 3. Confirm the legal entity, jurisdiction and final privacy text.
 4. Set `VITE_SITE_URL` to the deployed production URL.
-5. Review final copy with the Softzeno Tech project owner.
+5. Review final copy with the Softzeno Tech product owner.
 6. Run the complete quality gates and a final Lighthouse/accessibility review on the deployed build.
 
-Form submissions intentionally remain in preview mode until a production data service is approved.
-
-# enterprise-project
+Online form submission remains disabled until an approved data service is configured.

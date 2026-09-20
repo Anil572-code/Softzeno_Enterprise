@@ -11,7 +11,7 @@ export function HowItWorksPage() {
   return (
     <main className="internal-page internal-page--product internal-page--workflow" id="main-content">
       <Seo
-        description="See how organisations set up, assign, deliver and track workplace safety learning with Softzeno Tech."
+        description="See how organisations configure, deliver, manage and track workplace safety learning with Softzeno Tech."
         path={ROUTE_PATHS.howItWorks}
         title="How Softzeno Works"
       />
@@ -23,7 +23,7 @@ export function HowItWorksPage() {
       />
 
       <PageHero
-        description="A clear workflow helps administrators stay in control and gives learners a focused path from assignment to completion."
+        description="A clear workflow helps administrators stay in control and gives learners a focused path from enrolment to completion."
         eyebrow="How it works"
         visual="howItWorks"
         title={
@@ -74,7 +74,7 @@ export function HowItWorksPage() {
               <h3>Stay focused on what needs to be completed.</h3>
               <ul>
                 {[
-                  'Clear assigned learning',
+                  'Clear learning priorities',
                   'Interactive activities',
                   'Immediate assessment feedback',
                   'Visible progress and certificates',
@@ -93,7 +93,7 @@ export function HowItWorksPage() {
               <ul>
                 {[
                   'Structured team management',
-                  'Assignment controls',
+                  'Training allocation controls',
                   'Completion oversight',
                   'Analytics and reporting',
                 ].map((item) => (

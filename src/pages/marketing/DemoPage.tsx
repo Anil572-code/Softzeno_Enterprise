@@ -90,7 +90,7 @@ export function DemoPage() {
                   'Assessment approach',
                   'Administrator workflow',
                   'Progress and reporting',
-                  'Future platform direction',
+                  'Platform roadmap and extensibility',
                 ].map((item) => (
                   <li key={item}>
                     <CheckCircle2 aria-hidden="true" size={18} />

@@ -54,7 +54,7 @@ export function ResourcesPage() {
                     <h2>{title}</h2>
                     <p>{description}</p>
                   </div>
-                  <span className="internal-resource-item__status">In preparation</span>
+
                 </article>
               </Reveal>
             ))}
@@ -68,12 +68,12 @@ export function ResourcesPage() {
             <BookOpen aria-hidden="true" size={28} />
           </span>
           <div>
-            <p className="eyebrow">Resource roadmap</p>
-            <h2>Build a useful library, not content for content’s sake.</h2>
+            <p className="eyebrow">Resource focus</p>
+            <h2>Practical guidance for stronger safety-learning decisions.</h2>
             <p>
-              Future material can include implementation checklists, safety-learning templates,
-              platform guides and evidence-based insights. Each item should solve a clear problem
-              for the organisations Softzeno serves.
+              Softzeno resources focus on implementation guidance, safety-learning checklists,
+              platform practices and evidence-based insights that help organisations make clearer training decisions
+
             </p>
           </div>
           <ButtonLink to={ROUTE_PATHS.contact} variant="secondary">
