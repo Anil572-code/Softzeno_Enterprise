@@ -1,0 +1,209 @@
+/*
+ * Softzeno Tech Visual Discipline v2.3.0
+ * Enterprise readability and colour hierarchy for both light and dark themes.
+ */
+
+:root {
+  font-optical-sizing: auto;
+}
+
+body {
+  letter-spacing: -0.006em;
+}
+
+.text-gradient {
+  color: var(--softzeno-colour-secondary);
+  background: none;
+  -webkit-text-fill-color: currentcolor;
+}
+
+.eyebrow {
+  color: var(--softzeno-colour-secondary);
+}
+
+.button--primary {
+  color: #ffffff;
+  background: #5b21b6;
+  box-shadow: none;
+}
+
+.button--primary:hover:not(:disabled) {
+  background: #4c1d95;
+  box-shadow: none;
+}
+
+[data-theme='dark'] .button--primary {
+  color: #ffffff;
+  background: #6d28d9;
+}
+
+[data-theme='dark'] .button--primary:hover:not(:disabled) {
+  background: #7c3aed;
+}
+
+.button--secondary {
+  color: var(--softzeno-colour-text);
+  background: var(--softzeno-colour-surface);
+}
+
+.button--secondary:hover:not(:disabled) {
+  border-color: color-mix(
+    in srgb,
+    var(--softzeno-colour-secondary) 55%,
+    var(--softzeno-colour-border)
+  );
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.site-header {
+  border-block-end-color: var(--softzeno-colour-border);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+}
+
+.navigation-link {
+  color: var(--softzeno-colour-text-muted);
+}
+
+.navigation-link:hover {
+  color: var(--softzeno-colour-text);
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.navigation-link.is-active {
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-colour-accent-soft);
+}
+
+.page-hero {
+  background: var(--softzeno-colour-background);
+}
+
+.page-hero::before {
+  display: none;
+}
+
+.page-hero__content h1 {
+  color: var(--softzeno-colour-text);
+}
+
+.page-hero__description {
+  color: var(--softzeno-colour-text-muted);
+}
+
+.hero-art,
+[data-theme='dark'] .hero-art {
+  border-color: var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface);
+  box-shadow: var(--softzeno-shadow-xs);
+}
+
+.hero-art::before {
+  display: none;
+}
+
+.hero-art__caption {
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-colour-accent-soft);
+}
+
+.solution-flow__node--primary,
+.capability-summary,
+.industry-map__hub,
+.process-flow__marker--active,
+.resource-sheet__icon {
+  background: #5b21b6;
+  box-shadow: none;
+}
+
+[data-theme='dark'] .solution-flow__node--primary,
+[data-theme='dark'] .capability-summary,
+[data-theme='dark'] .industry-map__hub,
+[data-theme='dark'] .process-flow__marker--active,
+[data-theme='dark'] .resource-sheet__icon {
+  background: #6d28d9;
+}
+
+.solution-flow__node--primary span,
+.solution-flow__node--primary strong,
+.solution-flow__node--primary svg,
+.capability-summary,
+.industry-map__hub,
+.process-flow__marker--active {
+  color: #ffffff;
+}
+
+.solution-flow__connector,
+.process-flow__line,
+.capability-summary__line span {
+  background: #6d28d9;
+}
+
+[data-theme='dark'] .solution-flow__connector,
+[data-theme='dark'] .process-flow__line,
+[data-theme='dark'] .capability-summary__line span {
+  background: #8b5cf6;
+}
+
+.capability-tile--active {
+  border-color: color-mix(
+    in srgb,
+    var(--softzeno-colour-secondary) 38%,
+    var(--softzeno-colour-border)
+  );
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-colour-accent-soft);
+}
+
+.section-muted,
+.home-product-section,
+.home-workflow-section,
+.home-readiness-section {
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.home-capability-card,
+.home-role-preview,
+.home-readiness-panel,
+.home-industry-card,
+.card,
+.feature-card,
+.industry-card,
+.resource-card {
+  box-shadow: none;
+}
+
+[data-theme='dark'] .home-product-shell,
+[data-theme='dark'] .home-role-preview,
+[data-theme='dark'] .home-readiness-panel,
+[data-theme='dark'] .home-capability-card,
+[data-theme='dark'] .home-industry-card {
+  border-color: var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface);
+}
+
+[data-theme='dark'] .home-product-bars span {
+  background: #8b5cf6;
+}
+
+[data-theme='dark'] .home-product-shell__score,
+[data-theme='dark'] .home-capability-card__icon,
+[data-theme='dark'] .home-readiness-panel__icon,
+[data-theme='dark'] .home-industry-card > svg:first-child {
+  color: #9b7cff !important;
+}
+
+[data-theme='dark'] .home-role-switcher button.is-active {
+  color: #c4b5fd;
+  background: #1b1624;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-capability-card,
+  .home-industry-card {
+    transition:
+      border-color 140ms var(--softzeno-ease-standard),
+      transform 140ms var(--softzeno-ease-standard);
+  }
+}

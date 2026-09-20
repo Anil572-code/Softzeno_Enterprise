@@ -1,0 +1,359 @@
+/*
+ * Softzeno Tech UI/UX Closure v2.4.0
+ * Final visual discipline for first-viewport ownership, compact enterprise rhythm,
+ * high-contrast typography, responsive navigation, and neutral light/dark surfaces.
+ */
+
+:root {
+  --softzeno-header-height: 4rem;
+  --softzeno-section-divider: color-mix(in srgb, var(--softzeno-colour-border) 82%, transparent);
+}
+
+/* Global readability */
+
+body {
+  color: var(--softzeno-colour-text);
+  background: var(--softzeno-colour-background);
+}
+
+p,
+li,
+.section-heading__description,
+.page-hero__description {
+  color: var(--softzeno-colour-text-muted);
+}
+
+small,
+.form-field__hint {
+  color: var(--softzeno-colour-text-soft);
+}
+
+.text-gradient {
+  color: var(--softzeno-colour-secondary);
+  background: none;
+  -webkit-text-fill-color: currentcolor;
+}
+
+/* Header: compact and calm */
+
+.site-header {
+  min-block-size: var(--softzeno-header-height);
+  background: var(--softzeno-colour-header);
+  backdrop-filter: saturate(120%) blur(10px);
+}
+
+.site-header__inner {
+  min-block-size: var(--softzeno-header-height);
+}
+
+.navigation-link,
+.site-header__cta,
+.icon-button,
+.site-header__menu-button {
+  transition-duration: 140ms;
+}
+
+.icon-button:hover,
+.site-header__menu-button:hover {
+  transform: none;
+}
+
+/* Home: the hero owns the first desktop viewport. */
+
+@media (min-width: 68.001rem) {
+  .home-premium-hero {
+    min-block-size: calc(100dvh - var(--softzeno-header-height) + 1px);
+  }
+
+  .home-premium-hero__inner {
+    min-block-size: calc(100dvh - var(--softzeno-header-height) + 1px);
+    padding-block: clamp(3rem, 5vh, 4.5rem);
+  }
+
+  .home-audience-strip {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@supports not (height: 100dvh) {
+  @media (min-width: 68.001rem) {
+    .home-premium-hero,
+    .home-premium-hero__inner {
+      min-block-size: calc(100vh - var(--softzeno-header-height) + 1px);
+    }
+  }
+}
+
+.home-premium-hero__content {
+  align-content: center;
+}
+
+.home-premium-hero__eyebrow {
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-colour-surface);
+}
+
+.home-premium-hero h1 span {
+  color: var(--softzeno-colour-secondary);
+}
+
+.home-premium-hero__lead {
+  color: var(--softzeno-colour-text-muted);
+}
+
+.home-product-shell,
+.hero-art,
+.form-card,
+.card,
+.feature-card,
+.industry-card,
+.resource-card {
+  border-color: var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface);
+}
+
+.home-product-shell {
+  box-shadow: var(--softzeno-shadow-xs);
+}
+
+.home-audience-strip {
+  border-block-start: 1px solid var(--softzeno-section-divider);
+  border-block-end: 1px solid var(--softzeno-section-divider);
+  background: var(--softzeno-colour-surface);
+}
+
+.home-audience-strip__inner {
+  min-block-size: 4rem;
+}
+
+/* Page rhythm: consistent internal pages without giant dead zones. */
+
+.page-hero {
+  border-block-end: 1px solid var(--softzeno-section-divider);
+  background: var(--softzeno-colour-background);
+}
+
+.page-hero__inner {
+  min-block-size: clamp(31rem, 68vh, 38rem);
+  padding-block: clamp(4rem, 7vh, 5.25rem);
+}
+
+.page-hero__content {
+  gap: 1rem;
+}
+
+.page-hero__content h1 {
+  max-inline-size: 45rem;
+  color: var(--softzeno-colour-text);
+  font-size: clamp(2.8rem, 4.2vw, 3.6rem);
+  line-height: 1.035;
+}
+
+.page-hero__description {
+  max-inline-size: 42rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.page-hero__visual {
+  min-block-size: 21rem;
+}
+
+.hero-art {
+  border-radius: 0.875rem;
+  box-shadow: var(--softzeno-shadow-xs);
+}
+
+.hero-art__caption {
+  border: 1px solid var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+/* Purple is reserved for purpose, not body copy. */
+
+.solution-flow__node span,
+.capability-tile,
+.hero-art__footer-row span,
+.process-flow__step,
+.resource-sheet p,
+.resource-sheet span {
+  color: var(--softzeno-colour-text-muted);
+}
+
+.solution-flow__node--primary,
+.capability-summary,
+.industry-map__hub,
+.process-flow__marker--active,
+.resource-sheet__icon {
+  color: #fff;
+  background: var(--softzeno-colour-primary);
+}
+
+/* Sections: distinct but neutral. */
+
+.section-wrapper,
+.section-wrapper--spacious {
+  border-color: var(--softzeno-section-divider);
+}
+
+.section-muted,
+.home-product-section,
+.home-workflow-section,
+.home-readiness-section {
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.home-premium-section,
+.section-wrapper {
+  scroll-margin-block-start: calc(var(--softzeno-header-height) + 1rem);
+}
+
+/* Footer: neutral enterprise ending, not a second hero. */
+
+.site-footer {
+  padding-block: clamp(3.5rem, 6vw, 4.75rem) 1.5rem;
+  color: var(--softzeno-colour-text);
+  border-block-start: 1px solid var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface);
+}
+
+.site-footer .brand__copy strong,
+.site-footer h2 {
+  color: var(--softzeno-colour-text);
+}
+
+.site-footer .brand__copy span,
+.site-footer p,
+.site-footer a {
+  color: var(--softzeno-colour-text-muted);
+}
+
+.site-footer__email:hover,
+.site-footer__group a:hover,
+.site-footer__bottom a:hover {
+  color: var(--softzeno-colour-primary);
+}
+
+.site-footer__bottom {
+  border-block-start-color: var(--softzeno-colour-border);
+}
+
+/* Responsive navigation behaviour. */
+
+body.mobile-navigation-open {
+  overflow: hidden;
+}
+
+.site-header__backdrop {
+  position: fixed;
+  inset: var(--softzeno-header-height) 0 0;
+  z-index: -1;
+  display: none;
+  inline-size: 100%;
+  block-size: calc(100dvh - var(--softzeno-header-height));
+  padding: 0;
+  border: 0;
+  background: var(--softzeno-colour-overlay);
+  cursor: default;
+}
+
+@media (max-width: 68rem) {
+  .site-header__inner {
+    position: relative;
+  }
+
+  .site-header__backdrop {
+    display: block;
+  }
+
+  .site-header__navigation {
+    z-index: 2;
+    inset-block-start: calc(100% + 0.4rem);
+    border-radius: 0.75rem;
+    box-shadow: var(--softzeno-shadow-md);
+  }
+
+  .site-header__navigation--open {
+    animation: softzeno-mobile-menu-in 160ms var(--softzeno-ease-standard) both;
+  }
+
+  .navigation-link {
+    min-block-size: 2.8rem;
+  }
+
+  .home-premium-hero {
+    min-block-size: auto;
+  }
+
+  .page-hero__inner {
+    min-block-size: auto;
+  }
+}
+
+@media (max-width: 62rem) {
+  .home-premium-hero__inner {
+    padding-block: 3.5rem 4rem;
+  }
+
+  .page-hero__inner {
+    padding-block: 3.5rem 4rem;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  :root {
+    --softzeno-header-height: 3.75rem;
+  }
+
+  .site-header__inner {
+    min-block-size: var(--softzeno-header-height);
+  }
+
+  .home-premium-hero__inner {
+    padding-block: 2.75rem 3.25rem;
+  }
+
+  .home-premium-hero h1 {
+    font-size: clamp(2.5rem, 12vw, 3.2rem);
+    letter-spacing: -0.05em;
+  }
+
+  .home-premium-hero__lead {
+    font-size: 0.96rem;
+  }
+
+  .home-audience-strip__inner {
+    min-block-size: 3.75rem;
+  }
+
+  .page-hero__inner {
+    padding-block: 3rem 3.5rem;
+  }
+
+  .page-hero__content h1 {
+    font-size: clamp(2.35rem, 10vw, 3rem);
+  }
+
+  .site-footer {
+    padding-block-start: 3rem;
+  }
+}
+
+@keyframes softzeno-mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -0.35rem, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header__navigation--open {
+    animation: none;
+  }
+}

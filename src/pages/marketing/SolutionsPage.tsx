@@ -39,9 +39,9 @@ const solutionAreas = [
 
 export function SolutionsPage() {
   return (
-    <main id="main-content">
+    <main className="internal-page internal-page--product internal-page--solutions" id="main-content">
       <Seo
-        description="Explore SARAS solutions for engaging learners, coordinating training and improving workplace safety visibility."
+        description="Explore Softzeno Tech solutions for engaging learners, coordinating training and improving workplace safety visibility."
         path={ROUTE_PATHS.solutions}
         title="Workplace Safety Training Solutions"
       />
@@ -51,6 +51,7 @@ export function SolutionsPage() {
           { name: 'Solutions', path: '/solutions' },
         ]}
       />
+
       <PageHero
         description="One connected learning platform for the people who complete training, the teams who coordinate it and the managers who need confidence in the outcome."
         eyebrow="Solutions"
@@ -63,59 +64,68 @@ export function SolutionsPage() {
         }
       />
 
-      <SectionWrapper spacing="spacious">
+      <SectionWrapper className="internal-solution-section" spacing="spacious">
         <Container>
           <SectionHeading
-            align="centre"
-            description="SARAS brings the essential parts of workplace safety learning together in one coherent experience."
+            description="Four connected needs shape the experience, from learner participation through to management visibility."
             eyebrow="One platform, multiple needs"
             title="Designed around the work your organisation needs to do."
           />
-          <div className="solution-grid">
+
+          <div className="internal-solution-list">
             {solutionAreas.map(({ description, icon: Icon, points, title }, index) => (
-              <Reveal className="solution-card" delay={index * 0.05} key={title}>
-                <span className="feature-card__icon">
-                  <Icon aria-hidden="true" size={25} />
-                </span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <ul>
-                  {points.map((point) => (
-                    <li key={point}>
-                      <CheckCircle2 aria-hidden="true" size={17} />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+              <Reveal delay={index * 0.04} key={title}>
+                <article className="internal-solution-row">
+                  <div className="internal-solution-row__identity">
+                    <span className="internal-solution-row__number">0{index + 1}</span>
+                    <span className="internal-solution-row__icon">
+                      <Icon aria-hidden="true" size={21} strokeWidth={1.8} />
+                    </span>
+                  </div>
+                  <div className="internal-solution-row__copy">
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </div>
+                  <ul>
+                    {points.map((point) => (
+                      <li key={point}>
+                        <CheckCircle2 aria-hidden="true" size={16} />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
               </Reveal>
             ))}
           </div>
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper className="section-muted" spacing="spacious">
-        <Container className="split-layout">
-          <div className="split-layout__content">
-            <p className="eyebrow">Why organisations choose interactive learning</p>
-            <h2>Build a stronger training experience without adding unnecessary complexity.</h2>
+      <SectionWrapper className="section-muted internal-outcome-section" spacing="spacious">
+        <Container className="internal-outcome-grid">
+          <div>
+            <p className="eyebrow">Why interactive learning</p>
+            <h2>Strengthen the training experience without adding unnecessary operational complexity.</h2>
             <p>
-              The platform is designed to give learners clarity and managers visibility, while
-              maintaining a scalable foundation for future capabilities.
+              Give learners clarity, coordinators structure and managers visibility while keeping
+              one scalable learning foundation underneath.
             </p>
             <ButtonLink to={ROUTE_PATHS.features} variant="secondary">
               Explore platform features <ArrowRight aria-hidden="true" size={18} />
             </ButtonLink>
           </div>
-          <div className="benefit-panel">
-            {benefits.map((benefit) => (
+
+          <div className="internal-benefit-list">
+            {benefits.slice(0, 5).map((benefit) => (
               <div key={benefit}>
-                <CheckCircle2 aria-hidden="true" size={20} />
+                <CheckCircle2 aria-hidden="true" size={18} />
                 <span>{benefit}</span>
               </div>
             ))}
           </div>
         </Container>
       </SectionWrapper>
+
       <CtaBanner />
     </main>
   );

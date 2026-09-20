@@ -1,6 +1,6 @@
 import type { ResolvedTheme, ThemePreference } from '@/types/theme';
 
-const THEME_STORAGE_KEY = 'saras-theme-preference';
+const THEME_STORAGE_KEY = 'softzeno-theme-preference';
 const DARK_MODE_QUERY = '(prefers-color-scheme: dark)';
 const themePreferences: readonly ThemePreference[] = ['light', 'dark', 'system'];
 

@@ -6,4 +6,4 @@ Store source-controlled brand, illustration and media assets here.
 - `icons/` is reserved for non-Lucide custom SVG assets.
 - `images/` is reserved for optimised editorial and product imagery.
 
-The supplied SARAS logo is retained as a reference asset. Final transparent, monochrome and responsive logo exports are intentionally deferred to the Design System phase.
+The supplied Softzeno logo is retained as the source artwork. Optimized transparent web exports are generated for navigation, favicon/PWA and metadata use.

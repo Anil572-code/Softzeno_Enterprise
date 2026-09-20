@@ -6,7 +6,7 @@ import { BreadcrumbSchema, Seo } from '@/seo';
 const sections = [
   {
     title: '1. Purpose of this notice',
-    body: 'This privacy notice explains the intended approach to personal information collected through the SARAS promotional website. It must be reviewed and approved by the organisation before production publication.',
+    body: 'This privacy notice explains the intended approach to personal information collected through the Softzeno Tech promotional website. It must be reviewed and approved by the organisation before production publication.',
   },
   {
     title: '2. Information the website may collect',
@@ -38,7 +38,7 @@ export function PrivacyPolicyPage() {
   return (
     <main id="main-content">
       <Seo
-        description="Read the draft SARAS promotional website privacy policy."
+        description="Read the draft Softzeno Tech promotional website privacy policy."
         path={ROUTE_PATHS.privacy}
         title="Privacy Policy"
       />

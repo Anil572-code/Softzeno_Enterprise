@@ -1,0 +1,94 @@
+/*
+ * Softzeno Enterprise P1-R5-R1
+ * Internal Hero Geometry Repair v1.0.0
+ *
+ * Repairs a P1-R5 regression where PageHero visual grid items could shrink to
+ * their absolutely-positioned child's intrinsic width after max-inline-size +
+ * auto margin were introduced together.
+ *
+ * This layer changes geometry only. Existing page content/composition remains.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* 1. Desktop: give the visual grid item an explicit width authority           */
+/* -------------------------------------------------------------------------- */
+
+.internal-page .page-hero__visual {
+  inline-size: min(100%, 34rem);
+  max-inline-size: 34rem;
+  min-inline-size: 0;
+  justify-self: end;
+  margin-inline: 0;
+  overflow: visible;
+}
+
+.internal-page .page-hero__visual > .hero-art {
+  inline-size: auto;
+  min-inline-size: 0;
+  box-sizing: border-box;
+}
+
+/*
+ * PageHero artwork is absolutely positioned. The grid item therefore cannot
+ * rely on child intrinsic width. Explicit sizing above prevents the narrow
+ * vertical-strip collapse visible on product, workflow, industry and resource
+ * pages.
+ */
+.internal-page--product .page-hero__visual,
+.internal-page--discovery .page-hero__visual,
+.internal-page--about .page-hero__visual {
+  inline-size: min(100%, 34rem);
+}
+
+/* Keep About editorial balance without shrinking the artwork column. */
+@media (min-width: 68rem) {
+  .internal-page--about .page-hero__inner {
+    grid-template-columns: minmax(0, 1.08fr) minmax(24rem, 0.72fr);
+  }
+
+  .internal-page--product .page-hero__inner,
+  .internal-page--discovery .page-hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(24rem, 0.78fr);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Tablet: full stable artwork width inside the stacked layout              */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 67.999rem) {
+  .internal-page .page-hero__visual,
+  .internal-page--product .page-hero__visual,
+  .internal-page--discovery .page-hero__visual,
+  .internal-page--about .page-hero__visual {
+    inline-size: min(100%, 36rem);
+    max-inline-size: 36rem;
+    justify-self: start;
+    margin-inline: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Mobile: artwork must never create horizontal overflow                    */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 48rem) {
+  .internal-page .page-hero__visual,
+  .internal-page--product .page-hero__visual,
+  .internal-page--discovery .page-hero__visual,
+  .internal-page--about .page-hero__visual {
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  .internal-page .hero-art {
+    max-inline-size: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Team and Contact intentionally use editorial/conversion heroes without art. */
+.internal-page--team .page-hero__visual,
+.internal-page--contact .page-hero__visual {
+  display: none;
+}

@@ -1,0 +1,199 @@
+/*
+ * Softzeno Tech Home Hero Composition v2.5.0
+ * Desktop-only density refinement: fuller viewport use, stronger product presence,
+ * clean two-column balance, and a complete first-screen hero before the next section.
+ */
+
+@media (min-width: 68.001rem) {
+  .home-premium-hero {
+    min-block-size: calc(100dvh - var(--softzeno-header-height) + 0.5rem);
+  }
+
+  .home-premium-hero__inner {
+    inline-size: min(calc(100% - clamp(3rem, 6vw, 6rem)), 88rem);
+    grid-template-columns: minmax(0, 0.92fr) minmax(34rem, 1.08fr);
+    gap: clamp(3.75rem, 5vw, 6rem);
+    min-block-size: calc(100dvh - var(--softzeno-header-height) + 0.5rem);
+    padding-block: clamp(2.75rem, 4.5vh, 4rem);
+  }
+
+  .home-premium-hero__content {
+    gap: 1.12rem;
+    max-inline-size: 39.5rem;
+  }
+
+  .home-premium-hero h1 {
+    max-inline-size: 39rem;
+    font-size: clamp(3.55rem, 4.1vw, 4.1rem);
+    letter-spacing: -0.055em;
+    line-height: 0.995;
+  }
+
+  .home-premium-hero__lead {
+    max-inline-size: 35.5rem;
+    font-size: 1.05rem;
+    line-height: 1.62;
+  }
+
+  .home-premium-hero__actions {
+    gap: 0.75rem;
+    padding-block-start: 0.15rem;
+  }
+
+  .home-premium-proof {
+    gap: 0.6rem 1.2rem;
+    padding-block-start: 0.4rem;
+  }
+
+  .home-premium-proof li {
+    font-size: 0.8rem;
+  }
+
+  .home-premium-hero__visual {
+    inline-size: min(100%, 41rem);
+    justify-self: end;
+  }
+
+  .home-product-shell__topbar {
+    min-block-size: 2.7rem;
+    padding-inline: 1.1rem;
+  }
+
+  .home-product-shell__workspace {
+    grid-template-columns: 3rem 1fr;
+    min-block-size: 25rem;
+  }
+
+  .home-product-shell__rail {
+    gap: 0.85rem;
+    padding-block: 1.2rem;
+  }
+
+  .home-product-shell__rail span {
+    inline-size: 1.05rem;
+    block-size: 1.05rem;
+  }
+
+  .home-product-shell__content {
+    gap: 0.9rem;
+    padding: 1.15rem;
+  }
+
+  .home-product-shell__heading small,
+  .home-product-shell__activity small {
+    font-size: 0.66rem;
+  }
+
+  .home-product-shell__heading strong,
+  .home-product-shell__activity strong {
+    font-size: 0.8rem;
+  }
+
+  .home-product-shell__score {
+    font-size: 1.02rem !important;
+  }
+
+  .home-product-shell__progress {
+    block-size: 0.38rem;
+  }
+
+  .home-product-shell__cards {
+    gap: 0.8rem;
+  }
+
+  .home-product-card {
+    gap: 0.58rem;
+    min-block-size: 10.4rem;
+    padding: 1rem;
+  }
+
+  .home-product-card strong {
+    font-size: 0.8rem;
+  }
+
+  .home-product-card p,
+  .home-product-card > span {
+    font-size: 0.67rem;
+  }
+
+  .home-product-bars {
+    block-size: 5.35rem;
+  }
+
+  .home-product-shell__activity {
+    gap: 0.7rem;
+    padding: 0.8rem;
+  }
+
+  .home-product-shell__activity-icon {
+    inline-size: 2.15rem;
+    block-size: 2.15rem;
+  }
+
+  .home-audience-strip {
+    scroll-margin-block-start: var(--softzeno-header-height);
+  }
+}
+
+@media (min-width: 90rem) {
+  .home-premium-hero__inner {
+    inline-size: min(calc(100% - 7rem), 90rem);
+    grid-template-columns: minmax(0, 0.9fr) minmax(36rem, 1.1fr);
+    gap: clamp(4.5rem, 6vw, 7rem);
+  }
+
+  .home-premium-hero__content {
+    max-inline-size: 41rem;
+  }
+
+  .home-premium-hero h1 {
+    max-inline-size: 40.5rem;
+    font-size: clamp(3.9rem, 3.7vw, 4.35rem);
+  }
+
+  .home-premium-hero__lead {
+    max-inline-size: 36.5rem;
+    font-size: 1.08rem;
+  }
+
+  .home-premium-hero__visual {
+    inline-size: min(100%, 43rem);
+  }
+
+  .home-product-shell__workspace {
+    min-block-size: 26rem;
+  }
+}
+
+@supports not (height: 100dvh) {
+  @media (min-width: 68.001rem) {
+    .home-premium-hero,
+    .home-premium-hero__inner {
+      min-block-size: calc(100vh - var(--softzeno-header-height) + 0.5rem);
+    }
+  }
+}
+
+/* Short desktop displays keep the stronger horizontal composition without clipping. */
+@media (min-width: 68.001rem) and (max-height: 46rem) {
+  .home-premium-hero__inner {
+    min-block-size: auto;
+    padding-block: 2.5rem 3rem;
+  }
+
+  .home-premium-hero h1 {
+    font-size: clamp(3.2rem, 3.7vw, 3.8rem);
+  }
+
+  .home-premium-hero__visual {
+    inline-size: min(100%, 38rem);
+  }
+
+  .home-product-shell__workspace {
+    min-block-size: 22rem;
+  }
+
+  .home-product-card {
+    min-block-size: 9rem;
+  }
+}

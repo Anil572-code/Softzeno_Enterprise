@@ -1,14 +1,15 @@
 .site-footer {
-  padding-block: var(--saras-space-10) var(--saras-space-4);
-  color: #dbeafe;
-  background: radial-gradient(circle at 10% 20%, rgb(37 99 235 / 0.22), transparent 30rem), #081226;
+  padding-block: var(--softzeno-space-10) var(--softzeno-space-4);
+  color: #f3e8ff;
+  background:
+    radial-gradient(circle at 10% 20%, rgb(124 58 237 / 0.28), transparent 30rem), #0c0714;
 }
 
 .site-footer__grid {
   display: grid;
   grid-template-columns: minmax(17rem, 1.5fr) repeat(3, minmax(8rem, 0.65fr));
-  gap: var(--saras-space-6);
-  padding-block-end: var(--saras-space-8);
+  gap: var(--softzeno-space-6);
+  padding-block-end: var(--softzeno-space-8);
 }
 
 .site-footer .brand__copy strong,
@@ -25,7 +26,7 @@
 .site-footer__brand-column {
   display: grid;
   align-content: start;
-  gap: var(--saras-space-2);
+  gap: var(--softzeno-space-2);
   max-inline-size: 25rem;
 }
 
@@ -39,7 +40,7 @@
   gap: 0.6rem;
   width: fit-content;
   font-size: 0.92rem;
-  font-weight: var(--saras-font-weight-semibold);
+  font-weight: var(--softzeno-font-weight-semibold);
 }
 
 .site-footer__email:hover,
@@ -49,7 +50,7 @@
 }
 
 .site-footer__group h2 {
-  margin-block-end: var(--saras-space-2);
+  margin-block-end: var(--softzeno-space-2);
   font-size: 0.92rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -65,15 +66,15 @@
 
 .site-footer__group a {
   font-size: 0.92rem;
-  transition: color var(--saras-duration-fast) ease;
+  transition: color var(--softzeno-duration-fast) ease;
 }
 
 .site-footer__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--saras-space-2);
-  padding-block-start: var(--saras-space-3);
+  gap: var(--softzeno-space-2);
+  padding-block-start: var(--softzeno-space-3);
   border-block-start: 1px solid rgb(148 163 184 / 0.2);
 }
 

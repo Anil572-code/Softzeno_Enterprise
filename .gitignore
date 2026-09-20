@@ -28,3 +28,9 @@ npm-debug.log*
 *.bak
 *.backup
 *.before-*
+.softzeno-backups/
+.env.*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vscode/

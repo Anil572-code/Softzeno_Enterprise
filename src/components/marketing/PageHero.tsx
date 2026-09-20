@@ -20,19 +20,19 @@ const contentVariants = {
   hidden: {},
   visible: {
     transition: {
-      delayChildren: 0.03,
-      staggerChildren: 0.055,
+      delayChildren: 0.04,
+      staggerChildren: 0.065,
     },
   },
 };
 
 const contentItemVariants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 14 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.58,
+      duration: 0.46,
       ease: premiumEase,
     },
   },
@@ -65,12 +65,22 @@ export function PageHero({ actions, description, eyebrow, title, visual }: PageH
             )}
           </motion.div>
         </motion.div>
+
         <motion.div
-          animate={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
           aria-hidden="true"
           className="page-hero__visual motion-hero-visual"
-          initial={shouldReduceMotion ? false : { opacity: 0, x: 16 }}
-          transition={{ delay: 0.08, duration: 0.66, ease: premiumEase }}
+          initial={
+            shouldReduceMotion
+              ? false
+              : {
+                  opacity: 0,
+                  scale: 0.985,
+                  x: 18,
+                  y: 6,
+                }
+          }
+          transition={{ delay: 0.1, duration: 0.62, ease: premiumEase }}
         >
           <HeroVisual variant={visual} />
         </motion.div>

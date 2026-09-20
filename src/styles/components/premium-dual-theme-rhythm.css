@@ -1,0 +1,463 @@
+/*
+ * Softzeno Enterprise P1-R3
+ * Dual-Theme Visual Rhythm Authority v1.0.0
+ *
+ * Final override layer loaded after all existing website styles.
+ * Goals:
+ * - reduce desktop hero dead-space without making layouts cramped;
+ * - give light and dark themes equal premium depth;
+ * - improve product/hero surface separation;
+ * - standardise section rhythm and restrained interaction feedback;
+ * - keep motion finite and accessible.
+ */
+
+:root {
+  --softzeno-page-section-space: clamp(4.25rem, 6vw, 5.9rem);
+  --softzeno-page-section-space-compact: clamp(3.15rem, 4.5vw, 4.2rem);
+
+  --softzeno-premium-hero-grid: rgb(91 33 182 / 0.012);
+  --softzeno-premium-hero-glow-a: rgb(109 40 217 / 0.055);
+  --softzeno-premium-hero-glow-b: rgb(124 58 237 / 0.028);
+  --softzeno-premium-surface-shadow:
+    0 1.55rem 4rem rgb(33 24 55 / 0.095),
+    0 0.2rem 0.85rem rgb(33 24 55 / 0.045);
+  --softzeno-premium-surface-shadow-hover:
+    0 1.8rem 4.6rem rgb(33 24 55 / 0.12),
+    0 0.25rem 1rem rgb(33 24 55 / 0.055);
+  --softzeno-premium-surface-border: color-mix(
+    in srgb,
+    var(--softzeno-colour-border-strong) 82%,
+    transparent
+  );
+  --softzeno-premium-section-divider: color-mix(
+    in srgb,
+    var(--softzeno-colour-border) 78%,
+    transparent
+  );
+}
+
+[data-theme='dark'] {
+  --softzeno-premium-hero-grid: rgb(155 124 255 / 0.016);
+  --softzeno-premium-hero-glow-a: rgb(124 58 237 / 0.085);
+  --softzeno-premium-hero-glow-b: rgb(155 124 255 / 0.035);
+  --softzeno-premium-surface-shadow:
+    0 1.7rem 4.4rem rgb(0 0 0 / 0.32),
+    0 0.2rem 0.9rem rgb(0 0 0 / 0.18);
+  --softzeno-premium-surface-shadow-hover:
+    0 1.95rem 5rem rgb(0 0 0 / 0.38),
+    0 0.25rem 1rem rgb(0 0 0 / 0.22);
+  --softzeno-premium-surface-border: color-mix(
+    in srgb,
+    var(--softzeno-colour-primary) 14%,
+    var(--softzeno-colour-border)
+  );
+  --softzeno-premium-section-divider: color-mix(
+    in srgb,
+    var(--softzeno-colour-border) 86%,
+    transparent
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* 1. Page rhythm                                                             */
+/* -------------------------------------------------------------------------- */
+
+.section-wrapper,
+.section-wrapper--spacious {
+  padding-block: var(--softzeno-page-section-space);
+}
+
+.section-wrapper--compact {
+  padding-block: var(--softzeno-page-section-space-compact);
+}
+
+.section-wrapper,
+.home-audience-strip,
+.page-hero,
+.home-premium-hero {
+  border-color: var(--softzeno-premium-section-divider);
+}
+
+.section-heading {
+  margin-block-end: clamp(1.9rem, 3vw, 2.65rem);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Home hero: remove full-viewport dead space while preserving breathing   */
+/* -------------------------------------------------------------------------- */
+
+.home-premium-hero {
+  min-block-size: auto;
+  background:
+    radial-gradient(
+      ellipse 34rem 28rem at 79% 38%,
+      var(--softzeno-premium-hero-glow-a),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 30rem 24rem at 14% 24%,
+      var(--softzeno-premium-hero-glow-b),
+      transparent 74%
+    ),
+    var(--softzeno-colour-background);
+}
+
+.home-premium-hero::before {
+  background:
+    linear-gradient(var(--softzeno-premium-hero-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--softzeno-premium-hero-grid) 1px, transparent 1px);
+  background-size: 4.25rem 4.25rem;
+  mask-image: linear-gradient(to bottom, #000 0%, rgb(0 0 0 / 0.58) 42%, transparent 88%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    rgb(0 0 0 / 0.58) 42%,
+    transparent 88%
+  );
+}
+
+.home-premium-hero__content {
+  gap: clamp(0.95rem, 1.45vw, 1.15rem);
+}
+
+.home-premium-hero__lead {
+  max-inline-size: 35.5rem;
+}
+
+.home-premium-hero__visual {
+  position: relative;
+}
+
+.home-premium-hero__visual::before {
+  position: absolute;
+  inset: 10% 4% -3%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--softzeno-colour-primary) 10%, transparent),
+    transparent 68%
+  );
+  filter: blur(2rem);
+  content: '';
+  pointer-events: none;
+}
+
+.home-product-shell {
+  border-color: var(--softzeno-premium-surface-border);
+  box-shadow: var(--softzeno-premium-surface-shadow);
+  transition:
+    border-color 200ms var(--softzeno-ease-standard),
+    box-shadow 240ms var(--softzeno-ease-standard),
+    transform 260ms var(--softzeno-ease-standard);
+}
+
+[data-theme='light'] .home-product-shell {
+  background: color-mix(in srgb, var(--softzeno-colour-surface) 98%, #f7f3ff);
+}
+
+[data-theme='dark'] .home-product-shell {
+  background: color-mix(in srgb, var(--softzeno-colour-surface) 97%, #180f26);
+}
+
+/* Small finite data motion: enough to feel alive, never distracting. */
+.home-product-shell__progress span {
+  transform-origin: left center;
+  animation: softzeno-premium-progress-in 720ms 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.home-product-bars span {
+  transform-origin: center bottom;
+  animation: softzeno-premium-bar-in 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.home-product-bars span:nth-child(1) {
+  animation-delay: 340ms;
+}
+
+.home-product-bars span:nth-child(2) {
+  animation-delay: 390ms;
+}
+
+.home-product-bars span:nth-child(3) {
+  animation-delay: 440ms;
+}
+
+.home-product-bars span:nth-child(4) {
+  animation-delay: 490ms;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Shared interior-page heroes                                             */
+/* -------------------------------------------------------------------------- */
+
+.page-hero {
+  border-block-end: 1px solid var(--softzeno-premium-section-divider);
+  background:
+    radial-gradient(
+      ellipse 30rem 24rem at 78% 36%,
+      var(--softzeno-premium-hero-glow-a),
+      transparent 74%
+    ),
+    radial-gradient(
+      ellipse 25rem 22rem at 15% 22%,
+      var(--softzeno-premium-hero-glow-b),
+      transparent 76%
+    ),
+    var(--softzeno-colour-background);
+}
+
+.page-hero::before {
+  background-image:
+    linear-gradient(var(--softzeno-premium-hero-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--softzeno-premium-hero-grid) 1px, transparent 1px);
+  background-size: 4.25rem 4.25rem;
+  mask-image: linear-gradient(to bottom, #000, transparent 90%);
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 90%);
+}
+
+.page-hero__inner {
+  gap: clamp(3rem, 6vw, 5.5rem);
+  min-block-size: clamp(31.5rem, 63dvh, 36rem);
+  padding-block: clamp(3.15rem, 5.4vh, 4.35rem);
+}
+
+.page-hero__content {
+  gap: clamp(1rem, 1.5vw, 1.35rem);
+}
+
+.page-hero__description {
+  max-inline-size: 41rem;
+}
+
+.page-hero__visual {
+  min-block-size: 21.5rem;
+}
+
+.hero-art {
+  inset: 4% 0;
+  border-color: var(--softzeno-premium-surface-border);
+  border-radius: 1.15rem;
+  box-shadow: var(--softzeno-premium-surface-shadow);
+}
+
+[data-theme='light'] .hero-art {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, #fff 98%, #f5f0ff),
+    color-mix(in srgb, var(--softzeno-colour-surface-subtle) 96%, #f6f2ff)
+  );
+}
+
+[data-theme='dark'] .hero-art {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--softzeno-colour-surface) 97%, #1a1029),
+    color-mix(in srgb, var(--softzeno-colour-surface-subtle) 97%, #160d23)
+  );
+  box-shadow: var(--softzeno-premium-surface-shadow);
+}
+
+.hero-art::before {
+  opacity: 0.72;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Shared premium interaction language                                     */
+/* -------------------------------------------------------------------------- */
+
+.button,
+.icon-button,
+.feature-card,
+.solution-card,
+.industry-card,
+.resource-card,
+.process-card,
+.team-function-card,
+.team-profile-card,
+.home-capability-card,
+.home-industry-card,
+.home-value-card,
+.vision-card,
+.case-study-card,
+.form-card,
+.notice-card {
+  transition:
+    color 160ms var(--softzeno-ease-standard),
+    background 180ms var(--softzeno-ease-standard),
+    border-color 180ms var(--softzeno-ease-standard),
+    box-shadow 220ms var(--softzeno-ease-standard),
+    transform 220ms var(--softzeno-ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-product-shell:hover,
+  .page-hero__visual:hover .hero-art {
+    border-color: color-mix(
+      in srgb,
+      var(--softzeno-colour-primary) 22%,
+      var(--softzeno-premium-surface-border)
+    );
+    box-shadow: var(--softzeno-premium-surface-shadow-hover);
+    transform: translateY(-0.125rem);
+  }
+
+  .feature-card:hover,
+  .solution-card:hover,
+  .industry-card:hover,
+  .resource-card:hover,
+  .process-card:hover,
+  .team-function-card:hover,
+  .home-capability-card:hover,
+  .home-industry-card:hover,
+  .home-value-card:hover,
+  .vision-card:hover,
+  .case-study-card:hover {
+    transform: translateY(-0.16rem);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. Desktop density                                                         */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 68.001rem) {
+  .home-premium-hero,
+  .home-premium-hero__inner {
+    min-block-size: auto;
+  }
+
+  .home-premium-hero__inner {
+    min-block-size: clamp(35rem, 72dvh, 42rem);
+    padding-block: clamp(3.25rem, 5.5vh, 4.4rem);
+  }
+
+  .home-premium-hero h1 {
+    font-size: clamp(3.45rem, 4vw, 4.15rem);
+  }
+
+  .home-premium-hero__visual {
+    inline-size: min(100%, 41.5rem);
+  }
+}
+
+@media (min-width: 90rem) {
+  .home-premium-hero__inner {
+    min-block-size: clamp(36rem, 69dvh, 43rem);
+  }
+}
+
+/* Short desktop screens prioritise complete first-screen composition. */
+@media (min-width: 68.001rem) and (max-height: 46rem) {
+  .home-premium-hero__inner {
+    min-block-size: auto;
+    padding-block: 2.45rem 2.85rem;
+  }
+
+  .page-hero__inner {
+    min-block-size: auto;
+    padding-block: 2.65rem 3rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. Tablet/mobile                                                           */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 68rem) {
+  .home-premium-hero__inner,
+  .page-hero__inner {
+    min-block-size: auto;
+  }
+
+  .home-premium-hero__inner {
+    padding-block: clamp(3.5rem, 8vw, 5rem);
+  }
+
+  .page-hero__inner {
+    padding-block: clamp(3.4rem, 8vw, 4.75rem);
+  }
+}
+
+@media (max-width: 62rem) {
+  .home-premium-hero__visual,
+  .page-hero__visual {
+    justify-self: center;
+    inline-size: min(100%, 42rem);
+  }
+
+  .home-premium-hero__visual {
+    margin-block-start: 0.5rem;
+  }
+
+  .page-hero__visual {
+    margin-block-start: 0.25rem;
+  }
+}
+
+@media (max-width: 38rem) {
+  .home-premium-hero__inner,
+  .page-hero__inner {
+    padding-block: 3rem;
+  }
+
+  .section-wrapper,
+  .section-wrapper--spacious {
+    padding-block: 3.75rem;
+  }
+
+  .section-wrapper--compact {
+    padding-block: 3rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. Accessible motion                                                       */
+/* -------------------------------------------------------------------------- */
+
+@keyframes softzeno-premium-progress-in {
+  from {
+    opacity: 0.65;
+    transform: scaleX(0.18);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes softzeno-premium-bar-in {
+  from {
+    opacity: 0;
+    transform: scaleY(0.12);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-product-shell__progress span,
+  .home-product-bars span {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .home-product-shell,
+  .hero-art,
+  .feature-card,
+  .solution-card,
+  .industry-card,
+  .resource-card,
+  .process-card,
+  .team-function-card,
+  .team-profile-card,
+  .home-capability-card,
+  .home-industry-card,
+  .home-value-card,
+  .vision-card,
+  .case-study-card {
+    transition-duration: 0.01ms !important;
+  }
+}

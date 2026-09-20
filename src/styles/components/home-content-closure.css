@@ -1,0 +1,156 @@
+/*
+ * Softzeno Enterprise P1-R4
+ * Focused home content architecture.
+ * This layer intentionally reduces density rather than adding decoration.
+ */
+
+.home-page--focused .home-premium-section,
+.home-page--focused .home-product-section,
+.home-page--focused .home-workflow-section,
+.home-page--focused .home-industry-section {
+  padding-block: clamp(4.75rem, 7vw, 6.5rem);
+}
+
+.home-page--focused .home-audience-strip__inner {
+  min-block-size: 4rem;
+}
+
+.home-page--focused .home-section-intro {
+  margin-block-end: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.home-page--focused .home-section-intro h2,
+.home-page--focused .home-product-section__copy h2,
+.home-page--focused .home-final-cta h2 {
+  max-inline-size: 39rem;
+}
+
+.home-page--focused .home-capability-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.home-page--focused .home-capability-card {
+  padding: 1.35rem;
+}
+
+.home-page--focused .home-capability-card h3 {
+  margin-block-start: 1rem;
+}
+
+.home-page--focused .home-capability-card p {
+  max-inline-size: 28rem;
+}
+
+.home-page--focused .home-section-action {
+  padding-block-start: 1.6rem;
+}
+
+.home-page--focused .home-product-section {
+  border-block: 1px solid var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.home-page--focused .home-product-section__grid {
+  grid-template-columns: minmax(0, 0.86fr) minmax(26rem, 1.14fr);
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+.home-page--focused .home-role-preview {
+  border-radius: 0.8rem;
+}
+
+.home-page--focused .home-role-preview__body {
+  padding: 1.4rem;
+}
+
+.home-page--focused .home-workflow-section {
+  background: var(--softzeno-colour-background);
+}
+
+.home-page--focused .home-workflow {
+  overflow: hidden;
+  border: 1px solid var(--softzeno-colour-border);
+  border-radius: 0.8rem;
+  background: var(--softzeno-colour-surface);
+}
+
+.home-page--focused .home-workflow__item {
+  background: transparent;
+}
+
+.home-page--focused .home-workflow article {
+  padding: 1.25rem;
+}
+
+.home-page--focused .home-industry-section {
+  border-block-start: 1px solid var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.home-page--focused .home-industry-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.home-page--focused .home-industry-card {
+  min-block-size: 100%;
+  padding: 1.25rem;
+  background: var(--softzeno-colour-surface);
+}
+
+.home-page--focused .home-final-cta {
+  padding-block: clamp(4.5rem, 6vw, 5.75rem);
+  background: var(--softzeno-colour-background);
+}
+
+.home-page--focused .home-final-cta__inner {
+  border-radius: 0.85rem;
+  background: var(--softzeno-colour-surface);
+}
+
+[data-theme='dark'] .home-page--focused .home-product-section,
+[data-theme='dark'] .home-page--focused .home-industry-section {
+  background: color-mix(
+    in srgb,
+    var(--softzeno-colour-surface-subtle) 76%,
+    var(--softzeno-colour-background)
+  );
+}
+
+@media (max-width: 67.999rem) {
+  .home-page--focused .home-product-section__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+
+  .home-page--focused .home-industry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 48rem) {
+  .home-page--focused .home-premium-section,
+  .home-page--focused .home-product-section,
+  .home-page--focused .home-workflow-section,
+  .home-page--focused .home-industry-section {
+    padding-block: 4rem;
+  }
+
+  .home-page--focused .home-capability-grid,
+  .home-page--focused .home-industry-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-page--focused .home-capability-card,
+  .home-page--focused .home-industry-card {
+    padding: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page--focused .home-capability-card,
+  .home-page--focused .home-industry-card {
+    transition: none !important;
+  }
+}

@@ -9,11 +9,11 @@ import { BreadcrumbSchema, Seo } from '@/seo';
 
 export function HowItWorksPage() {
   return (
-    <main id="main-content">
+    <main className="internal-page internal-page--product internal-page--workflow" id="main-content">
       <Seo
-        description="See how organisations set up, assign, deliver and track workplace safety learning with SARAS."
+        description="See how organisations set up, assign, deliver and track workplace safety learning with Softzeno Tech."
         path={ROUTE_PATHS.howItWorks}
-        title="How SARAS Works"
+        title="How Softzeno Works"
       />
       <BreadcrumbSchema
         items={[
@@ -21,6 +21,7 @@ export function HowItWorksPage() {
           { name: 'How It Works', path: '/how-it-works' },
         ]}
       />
+
       <PageHero
         description="A clear workflow helps administrators stay in control and gives learners a focused path from assignment to completion."
         eyebrow="How it works"
@@ -33,46 +34,44 @@ export function HowItWorksPage() {
         }
       />
 
-      <SectionWrapper spacing="spacious">
+      <SectionWrapper className="internal-workflow-section" spacing="spacious">
         <Container>
           <SectionHeading
-            align="centre"
-            description="The platform connects planning, learning, assessment and progress visibility in one repeatable journey."
-            eyebrow="The SARAS workflow"
-            title="Four steps to a stronger digital training experience."
+            description="Planning, learning, assessment and progress visibility connect in one repeatable journey."
+            eyebrow="The Softzeno workflow"
+            title="Four stages. One understandable operating flow."
           />
-          <div className="process-timeline">
+
+          <ol className="internal-workflow-list">
             {processSteps.map((step, index) => (
-              <Reveal className="process-timeline__item" delay={index * 0.05} key={step.number}>
-                <span className="process-timeline__number">{step.number}</span>
-                <div>
-                  <h2>{step.title}</h2>
-                  <p>{step.description}</p>
-                </div>
-                <div aria-hidden="true" className="process-timeline__visual">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </Reveal>
+              <li key={step.number}>
+                <Reveal delay={index * 0.045}>
+                  <article className="internal-workflow-step">
+                    <span className="internal-workflow-step__number">{step.number}</span>
+                    <div>
+                      <h2>{step.title}</h2>
+                      <p>{step.description}</p>
+                    </div>
+                    <span aria-hidden="true" className="internal-workflow-step__line" />
+                  </article>
+                </Reveal>
+              </li>
             ))}
-          </div>
+          </ol>
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper className="section-muted" spacing="spacious">
-        <Container className="split-layout split-layout--balanced">
-          <div>
-            <p className="eyebrow">Designed for both sides of the experience</p>
+      <SectionWrapper className="section-muted internal-audience-section" spacing="spacious">
+        <Container>
+          <div className="internal-section-lead">
+            <p className="eyebrow">Two sides of the same experience</p>
             <h2>Simple for learners. Clear for administrators.</h2>
-            <p>
-              The learner experience prioritises focus and progress. The administrator experience
-              prioritises organisation, visibility and dependable records.
-            </p>
           </div>
-          <div className="dual-audience-grid">
+
+          <div className="internal-audience-grid">
             <article>
-              <h3>For learners</h3>
+              <span>Learner experience</span>
+              <h3>Stay focused on what needs to be completed.</h3>
               <ul>
                 {[
                   'Clear assigned learning',
@@ -87,8 +86,10 @@ export function HowItWorksPage() {
                 ))}
               </ul>
             </article>
+
             <article>
-              <h3>For administrators</h3>
+              <span>Administrator experience</span>
+              <h3>Keep training organised and progress visible.</h3>
               <ul>
                 {[
                   'Structured team management',
@@ -104,21 +105,15 @@ export function HowItWorksPage() {
               </ul>
             </article>
           </div>
+
+          <div className="internal-action-row internal-action-row--spaced">
+            <ButtonLink size="large" to={ROUTE_PATHS.demo}>
+              Request a tailored demo <ArrowRight aria-hidden="true" size={19} />
+            </ButtonLink>
+          </div>
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper spacing="spacious">
-        <Container className="centre-callout">
-          <p className="eyebrow">See the workflow in context</p>
-          <h2>A demonstration can focus on the needs of your organisation.</h2>
-          <p>
-            Share your industry, workforce size and current training priorities with the SARAS team.
-          </p>
-          <ButtonLink size="large" to={ROUTE_PATHS.demo}>
-            Request a tailored demo <ArrowRight aria-hidden="true" size={19} />
-          </ButtonLink>
-        </Container>
-      </SectionWrapper>
       <CtaBanner />
     </main>
   );

@@ -31,7 +31,7 @@ export function DemoPage() {
   return (
     <main id="main-content">
       <Seo
-        description="Request a tailored demonstration of the SARAS Interactive Safety Platform."
+        description="Request a tailored demonstration of the Softzeno Interactive Safety Platform."
         path={ROUTE_PATHS.demo}
         title="Request a Demonstration"
       />
@@ -52,7 +52,7 @@ export function DemoPage() {
         visual="demo"
         title={
           <>
-            See how SARAS can support{' '}
+            See how Softzeno Tech can support{' '}
             <span className="text-gradient">safer, better-prepared teams.</span>
           </>
         }
@@ -103,7 +103,7 @@ export function DemoPage() {
           <div className="form-card">
             <div className="form-card__header">
               <p className="eyebrow">Tell us about your needs</p>
-              <h2>Request your SARAS demo</h2>
+              <h2>Request your Softzeno demo</h2>
               <p>Complete the form and the team can prepare a relevant conversation.</p>
             </div>
             <DemoRequestForm />

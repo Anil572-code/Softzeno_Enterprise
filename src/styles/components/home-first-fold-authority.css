@@ -1,0 +1,50 @@
+/*
+ * Softzeno Enterprise P1-R3A
+ * Home First-Fold Authority v1.0.1
+ *
+ * Keeps the first desktop landing viewport dedicated to the Home hero.
+ * Supporting content remains on the Home page, but starts below the fold.
+ */
+
+@media (min-width: 68.001rem) {
+  .home-premium-hero {
+    min-block-size: calc(100svh - var(--softzeno-header-height));
+  }
+
+  .home-premium-hero__inner {
+    min-block-size: calc(100svh - var(--softzeno-header-height));
+    align-items: center;
+    padding-block: clamp(2.25rem, 4.5vh, 3.6rem);
+  }
+
+  .home-audience-strip {
+    scroll-margin-block-start: var(--softzeno-header-height);
+  }
+}
+
+@supports not (height: 100svh) {
+  @media (min-width: 68.001rem) {
+    .home-premium-hero,
+    .home-premium-hero__inner {
+      min-block-size: calc(100vh - var(--softzeno-header-height));
+    }
+  }
+}
+
+@media (min-width: 90rem) and (min-height: 50rem) {
+  .home-premium-hero__inner {
+    padding-block: clamp(2.75rem, 5vh, 4.25rem);
+  }
+}
+
+/* On unusually short desktop displays, content safety takes precedence. */
+@media (min-width: 68.001rem) and (max-height: 43rem) {
+  .home-premium-hero,
+  .home-premium-hero__inner {
+    min-block-size: auto;
+  }
+
+  .home-premium-hero__inner {
+    padding-block: 2.35rem 2.75rem;
+  }
+}

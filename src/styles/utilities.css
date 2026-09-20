@@ -12,16 +12,16 @@
 
 .skip-link {
   position: fixed;
-  inset-block-start: var(--saras-space-1);
-  inset-inline-start: var(--saras-space-1);
-  z-index: var(--saras-z-toast);
-  padding: var(--saras-space-1) var(--saras-space-2);
-  border-radius: var(--saras-radius-sm);
-  color: var(--saras-colour-on-primary);
-  background: var(--saras-colour-primary);
+  inset-block-start: var(--softzeno-space-1);
+  inset-inline-start: var(--softzeno-space-1);
+  z-index: var(--softzeno-z-toast);
+  padding: var(--softzeno-space-1) var(--softzeno-space-2);
+  border-radius: var(--softzeno-radius-sm);
+  color: var(--softzeno-colour-on-primary);
+  background: var(--softzeno-colour-primary);
   font-weight: 600;
   transform: translateY(-200%);
-  transition: transform var(--saras-duration-fast) var(--saras-ease-standard);
+  transition: transform var(--softzeno-duration-fast) var(--softzeno-ease-standard);
 }
 
 .skip-link:focus {

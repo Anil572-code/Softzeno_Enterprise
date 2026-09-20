@@ -93,5 +93,5 @@ if ($LASTEXITCODE -ne 0) {
     throw ("Foundation validation failed with exit code {0}." -f $LASTEXITCODE)
 }
 
-Write-Host "PASS: SARAS enterprise foundation is ready." -ForegroundColor Green
+Write-Host "PASS: Softzeno Tech enterprise foundation is ready." -ForegroundColor Green
 Write-Host "No development or preview server was started." -ForegroundColor Yellow

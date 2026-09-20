@@ -16,7 +16,7 @@ function normalizeRequiredValue(value: string | undefined, fallback: string): st
 }
 
 export const env = environmentSchema.parse({
-  appName: normalizeRequiredValue(import.meta.env.VITE_APP_NAME, 'SARAS'),
+  appName: normalizeRequiredValue(import.meta.env.VITE_APP_NAME, 'Softzeno Tech'),
   siteUrl: normalizeRequiredValue(import.meta.env.VITE_SITE_URL, 'http://127.0.0.1:6066'),
   apiBaseUrl: normalizeOptionalValue(import.meta.env.VITE_API_BASE_URL),
 });

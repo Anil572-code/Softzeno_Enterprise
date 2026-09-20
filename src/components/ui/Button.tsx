@@ -45,7 +45,7 @@ export function ButtonLink({
   ...props
 }: ButtonLinkProps) {
   return (
-    <Link className={buttonClassName(variant, size, className)} viewTransition {...props}>
+    <Link className={buttonClassName(variant, size, className)} {...props}>
       {children}
     </Link>
   );

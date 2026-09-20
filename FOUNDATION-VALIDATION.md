@@ -2,7 +2,7 @@
 
 ## Release
 
-- Package: `saras-enterprise-website`
+- Package: `softzeno-tech-enterprise-website`
 - Foundation version: `0.1.0`
 - Scope: architecture and shared infrastructure only
 - Marketing page content: intentionally deferred
@@ -21,10 +21,10 @@
 | JSON parsing                            | Pass                             |
 | CSS structural brace validation         | Pass                             |
 | JavaScript configuration syntax         | Pass                             |
-| Supplied SARAS logo integrity           | Pass                             |
+| Supplied Softzeno Tech logo integrity   | Pass                             |
 
 The supplied logo was copied byte-for-byte into
-`src/assets/brand/saras-logo-reference.png` and retained as the protected brand reference.
+`src/assets/brand/softzeno.png` and retained as the protected source brand artwork.
 
 ## Dependency-backed validation status
 

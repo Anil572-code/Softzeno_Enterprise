@@ -12,15 +12,13 @@ const commonNeeds = [
   'Clear hazard-recognition activities',
   'Evidence of learner completion',
   'Visibility across teams and locations',
-  'Accessible training for varied roles',
-  'A platform that can grow with the organisation',
 ] as const;
 
 export function IndustriesPage() {
   return (
-    <main id="main-content">
+    <main className="internal-page internal-page--discovery internal-page--industries" id="main-content">
       <Seo
-        description="Discover how SARAS supports workplace safety learning across warehousing, manufacturing, automotive, logistics and corporate environments."
+        description="Discover how Softzeno Tech supports workplace safety learning across warehousing, manufacturing, automotive, logistics and corporate environments."
         path={ROUTE_PATHS.industries}
         title="Industry Safety Training"
       />
@@ -30,8 +28,9 @@ export function IndustriesPage() {
           { name: 'Industries', path: '/industries' },
         ]}
       />
+
       <PageHero
-        description="Different environments create different risks. SARAS provides a flexible learning foundation that can be shaped around the realities of your workforce."
+        description="Different environments create different risks. Softzeno Tech provides a flexible learning foundation that can be shaped around the realities of your workforce."
         eyebrow="Industries"
         visual="industries"
         title={
@@ -42,58 +41,58 @@ export function IndustriesPage() {
         }
       />
 
-      <SectionWrapper spacing="spacious">
+      <SectionWrapper className="internal-industry-section" spacing="spacious">
         <Container>
           <SectionHeading
-            align="centre"
-            description="Adapt interactive learning, scenarios and assessment to the people and risks that define your organisation."
+            description="A common platform can support different working environments while keeping learning relevant to the people and risks involved."
             eyebrow="Industry use cases"
-            title="Built for organisations where safety performance matters every day."
+            title="Adapt the learning context without fragmenting the standard."
           />
-          <div className="industry-grid industry-grid--large">
+
+          <div className="internal-industry-list">
             {industries.map(({ description, icon: Icon, title }, index) => (
-              <Reveal
-                className="industry-card industry-card--static"
-                delay={index * 0.04}
-                key={title}
-              >
-                <Icon aria-hidden="true" size={28} />
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <span>
-                  Role-aware learning <ArrowRight aria-hidden="true" size={16} />
-                </span>
+              <Reveal delay={index * 0.035} key={title}>
+                <article className="internal-industry-item">
+                  <span className="internal-industry-item__number">0{index + 1}</span>
+                  <span className="internal-industry-item__icon">
+                    <Icon aria-hidden="true" size={22} strokeWidth={1.8} />
+                  </span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper className="section-muted" spacing="spacious">
-        <Container className="split-layout">
-          <div className="split-layout__content">
-            <p className="eyebrow">Shared needs, tailored context</p>
-            <h2>
-              One platform can support different teams without making every experience identical.
-            </h2>
+      <SectionWrapper className="section-muted internal-industry-standard" spacing="spacious">
+        <Container className="internal-outcome-grid">
+          <div>
+            <p className="eyebrow">Shared standard, tailored context</p>
+            <h2>Keep one safety-learning standard while adapting the experience to different teams.</h2>
             <p>
-              Organisations can create a consistent safety standard while still presenting learning
-              in language, scenarios and workflows that feel relevant to each audience.
+              The same operating model can present relevant scenarios, language and learning paths
+              without making every audience experience identical.
             </p>
             <ButtonLink to={ROUTE_PATHS.demo}>
-              Discuss your industry needs <ArrowRight aria-hidden="true" size={18} />
+              Discuss your environment <ArrowRight aria-hidden="true" size={18} />
             </ButtonLink>
           </div>
-          <div className="benefit-panel">
+
+          <div className="internal-benefit-list">
             {commonNeeds.map((need) => (
               <div key={need}>
-                <CheckCircle2 aria-hidden="true" size={20} />
+                <CheckCircle2 aria-hidden="true" size={18} />
                 <span>{need}</span>
               </div>
             ))}
           </div>
         </Container>
       </SectionWrapper>
+
       <CtaBanner />
     </main>
   );

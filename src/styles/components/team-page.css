@@ -1,0 +1,195 @@
+.team-page {
+  border-block-start: 1px solid var(--softzeno-colour-border);
+}
+
+.team-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block-start: 2.5rem;
+}
+
+.team-profile-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--softzeno-colour-border);
+  border-radius: 0.875rem;
+  background: var(--softzeno-colour-surface);
+  box-shadow: var(--softzeno-shadow-sm);
+  transition:
+    border-color 180ms var(--softzeno-ease-standard),
+    transform 180ms var(--softzeno-ease-standard),
+    box-shadow 180ms var(--softzeno-ease-standard);
+}
+
+.team-profile-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--softzeno-colour-primary) 34%,
+    var(--softzeno-colour-border)
+  );
+  box-shadow: var(--softzeno-shadow-md);
+  transform: translateY(-2px);
+}
+
+.team-profile-card__media {
+  aspect-ratio: 4 / 4.6;
+  overflow: hidden;
+  border-block-end: 1px solid var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.team-profile-card__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 24%;
+  transition: transform 260ms var(--softzeno-ease-standard);
+}
+
+.team-profile-card:hover .team-profile-card__media img {
+  transform: scale(1.015);
+}
+
+.team-profile-card__content {
+  padding: 1.25rem;
+}
+
+.team-profile-card__role {
+  min-height: 2.5rem;
+  margin: 0 0 0.65rem;
+  color: var(--softzeno-colour-primary);
+  font-size: 0.75rem;
+  font-weight: var(--softzeno-font-weight-bold);
+  letter-spacing: 0.055em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.team-profile-card h2 {
+  margin: 0;
+  color: var(--softzeno-colour-text);
+  font-size: 1.22rem;
+  line-height: 1.2;
+}
+
+.team-profile-card__content > p:last-child {
+  margin: 0.7rem 0 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.team-page__working-model-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: start;
+}
+
+.team-page__working-model h2 {
+  max-width: 13ch;
+  margin: 0;
+}
+
+.team-page__working-model-grid > div:last-child {
+  max-width: 38rem;
+}
+
+.team-page__working-model-grid > div:last-child > p {
+  margin-block-start: 0;
+  color: var(--softzeno-colour-text-muted);
+  line-height: 1.75;
+}
+
+@media (min-width: 68.001rem) and (max-width: 84rem) {
+  .primary-navigation {
+    gap: 0.05rem;
+  }
+
+  .navigation-link {
+    padding-inline: 0.48rem;
+    font-size: 0.82rem;
+  }
+
+  .site-header__navigation {
+    gap: 0.65rem;
+  }
+}
+
+@media (max-width: 68rem) {
+  .team-profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 42rem) {
+  .team-profile-grid,
+  .team-page__working-model-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-profile-grid {
+    gap: 0.85rem;
+    margin-block-start: 1.75rem;
+  }
+
+  .team-profile-card {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+  }
+
+  .team-profile-card__media {
+    height: 100%;
+    aspect-ratio: auto;
+    border-block-end: 0;
+    border-inline-end: 1px solid var(--softzeno-colour-border);
+  }
+
+  .team-profile-card__content {
+    padding: 1rem;
+  }
+
+  .team-profile-card__role {
+    min-height: 0;
+    font-size: 0.68rem;
+  }
+
+  .team-profile-card h2 {
+    font-size: 1.08rem;
+  }
+
+  .team-profile-card__content > p:last-child {
+    font-size: 0.86rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-profile-card,
+  .team-profile-card__media img {
+    transition: none;
+  }
+
+  .team-profile-card:hover,
+  .team-profile-card:hover .team-profile-card__media img {
+    transform: none;
+  }
+}
+
+.about-story-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.25rem;
+}
+
+@media (max-width: 30rem) {
+  .about-story-actions {
+    display: grid;
+  }
+
+  .about-story-actions .button {
+    width: 100%;
+  }
+}

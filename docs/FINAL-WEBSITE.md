@@ -2,14 +2,14 @@
 
 ## Product objective
 
-The website promotes the SARAS Interactive Safety Platform to safety managers, warehouse and manufacturing leaders, logistics organisations, training coordinators and business owners. The primary conversion action is a demonstration request.
+The website promotes the Softzeno Interactive Safety Platform to safety managers, warehouse and manufacturing leaders, logistics organisations, training coordinators and business owners. The primary conversion action is a demonstration request.
 
 ## Design direction
 
 The visual system uses a restrained enterprise SaaS direction:
 
-- deep safety blue as the primary brand colour
-- bright blue accents for interaction and emphasis
+- deep violet and electric purple as the primary brand colours
+- violet, indigo and restrained magenta accents for interaction and emphasis
 - high-contrast neutral surfaces
 - generous whitespace and clear information hierarchy
 - interface-inspired product visuals created with native HTML and CSS
@@ -19,7 +19,7 @@ The visual system uses a restrained enterprise SaaS direction:
 ## Reusable website components
 
 - responsive sticky header and mobile navigation
-- brand component using the supplied SARAS mark
+- brand component using the supplied Softzeno mark
 - button and button-link variants
 - page hero and home hero systems
 - section heading and reveal primitives

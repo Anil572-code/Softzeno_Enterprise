@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail } from 'lucide-react';
+import { ArrowUpRight, MessageSquareText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { Container } from '@/components/layout';
@@ -19,8 +19,8 @@ const footerGroups = [
   {
     title: 'Company',
     links: [
-      { label: 'About', href: ROUTE_PATHS.about },
-      { label: 'Team', href: ROUTE_PATHS.team },
+      { label: 'About Us', href: ROUTE_PATHS.about },
+      { label: 'Our Team', href: ROUTE_PATHS.team },
       { label: 'Case studies', href: ROUTE_PATHS.caseStudies },
       { label: 'Contact', href: ROUTE_PATHS.contact },
     ],
@@ -44,12 +44,12 @@ export function SiteFooter() {
           <div className="site-footer__brand-column">
             <Brand className="site-footer__brand" />
             <p>
-              Interactive workplace safety learning designed to help organisations build safer,
+              Technology-led workplace safety learning designed to help organisations build safer,
               better-prepared teams.
             </p>
-            <a className="site-footer__email" href="mailto:hello@saras-safety.example">
-              <Mail aria-hidden="true" size={18} /> hello@saras-safety.example
-            </a>
+            <Link className="site-footer__email" to={ROUTE_PATHS.contact}>
+              <MessageSquareText aria-hidden="true" size={18} /> Contact Softzeno Tech
+            </Link>
           </div>
           {footerGroups.map((group) => (
             <div className="site-footer__group" key={group.title}>

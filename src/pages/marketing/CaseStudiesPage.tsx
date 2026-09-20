@@ -11,7 +11,7 @@ export function CaseStudiesPage() {
   return (
     <main id="main-content">
       <Seo
-        description="Explore illustrative SARAS workplace safety learning use cases across operational industries."
+        description="Explore illustrative Softzeno Tech workplace safety learning use cases across operational industries."
         path={ROUTE_PATHS.caseStudies}
         title="Case Studies"
       />
@@ -45,7 +45,7 @@ export function CaseStudiesPage() {
             align="centre"
             description="Each example demonstrates a potential application of the platform without presenting fictional customer outcomes as fact."
             eyebrow="Illustrative applications"
-            title="See how SARAS can adapt to different training priorities."
+            title="See how Softzeno Tech can adapt to different training priorities."
           />
           <div className="case-study-grid">
             {caseStudyCards.map((card, index) => (

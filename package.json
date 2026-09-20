@@ -1,9 +1,9 @@
 {
-  "name": "saras-enterprise-website",
+  "name": "softzeno-tech-enterprise-website",
   "private": true,
-  "version": "1.3.0",
+  "version": "2.6.3",
   "type": "module",
-  "description": "Production-ready promotional website for the SARAS Interactive Safety Platform.",
+  "description": "Softzeno Tech enterprise website with dedicated About Us and Our Team navigation, real four-member project team profiles, robust JPEG/PNG team-photo adoption, responsive enterprise header refinements, and compatibility-safe installation.",
   "engines": {
     "node": ">=22.12.0",
     "npm": ">=10.0.0"

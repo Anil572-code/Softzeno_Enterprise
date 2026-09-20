@@ -1,19 +1,19 @@
 {
-  "name": "SARAS Interactive Safety Platform",
-  "short_name": "SARAS",
-  "description": "Enterprise workplace health and safety learning platform.",
+  "name": "Softzeno Interactive Safety Platform",
+  "short_name": "Softzeno",
+  "description": "Interactive workplace health and safety learning by Softzeno Tech.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F8FAFC",
-  "theme_color": "#1E3A8A",
+  "background_color": "#FAF9FF",
+  "theme_color": "#6D28D9",
   "icons": [
     {
-      "src": "/brand/saras-icon-192.png",
+      "src": "/brand/softzeno-icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/brand/saras-icon-512.png",
+      "src": "/brand/softzeno-icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

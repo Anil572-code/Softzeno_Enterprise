@@ -128,7 +128,7 @@ function IndustriesVisual() {
       <div className="industry-map">
         <div className="industry-map__hub">
           <ShieldCheck aria-hidden="true" size={28} />
-          <strong>SARAS</strong>
+          <strong>SOFTZENO</strong>
           <span>Safety learning</span>
         </div>
         {industries.map(([label, Icon], index) => (
@@ -214,7 +214,7 @@ function ResourcesVisual() {
 function ContactVisual() {
   return (
     <div className="hero-art hero-art--contact">
-      <div className="hero-art__caption">A direct line to the SARAS team</div>
+      <div className="hero-art__caption">A direct line to the Softzeno Tech team</div>
       <div className="contact-preview">
         <div className="contact-preview__topbar">
           <MailCheck aria-hidden="true" size={21} />
@@ -374,7 +374,7 @@ function FaqVisual() {
           <HelpCircle aria-hidden="true" size={25} />
           <div>
             <span>Most asked</span>
-            <strong>How does SARAS support different workplaces?</strong>
+            <strong>How does Softzeno Tech support different workplaces?</strong>
           </div>
         </div>
         <div className="faq-preview__row">
@@ -382,7 +382,7 @@ function FaqVisual() {
           <strong>+</strong>
         </div>
         <div className="faq-preview__row">
-          <span>Does SARAS track completion?</span>
+          <span>Does Softzeno Tech track completion?</span>
           <strong>+</strong>
         </div>
         <div className="faq-preview__row">

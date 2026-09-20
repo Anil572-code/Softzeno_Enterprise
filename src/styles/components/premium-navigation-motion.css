@@ -1,0 +1,371 @@
+/*
+ * Softzeno Enterprise P1-R2
+ * Premium Navigation + Motion Authority
+ * Final override layer for compact navigation, balanced light/dark surfaces,
+ * and restrained finite motion. Loaded last intentionally.
+ */
+
+:root {
+  --softzeno-header-height: 3.875rem;
+  --softzeno-nav-glass: rgb(255 255 255 / 0.82);
+  --softzeno-nav-glass-scrolled: rgb(255 255 255 / 0.92);
+  --softzeno-nav-border: rgb(18 17 22 / 0.08);
+  --softzeno-nav-hover: rgb(91 33 182 / 0.065);
+  --softzeno-nav-shadow: 0 0.75rem 2.4rem rgb(28 23 41 / 0.07);
+  --softzeno-dropdown-shadow: 0 1rem 2.6rem rgb(28 23 41 / 0.11);
+}
+
+[data-theme='dark'] {
+  --softzeno-nav-glass: rgb(10 10 13 / 0.8);
+  --softzeno-nav-glass-scrolled: rgb(10 10 13 / 0.92);
+  --softzeno-nav-border: rgb(255 255 255 / 0.075);
+  --softzeno-nav-hover: rgb(155 124 255 / 0.085);
+  --softzeno-nav-shadow: 0 0.8rem 2.5rem rgb(0 0 0 / 0.2);
+  --softzeno-dropdown-shadow: 0 1.15rem 3rem rgb(0 0 0 / 0.32);
+}
+
+/* Header shell */
+
+.site-header {
+  min-block-size: var(--softzeno-header-height);
+  border-block-end: 1px solid var(--softzeno-nav-border);
+  background: var(--softzeno-nav-glass);
+  box-shadow: none;
+  backdrop-filter: saturate(145%) blur(18px);
+  -webkit-backdrop-filter: saturate(145%) blur(18px);
+  transition:
+    background 180ms var(--softzeno-ease-standard),
+    border-color 180ms var(--softzeno-ease-standard),
+    box-shadow 180ms var(--softzeno-ease-standard);
+}
+
+.site-header--scrolled {
+  background: var(--softzeno-nav-glass-scrolled);
+  box-shadow: var(--softzeno-nav-shadow);
+}
+
+.site-header__inner {
+  min-block-size: var(--softzeno-header-height);
+  gap: 0.8rem;
+}
+
+/* Compact brand: tagline is useful in the footer, not in the primary nav. */
+
+.brand--compact {
+  gap: 0.55rem;
+}
+
+.brand--compact .brand__mark {
+  inline-size: 2.15rem;
+  block-size: 2.15rem;
+}
+
+.brand--compact .brand__copy {
+  gap: 0;
+}
+
+.brand--compact .brand__copy strong {
+  font-size: 1rem;
+  letter-spacing: 0.015em;
+}
+
+.brand--compact .brand__copy span {
+  display: none;
+}
+
+/* Desktop navigation */
+
+.site-header__navigation {
+  gap: clamp(0.85rem, 1.7vw, 1.35rem);
+}
+
+.primary-navigation {
+  gap: 0.1rem;
+}
+
+.navigation-link,
+.navigation-group__trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  min-block-size: 2.25rem;
+  padding: 0 0.62rem;
+  border: 0;
+  border-radius: 0.55rem;
+  color: var(--softzeno-colour-text-muted);
+  background: transparent;
+  font: inherit;
+  font-size: 0.835rem;
+  font-weight: var(--softzeno-font-weight-semibold);
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 150ms var(--softzeno-ease-standard),
+    background 150ms var(--softzeno-ease-standard);
+}
+
+.navigation-link:hover,
+.navigation-link.is-active,
+.navigation-group__trigger:hover,
+.navigation-group__trigger.is-active,
+.navigation-group__trigger.is-open {
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-nav-hover);
+}
+
+.navigation-link::after,
+.navigation-group__trigger::after {
+  position: absolute;
+  inset-inline: 0.62rem;
+  inset-block-end: -0.12rem;
+  block-size: 0.1rem;
+  border-radius: 999px;
+  background: var(--softzeno-colour-primary);
+  content: '';
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition:
+    opacity 150ms var(--softzeno-ease-standard),
+    transform 200ms var(--softzeno-ease-standard);
+}
+
+.navigation-link:hover::after,
+.navigation-link.is-active::after,
+.navigation-group__trigger:hover::after,
+.navigation-group__trigger.is-active::after,
+.navigation-group__trigger.is-open::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.navigation-group {
+  position: relative;
+}
+
+.navigation-group__trigger svg {
+  opacity: 0.72;
+  transition: transform 180ms var(--softzeno-ease-standard);
+}
+
+.navigation-group__trigger.is-open svg {
+  transform: rotate(180deg);
+}
+
+.navigation-dropdown {
+  position: absolute;
+  inset-block-start: calc(100% + 0.65rem);
+  inset-inline-start: 50%;
+  z-index: var(--softzeno-z-dropdown);
+  display: grid;
+  min-inline-size: 12.75rem;
+  padding: 0.42rem;
+  border: 1px solid var(--softzeno-colour-border);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--softzeno-colour-surface) 96%, transparent);
+  box-shadow: var(--softzeno-dropdown-shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transform: translateX(-50%);
+  transform-origin: top center;
+  animation: softzeno-premium-dropdown-in 170ms var(--softzeno-ease-standard) both;
+}
+
+.navigation-dropdown__link {
+  display: flex;
+  align-items: center;
+  min-block-size: 2.45rem;
+  padding-inline: 0.72rem;
+  border-radius: 0.55rem;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.84rem;
+  font-weight: var(--softzeno-font-weight-semibold);
+  transition:
+    color 150ms var(--softzeno-ease-standard),
+    background 150ms var(--softzeno-ease-standard),
+    transform 150ms var(--softzeno-ease-standard);
+}
+
+.navigation-dropdown__link:hover,
+.navigation-dropdown__link.is-active {
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-nav-hover);
+  transform: translateX(0.12rem);
+}
+
+/* Header actions stay visually secondary to the page content. */
+
+.site-header__actions {
+  gap: 0.5rem;
+}
+
+.site-header .icon-button,
+.site-header__menu-button {
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  border-color: var(--softzeno-nav-border);
+  border-radius: 0.6rem;
+  background: transparent;
+}
+
+.site-header .icon-button:hover,
+.site-header__menu-button:hover {
+  border-color: color-mix(in srgb, var(--softzeno-colour-primary) 34%, var(--softzeno-nav-border));
+  background: var(--softzeno-nav-hover);
+}
+
+.site-header__cta.button--small {
+  min-block-size: 2.3rem;
+  padding-inline: 0.88rem;
+  border-radius: 0.62rem;
+  font-size: 0.82rem;
+}
+
+/* Premium motion: finite, restrained and fast enough for enterprise UX. */
+
+.motion-reveal {
+  transform-origin: center bottom;
+}
+
+.page-hero__visual .hero-art {
+  transition:
+    border-color 200ms var(--softzeno-ease-standard),
+    background 200ms var(--softzeno-ease-standard),
+    box-shadow 240ms var(--softzeno-ease-standard),
+    transform 260ms var(--softzeno-ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page-hero__visual:hover .hero-art {
+    border-color: color-mix(
+      in srgb,
+      var(--softzeno-colour-primary) 24%,
+      var(--softzeno-colour-border)
+    );
+    box-shadow: var(--softzeno-shadow-sm);
+    transform: translateY(-0.12rem);
+  }
+}
+
+/* Mobile/tablet: clean panel, no desktop-style floating dropdowns. */
+
+@media (max-width: 68rem) {
+  .site-header__navigation {
+    inset-block-start: calc(100% + 0.45rem);
+    gap: 0.7rem;
+    max-block-size: calc(100dvh - var(--softzeno-header-height) - 1rem);
+    padding: 0.55rem;
+    border-color: var(--softzeno-colour-border);
+    border-radius: 0.85rem;
+    background: color-mix(in srgb, var(--softzeno-colour-surface) 97%, transparent);
+    box-shadow: var(--softzeno-dropdown-shadow);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .primary-navigation {
+    gap: 0.16rem;
+  }
+
+  .navigation-group {
+    display: grid;
+  }
+
+  .navigation-link,
+  .navigation-group__trigger {
+    justify-content: space-between;
+    inline-size: 100%;
+    min-block-size: 2.72rem;
+    padding-inline: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .navigation-link::after,
+  .navigation-group__trigger::after {
+    display: none;
+  }
+
+  .navigation-dropdown {
+    position: static;
+    min-inline-size: 0;
+    margin: 0.16rem 0 0.28rem 0.48rem;
+    padding: 0.24rem;
+    border: 0;
+    border-inline-start: 1px solid var(--softzeno-colour-border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    transform: none;
+    animation: softzeno-premium-mobile-subnav-in 160ms var(--softzeno-ease-standard) both;
+  }
+
+  .navigation-dropdown__link {
+    min-block-size: 2.45rem;
+    padding-inline: 0.82rem;
+  }
+
+  .navigation-dropdown__link:hover,
+  .navigation-dropdown__link.is-active {
+    transform: none;
+  }
+
+  .site-header__actions {
+    gap: 0.55rem;
+    padding: 0.55rem 0.25rem 0.15rem;
+  }
+
+  .site-header__cta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  :root {
+    --softzeno-header-height: 3.65rem;
+  }
+
+  .brand--compact .brand__mark {
+    inline-size: 2rem;
+    block-size: 2rem;
+  }
+
+  .brand--compact .brand__copy strong {
+    font-size: 0.94rem;
+  }
+}
+
+@keyframes softzeno-premium-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-0.35rem) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes softzeno-premium-mobile-subnav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-dropdown,
+  .navigation-dropdown__link,
+  .navigation-group__trigger svg,
+  .page-hero__visual .hero-art {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,5 +1,5 @@
 /*
- * SARAS premium experience layer.
+ * Softzeno Tech premium experience layer.
  * Motion is contextual, crisp and finite: no animated blur or constant floating.
  */
 
@@ -7,11 +7,11 @@ body::before {
   position: fixed;
   inset-block-start: 0;
   inset-inline-start: 0;
-  z-index: var(--saras-z-toast);
+  z-index: var(--softzeno-z-toast);
   inline-size: 100%;
   block-size: 0.2rem;
-  background: var(--saras-gradient-brand);
-  box-shadow: 0 0 1rem rgb(37 99 235 / 0.35);
+  background: var(--softzeno-gradient-brand);
+  box-shadow: 0 0 1rem rgb(124 58 237 / 0.35);
   content: '';
   transform: scaleX(0);
   transform-origin: left center;
@@ -20,16 +20,16 @@ body::before {
 
 @supports (animation-timeline: scroll()) {
   body::before {
-    animation: saras-scroll-progress linear both;
+    animation: softzeno-scroll-progress linear both;
     animation-timeline: scroll(root block);
   }
 }
 
 .site-header {
   transition:
-    border-color var(--saras-duration-normal) var(--saras-ease-standard),
-    background var(--saras-duration-normal) var(--saras-ease-standard),
-    box-shadow var(--saras-duration-normal) var(--saras-ease-standard);
+    border-color var(--softzeno-duration-normal) var(--softzeno-ease-standard),
+    background var(--softzeno-duration-normal) var(--softzeno-ease-standard),
+    box-shadow var(--softzeno-duration-normal) var(--softzeno-ease-standard);
 }
 
 .site-header__inner {
@@ -41,17 +41,21 @@ body::before {
   object-fit: contain;
   filter: drop-shadow(0 0.3rem 0.58rem rgb(23 55 131 / 0.18));
   transition:
-    filter var(--saras-duration-normal) var(--saras-ease-standard),
-    transform var(--saras-duration-normal) var(--saras-ease-standard);
+    filter var(--softzeno-duration-normal) var(--softzeno-ease-standard),
+    transform var(--softzeno-duration-normal) var(--softzeno-ease-standard);
 }
 
 .brand:hover .brand__mark {
-  filter: drop-shadow(0 0.42rem 0.72rem rgb(37 99 235 / 0.24));
+  filter: drop-shadow(0 0.42rem 0.72rem rgb(124 58 237 / 0.24));
   transform: translateY(-0.08rem);
 }
 
 .brand__copy strong {
-  background: linear-gradient(105deg, var(--saras-colour-primary), var(--saras-colour-secondary));
+  background: linear-gradient(
+    105deg,
+    var(--softzeno-colour-primary),
+    var(--softzeno-colour-secondary)
+  );
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -61,14 +65,14 @@ body::before {
   inset-inline: 0.72rem;
   inset-block-end: 0.25rem;
   block-size: 0.125rem;
-  border-radius: var(--saras-radius-full);
-  background: var(--saras-gradient-brand);
+  border-radius: var(--softzeno-radius-full);
+  background: var(--softzeno-gradient-brand);
   content: '';
   opacity: 0;
   transform: scaleX(0.25);
   transition:
-    opacity var(--saras-duration-fast) var(--saras-ease-standard),
-    transform var(--saras-duration-normal) var(--saras-ease-standard);
+    opacity var(--softzeno-duration-fast) var(--softzeno-ease-standard),
+    transform var(--softzeno-duration-normal) var(--softzeno-ease-standard);
 }
 
 .navigation-link:hover::after,
@@ -90,7 +94,7 @@ body:has(.site-header__navigation--open) {
   background: rgb(8 17 31 / 0.52);
   backdrop-filter: blur(0.18rem);
   cursor: default;
-  animation: saras-backdrop-in 150ms ease-out both;
+  animation: softzeno-backdrop-in 150ms ease-out both;
 }
 
 .button {
@@ -110,8 +114,8 @@ body:has(.site-header__navigation--open) {
   opacity: 0;
   transform: translate3d(0, 0, 0) skewX(-18deg);
   transition:
-    transform 520ms var(--saras-ease-standard),
-    opacity var(--saras-duration-fast) ease;
+    transform 520ms var(--softzeno-ease-standard),
+    opacity var(--softzeno-duration-fast) ease;
 }
 
 .button--primary:hover::before,
@@ -121,7 +125,7 @@ body:has(.site-header__navigation--open) {
 }
 
 .button svg {
-  transition: transform var(--saras-duration-normal) var(--saras-ease-standard);
+  transition: transform var(--softzeno-duration-normal) var(--softzeno-ease-standard);
 }
 
 .button:hover svg {
@@ -130,13 +134,13 @@ body:has(.site-header__navigation--open) {
 
 .page-hero__progress span,
 .preview-progress span {
-  animation: saras-progress-grow 620ms 180ms var(--saras-ease-standard) both;
+  animation: softzeno-progress-grow 620ms 180ms var(--softzeno-ease-standard) both;
   transform-origin: left center;
 }
 
 .mini-bars span,
 .outcome-chart span {
-  animation: saras-bar-rise 500ms var(--saras-ease-standard) both;
+  animation: softzeno-bar-rise 500ms var(--softzeno-ease-standard) both;
   transform-origin: bottom center;
 }
 
@@ -202,10 +206,10 @@ body:has(.site-header__navigation--open) {
   inset: 0;
   z-index: -1;
   border-radius: inherit;
-  background: radial-gradient(circle at 18% 0%, rgb(96 165 250 / 0.12), transparent 42%);
+  background: radial-gradient(circle at 18% 0%, rgb(167 139 250 / 0.12), transparent 42%);
   content: '';
   opacity: 0;
-  transition: opacity var(--saras-duration-normal) var(--saras-ease-standard);
+  transition: opacity var(--softzeno-duration-normal) var(--softzeno-ease-standard);
 }
 
 .feature-card:hover::after,
@@ -231,7 +235,11 @@ body:has(.site-header__navigation--open) {
 .case-study-card:hover,
 .resource-card:hover,
 .team-function-card:hover {
-  border-color: color-mix(in srgb, var(--saras-colour-secondary) 34%, var(--saras-colour-border));
+  border-color: color-mix(
+    in srgb,
+    var(--softzeno-colour-secondary) 34%,
+    var(--softzeno-colour-border)
+  );
   transform: translate3d(0, -0.2rem, 0);
 }
 
@@ -252,11 +260,11 @@ body:has(.site-header__navigation--open) {
   inset-block-end: -0.2rem;
   inline-size: 100%;
   block-size: 0.0625rem;
-  background: #93c5fd;
+  background: #c4b5fd;
   content: '';
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform var(--saras-duration-normal) var(--saras-ease-standard);
+  transition: transform var(--softzeno-duration-normal) var(--softzeno-ease-standard);
 }
 
 .site-footer__group a:hover::after {
@@ -282,7 +290,7 @@ body:has(.site-header__navigation--open) {
   }
 
   .site-header__navigation--open {
-    animation: saras-menu-enter 190ms var(--saras-ease-standard) both;
+    animation: softzeno-menu-enter 190ms var(--softzeno-ease-standard) both;
   }
 
   .site-header__menu-button {
@@ -297,7 +305,7 @@ body:has(.site-header__navigation--open) {
   .primary-navigation li {
     opacity: 0;
     transform: translateY(-0.25rem);
-    animation: saras-menu-item 220ms var(--saras-ease-standard) forwards;
+    animation: softzeno-menu-item 220ms var(--softzeno-ease-standard) forwards;
   }
 
   .primary-navigation li:nth-child(2) {
@@ -324,13 +332,13 @@ body:has(.site-header__navigation--open) {
   }
 }
 
-@keyframes saras-scroll-progress {
+@keyframes softzeno-scroll-progress {
   to {
     transform: scaleX(1);
   }
 }
 
-@keyframes saras-backdrop-in {
+@keyframes softzeno-backdrop-in {
   from {
     opacity: 0;
   }
@@ -339,7 +347,7 @@ body:has(.site-header__navigation--open) {
   }
 }
 
-@keyframes saras-menu-enter {
+@keyframes softzeno-menu-enter {
   from {
     opacity: 0;
     transform: translate3d(0, -0.4rem, 0);
@@ -350,14 +358,14 @@ body:has(.site-header__navigation--open) {
   }
 }
 
-@keyframes saras-menu-item {
+@keyframes softzeno-menu-item {
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes saras-progress-grow {
+@keyframes softzeno-progress-grow {
   from {
     transform: scaleX(0);
   }
@@ -366,7 +374,7 @@ body:has(.site-header__navigation--open) {
   }
 }
 
-@keyframes saras-bar-rise {
+@keyframes softzeno-bar-rise {
   from {
     opacity: 0;
     transform: scaleY(0.1);

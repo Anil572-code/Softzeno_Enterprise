@@ -186,9 +186,9 @@ export const values = [
 
 export const faqs = [
   {
-    question: 'What is the SARAS Interactive Safety Platform?',
+    question: 'What is the Softzeno Interactive Safety Platform?',
     answer:
-      'SARAS is a digital workplace health and safety learning platform designed to deliver interactive training, scenario-based activities, assessments, certificates and progress tracking through a modern browser-based experience.',
+      'The Softzeno Interactive Safety Platform is a digital workplace health and safety learning product designed to deliver interactive training, scenario-based activities, assessments, certificates and progress tracking through a modern browser-based experience.',
   },
   {
     question: 'Who is the platform designed for?',
@@ -201,24 +201,24 @@ export const faqs = [
       'Yes. The platform is designed around an administrator experience that can support learner organisation, training assignment, completion tracking and reporting across teams and locations.',
   },
   {
-    question: 'Does SARAS provide training certificates?',
+    question: 'Does the Softzeno platform provide training certificates?',
     answer:
       'Yes. Certificate support is part of the planned platform capability, helping organisations maintain clear evidence of completed learning.',
   },
   {
     question: 'Is the platform cloud based?',
     answer:
-      'SARAS is cloud ready and intended to provide secure browser-based access without requiring complex local deployment for every learner.',
+      'The Softzeno platform is cloud ready and intended to provide secure browser-based access without requiring complex local deployment for every learner.',
   },
   {
-    question: 'Will SARAS support virtual reality?',
+    question: 'Will the Softzeno platform support virtual reality?',
     answer:
       'Future VR support is part of the product direction. The current promotional website focuses on the interactive digital platform and its scalable learning foundation.',
   },
   {
     question: 'How can our organisation see the platform?',
     answer:
-      'Use the demo request form to share your organisation details and training priorities. The SARAS team can then arrange a focused product demonstration.',
+      'Use the demo request form to share your organisation details and training priorities. The Softzeno Tech team can then arrange a focused product demonstration.',
   },
 ];
 

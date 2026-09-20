@@ -1,0 +1,575 @@
+/*
+ * Softzeno Enterprise P1-R5-R2
+ * Brand + Typography + Visual System Authority v1.0.0
+ *
+ * Final visual-system override loaded after all earlier authorities.
+ * Purpose:
+ * - replace washed-out violet with a richer, controlled brand palette;
+ * - establish one professional type scale across every marketing page;
+ * - reduce oversized headings and excessive vertical air;
+ * - strengthen CTA, hero, footer and content hierarchy in light + dark mode;
+ * - preserve P1-R5 content architecture and P1-R5-R1 hero geometry.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* 1. Brand palette authority                                                  */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  --softzeno-colour-primary: #6d28d9;
+  --softzeno-colour-primary-hover: #5b21b6;
+  --softzeno-colour-secondary: #7c3aed;
+  --softzeno-colour-secondary-hover: #6d28d9;
+  --softzeno-colour-accent: #7c3aed;
+  --softzeno-colour-accent-soft: #f3efff;
+  --softzeno-colour-focus: #7c3aed;
+
+  --softzeno-colour-background: #fbfbfd;
+  --softzeno-colour-surface: #ffffff;
+  --softzeno-colour-surface-subtle: #f7f7fa;
+  --softzeno-colour-surface-strong: #eeeeF3;
+  --softzeno-colour-text: #111114;
+  --softzeno-colour-text-muted: #5b5762;
+  --softzeno-colour-text-soft: #7a7581;
+  --softzeno-colour-border: #e6e4ea;
+  --softzeno-colour-border-strong: #d5d2dc;
+
+  --softzeno-gradient-brand: linear-gradient(135deg, #5b21b6 0%, #6d28d9 52%, #7c3aed 100%);
+  --softzeno-gradient-hero: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+
+  --softzeno-font-family-sans:
+    'Inter Variable', 'Inter', 'Segoe UI Variable', 'Segoe UI', ui-sans-serif,
+    system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --softzeno-font-size-caption: 0.75rem;
+  --softzeno-font-size-small: 0.825rem;
+  --softzeno-font-size-body: 0.975rem;
+  --softzeno-font-size-h3: clamp(1.1rem, 1.35vw, 1.3rem);
+  --softzeno-font-size-h2: clamp(1.85rem, 2.6vw, 2.35rem);
+  --softzeno-font-size-h1: clamp(2.55rem, 3.75vw, 3.35rem);
+  --softzeno-font-size-hero: clamp(2.9rem, 4vw, 3.7rem);
+
+  --softzeno-font-weight-medium: 500;
+  --softzeno-font-weight-semibold: 600;
+  --softzeno-font-weight-bold: 700;
+  --softzeno-font-weight-extrabold: 700;
+
+  --softzeno-line-height-tight: 1.035;
+  --softzeno-line-height-heading: 1.085;
+  --softzeno-line-height-body: 1.62;
+
+  --softzeno-page-section-space: clamp(3.9rem, 5.2vw, 5rem);
+  --softzeno-page-section-space-compact: clamp(3rem, 4vw, 3.75rem);
+
+  --softzeno-shadow-brand: 0 18px 42px rgb(91 33 182 / 0.16);
+}
+
+[data-theme='dark'] {
+  --softzeno-colour-primary: #8b5cf6;
+  --softzeno-colour-primary-hover: #7c3aed;
+  --softzeno-colour-secondary: #8b5cf6;
+  --softzeno-colour-secondary-hover: #7c3aed;
+  --softzeno-colour-accent: #8b5cf6;
+  --softzeno-colour-accent-soft: #191321;
+  --softzeno-colour-focus: #8b5cf6;
+
+  --softzeno-colour-background: #09090b;
+  --softzeno-colour-surface: #111114;
+  --softzeno-colour-surface-subtle: #151519;
+  --softzeno-colour-surface-strong: #202027;
+  --softzeno-colour-text: #f7f7f8;
+  --softzeno-colour-text-muted: #b9b5c0;
+  --softzeno-colour-text-soft: #8f8a96;
+  --softzeno-colour-border: #27262d;
+  --softzeno-colour-border-strong: #383640;
+
+  --softzeno-gradient-brand: linear-gradient(135deg, #5b21b6 0%, #6d28d9 50%, #7c3aed 100%);
+  --softzeno-gradient-hero: linear-gradient(180deg, #0b0b0e 0%, #09090b 100%);
+  --softzeno-shadow-brand: 0 18px 44px rgb(0 0 0 / 0.3);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Global typography                                                        */
+/* -------------------------------------------------------------------------- */
+
+html {
+  font-family: var(--softzeno-font-family-sans);
+  font-optical-sizing: auto;
+}
+
+body {
+  font-size: var(--softzeno-font-size-body);
+  letter-spacing: -0.006em;
+  line-height: var(--softzeno-line-height-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--softzeno-font-family-sans);
+  font-weight: 700;
+  letter-spacing: -0.038em;
+  text-wrap: balance;
+}
+
+h1 {
+  line-height: 1.045;
+}
+
+h2 {
+  line-height: 1.09;
+}
+
+h3 {
+  line-height: 1.18;
+}
+
+p {
+  line-height: 1.62;
+}
+
+.eyebrow,
+.home-premium-hero__eyebrow,
+.hero-art__caption {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.095em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Header typography and density                                            */
+/* -------------------------------------------------------------------------- */
+
+.brand__copy strong {
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.brand__copy span {
+  font-size: 0.64rem;
+  letter-spacing: 0;
+}
+
+.navigation-link,
+.navigation-trigger {
+  font-size: 0.81rem;
+  font-weight: 600;
+  letter-spacing: -0.006em;
+}
+
+.site-header__cta {
+  font-size: 0.82rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Hero typography and composition                                          */
+/* -------------------------------------------------------------------------- */
+
+.home-premium-hero h1 {
+  max-inline-size: 39rem;
+  font-size: clamp(3rem, 3.75vw, 3.7rem);
+  font-weight: 700;
+  letter-spacing: -0.047em;
+  line-height: 1.035;
+}
+
+.home-premium-hero__lead {
+  max-inline-size: 34.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.page-hero__inner {
+  min-block-size: clamp(27.5rem, 55dvh, 31.5rem);
+  padding-block: clamp(3rem, 5vh, 3.8rem);
+}
+
+.page-hero__content {
+  gap: 0.9rem;
+}
+
+.page-hero__content h1 {
+  max-inline-size: 42rem;
+  font-size: clamp(2.7rem, 3.55vw, 3.35rem);
+  font-weight: 700;
+  letter-spacing: -0.044em;
+  line-height: 1.045;
+}
+
+.page-hero__description {
+  max-inline-size: 38rem;
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.page-hero__actions {
+  padding-block-start: 0.2rem;
+}
+
+.page-hero__visual {
+  min-block-size: 19.5rem;
+}
+
+.hero-art {
+  border-radius: 0.8rem;
+}
+
+/* Editorial/conversion heroes should not look like empty presentation slides. */
+@media (min-width: 68rem) {
+  .internal-page--team .page-hero__inner,
+  .internal-page--contact .page-hero__inner {
+    min-block-size: auto;
+    padding-block: 4.1rem 4.35rem;
+  }
+
+  .internal-page--team .page-hero__content,
+  .internal-page--contact .page-hero__content {
+    max-inline-size: 47rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. Section hierarchy                                                        */
+/* -------------------------------------------------------------------------- */
+
+.section-wrapper,
+.section-wrapper--spacious {
+  padding-block: var(--softzeno-page-section-space);
+}
+
+.section-wrapper--compact {
+  padding-block: var(--softzeno-page-section-space-compact);
+}
+
+.section-heading {
+  gap: 0.65rem;
+  margin-block-end: clamp(1.7rem, 2.6vw, 2.25rem);
+}
+
+.section-heading h2 {
+  max-inline-size: 39rem;
+  font-size: clamp(1.85rem, 2.4vw, 2.25rem);
+  letter-spacing: -0.038em;
+}
+
+.section-heading__description {
+  max-inline-size: 38rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* P1-R5 editorial/product/discovery hierarchy */
+.internal-editorial-copy h2,
+.internal-story-grid h2,
+.internal-outcome-grid h2,
+.internal-readiness-grid h2,
+.internal-contact-intro h2,
+.internal-section-lead h2,
+.internal-resource-roadmap h2 {
+  font-size: clamp(1.8rem, 2.35vw, 2.2rem);
+  letter-spacing: -0.038em;
+  line-height: 1.1;
+}
+
+.internal-editorial-quote blockquote {
+  font-size: clamp(1.55rem, 2.1vw, 1.95rem);
+  letter-spacing: -0.032em;
+  line-height: 1.16;
+}
+
+.internal-feature-group > header h2 {
+  font-size: clamp(1.35rem, 1.8vw, 1.65rem);
+  letter-spacing: -0.025em;
+  line-height: 1.16;
+}
+
+.internal-workflow-step h2,
+.internal-audience-grid h3,
+.internal-resource-item h2 {
+  letter-spacing: -0.026em;
+}
+
+.internal-workflow-step h2 {
+  font-size: clamp(1.2rem, 1.65vw, 1.5rem);
+}
+
+.internal-audience-grid h3 {
+  font-size: 1.22rem;
+}
+
+.internal-value-item h3,
+.internal-solution-row h3,
+.internal-feature-group__items h3,
+.internal-industry-item h3 {
+  font-size: 0.98rem;
+  letter-spacing: -0.018em;
+}
+
+.internal-value-item p,
+.internal-solution-row p,
+.internal-feature-group__items p,
+.internal-industry-item p,
+.internal-resource-item p {
+  font-size: 0.92rem;
+  line-height: 1.58;
+}
+
+.internal-story-grid,
+.internal-editorial-split,
+.internal-outcome-grid,
+.internal-readiness-grid,
+.internal-contact-layout {
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* Team cards */
+.internal-team-grid .team-profile-card__content {
+  padding: 1rem;
+}
+
+.team-profile-card__content h2 {
+  font-size: 1.15rem;
+  letter-spacing: -0.025em;
+}
+
+.team-profile-card__role {
+  font-size: 0.68rem;
+  letter-spacing: 0.075em;
+}
+
+.team-profile-card__content > p:last-child {
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* Contact */
+.internal-contact-form .form-card__header h2 {
+  font-size: clamp(1.8rem, 2.3vw, 2.15rem);
+}
+
+.internal-contact-form .form-card__header > p:last-child {
+  font-size: 0.92rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. Richer brand treatment — no washed-out purple                            */
+/* -------------------------------------------------------------------------- */
+
+.text-gradient,
+.home-premium-hero h1 span,
+.page-hero__content .text-gradient {
+  color: var(--softzeno-colour-primary);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+[data-theme='dark'] .text-gradient,
+[data-theme='dark'] .home-premium-hero h1 span,
+[data-theme='dark'] .page-hero__content .text-gradient {
+  color: #8b5cf6;
+}
+
+.solution-flow__node--primary,
+.capability-summary,
+.industry-map__hub,
+.process-flow__marker--active,
+.resource-sheet__icon {
+  background: #6d28d9;
+}
+
+[data-theme='dark'] .solution-flow__node--primary,
+[data-theme='dark'] .capability-summary,
+[data-theme='dark'] .industry-map__hub,
+[data-theme='dark'] .process-flow__marker--active,
+[data-theme='dark'] .resource-sheet__icon {
+  background: #7c3aed;
+}
+
+[data-theme='dark'] .solution-flow__connector,
+[data-theme='dark'] .process-flow__line,
+[data-theme='dark'] .capability-summary__line span,
+[data-theme='dark'] .home-product-bars span {
+  background: #8b5cf6;
+}
+
+[data-theme='dark'] .home-product-shell__score,
+[data-theme='dark'] .home-capability-card__icon,
+[data-theme='dark'] .home-readiness-panel__icon,
+[data-theme='dark'] .home-industry-card > svg:first-child {
+  color: #8b5cf6 !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. CTA banner — strong enterprise conversion surface                        */
+/* -------------------------------------------------------------------------- */
+
+.cta-banner-section {
+  padding-block: clamp(3rem, 4.5vw, 4.1rem);
+}
+
+.cta-banner {
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(2rem, 3vw, 2.65rem);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.8rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 32%, #6d28d9 68%, #7c3aed 100%);
+  box-shadow: 0 18px 48px rgb(76 29 149 / 0.16);
+}
+
+[data-theme='dark'] .cta-banner {
+  background: linear-gradient(135deg, #3f167e 0%, #5020a5 34%, #6425c8 68%, #7333dc 100%);
+  box-shadow: 0 22px 54px rgb(0 0 0 / 0.28);
+}
+
+.cta-banner h2 {
+  max-inline-size: 31rem;
+  color: #ffffff;
+  font-size: clamp(1.85rem, 2.55vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.038em;
+  line-height: 1.1;
+}
+
+.cta-banner p:not(.eyebrow) {
+  max-inline-size: 43rem;
+  color: rgb(255 255 255 / 0.84);
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+
+.cta-banner .eyebrow {
+  color: rgb(255 255 255 / 0.88);
+}
+
+.cta-banner .button--light {
+  min-inline-size: 9rem;
+  border: 1px solid rgb(255 255 255 / 0.45);
+  color: #5b21b6;
+  background: #ffffff;
+  box-shadow: 0 8px 22px rgb(42 16 84 / 0.16);
+}
+
+.cta-banner .button--light:hover {
+  border-color: #ffffff;
+  color: #4c1d95;
+  background: #faf8ff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. Footer typography                                                        */
+/* -------------------------------------------------------------------------- */
+
+.site-footer {
+  padding-block: 3.2rem 1.5rem;
+}
+
+.site-footer__grid {
+  gap: clamp(1.75rem, 3vw, 3rem);
+  padding-block-end: 2.4rem;
+}
+
+.site-footer .brand__copy strong {
+  font-size: 0.94rem;
+}
+
+.site-footer p,
+.site-footer a {
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.site-footer__group h2 {
+  margin-block-end: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 9. Compact controls and cards                                               */
+/* -------------------------------------------------------------------------- */
+
+.button {
+  border-radius: 0.55rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.button--large {
+  min-block-size: 2.9rem;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.88rem;
+}
+
+.form-control {
+  font-size: 0.9rem;
+}
+
+.internal-feature-group,
+.internal-audience-grid article,
+.internal-contact-form,
+.internal-benefit-list,
+.internal-readiness-list {
+  border-radius: 0.72rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 10. Responsive type closure                                                 */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 67.999rem) {
+  .page-hero__inner {
+    min-block-size: auto;
+    padding-block: 3.5rem 4rem;
+  }
+
+  .page-hero__content h1 {
+    font-size: clamp(2.55rem, 6vw, 3.2rem);
+  }
+
+  .home-premium-hero h1 {
+    font-size: clamp(2.9rem, 6vw, 3.5rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .home-premium-hero h1,
+  .page-hero__content h1 {
+    font-size: clamp(2.35rem, 10vw, 2.9rem);
+    letter-spacing: -0.04em;
+  }
+
+  .section-heading h2,
+  .internal-editorial-copy h2,
+  .internal-story-grid h2,
+  .internal-outcome-grid h2,
+  .internal-readiness-grid h2,
+  .internal-contact-intro h2,
+  .internal-section-lead h2,
+  .internal-resource-roadmap h2 {
+    font-size: clamp(1.7rem, 7.5vw, 2.05rem);
+  }
+
+  .cta-banner {
+    padding: 1.6rem;
+  }
+
+  .cta-banner h2 {
+    font-size: clamp(1.65rem, 7vw, 2rem);
+  }
+
+  .site-footer {
+    padding-block: 2.75rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-banner .button--light {
+    transition: none !important;
+  }
+}

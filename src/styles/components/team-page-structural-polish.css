@@ -1,0 +1,231 @@
+/*
+ * Softzeno Enterprise P1-R5-R3
+ * Team Page Structural Polish v1.0.0
+ *
+ * Converts the Team page from a sparse empty-hero layout into a complete
+ * editorial team composition with a purposeful right-side panel and tighter
+ * bridge into the profile grid.
+ */
+
+.internal-page--team-refined .team-page-refined-hero {
+  border-block-end: 1px solid var(--softzeno-colour-border);
+  background:
+    radial-gradient(circle at top right, rgb(124 58 237 / 0.06), transparent 28%),
+    var(--softzeno-gradient-hero);
+}
+
+.internal-page--team-refined .team-page-refined-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(20rem, 0.92fr);
+  gap: clamp(2.25rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.internal-page--team-refined .team-page-refined-hero__content {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.internal-page--team-refined .team-page-refined-hero__content h1 {
+  max-inline-size: 13ch;
+  margin: 0;
+  font-size: clamp(2.7rem, 3.9vw, 3.55rem);
+  line-height: 1.03;
+  letter-spacing: -0.046em;
+}
+
+.internal-page--team-refined .team-page-refined-hero__content > p:not(.eyebrow) {
+  max-inline-size: 39rem;
+  margin: 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.64;
+}
+
+.internal-page--team-refined .team-page-refined-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  padding-block-start: 0.35rem;
+}
+
+.internal-page--team-refined .team-page-refined-hero__signals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding-block-start: 0.6rem;
+}
+
+.internal-page--team-refined .team-page-refined-signal {
+  min-block-size: 100%;
+  padding: 1rem 1rem 1.05rem;
+  border: 1px solid var(--softzeno-colour-border);
+  border-radius: 0.85rem;
+  background: var(--softzeno-colour-surface);
+}
+
+.internal-page--team-refined .team-page-refined-signal h2 {
+  margin: 0;
+  color: var(--softzeno-colour-text);
+  font-size: 1rem;
+  line-height: 1.18;
+  letter-spacing: -0.022em;
+}
+
+.internal-page--team-refined .team-page-refined-signal p {
+  margin: 0.55rem 0 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+
+.internal-page--team-refined .team-page-refined-hero__panel {
+  padding: 1.25rem;
+  border: 1px solid var(--softzeno-colour-border);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--softzeno-colour-surface) 92%, transparent);
+  box-shadow: 0 18px 44px rgb(17 17 20 / 0.06);
+}
+
+[data-theme='dark'] .internal-page--team-refined .team-page-refined-hero__panel {
+  box-shadow: 0 18px 44px rgb(0 0 0 / 0.22);
+}
+
+.internal-page--team-refined .team-page-refined-hero__panel > .eyebrow {
+  margin-block-end: 0.9rem;
+}
+
+.internal-page--team-refined .team-page-refined-hero__panel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.internal-page--team-refined .team-page-refined-principle {
+  min-block-size: 100%;
+  padding: 1rem;
+  border: 1px solid var(--softzeno-colour-border);
+  border-radius: 0.85rem;
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.internal-page--team-refined .team-page-refined-principle h2 {
+  margin: 0;
+  color: var(--softzeno-colour-text);
+  font-size: 1rem;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.internal-page--team-refined .team-page-refined-principle p {
+  margin: 0.55rem 0 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.internal-page--team-refined .internal-team-section {
+  padding-block-start: clamp(3.35rem, 4.5vw, 4.25rem);
+}
+
+.internal-page--team-refined .internal-team-section .section-heading {
+  margin-block-end: 1.75rem;
+}
+
+.internal-page--team-refined .internal-team-section .section-heading h2 {
+  max-inline-size: 24rem;
+}
+
+.internal-page--team-refined .internal-team-grid {
+  gap: 1rem;
+}
+
+.internal-page--team-refined .internal-team-grid .team-profile-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.95rem;
+  box-shadow: none;
+}
+
+.internal-page--team-refined .internal-team-grid .team-profile-card__media {
+  aspect-ratio: 4 / 4.45;
+}
+
+.internal-page--team-refined .internal-team-grid .team-profile-card__content {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1.1rem;
+}
+
+.internal-page--team-refined .internal-team-grid .team-profile-card__role {
+  min-height: 0;
+  margin: 0;
+}
+
+.internal-page--team-refined .internal-team-grid .team-profile-card__content h2 {
+  margin: 0;
+}
+
+.internal-page--team-refined .internal-team-grid .team-profile-card__content > p:last-child {
+  margin: 0.1rem 0 0;
+}
+
+.internal-page--team-refined .internal-team-model {
+  border-block-start: 1px solid var(--softzeno-colour-border);
+}
+
+.internal-page--team-refined .internal-team-model .internal-story-grid {
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.internal-page--team-refined .internal-team-model h2 {
+  max-inline-size: 13ch;
+}
+
+.internal-page--team-refined .internal-team-model p {
+  max-inline-size: 38rem;
+}
+
+@media (max-width: 68rem) {
+  .internal-page--team-refined .team-page-refined-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+  }
+
+  .internal-page--team-refined .team-page-refined-hero__content h1 {
+    max-inline-size: 12.5ch;
+  }
+
+  .internal-page--team-refined .team-page-refined-hero__panel {
+    max-inline-size: 46rem;
+  }
+}
+
+@media (max-width: 56rem) {
+  .internal-page--team-refined .team-page-refined-hero__signals,
+  .internal-page--team-refined .team-page-refined-hero__panel-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .internal-page--team-refined .team-page-refined-hero__actions {
+    align-items: stretch;
+  }
+
+  .internal-page--team-refined .team-page-refined-hero__actions .button {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 48rem) {
+  .internal-page--team-refined .team-page-refined-hero__content h1 {
+    max-inline-size: 11.5ch;
+  }
+
+  .internal-page--team-refined .team-page-refined-hero__panel,
+  .internal-page--team-refined .team-page-refined-signal,
+  .internal-page--team-refined .team-page-refined-principle {
+    border-radius: 0.8rem;
+  }
+}

@@ -1,0 +1,413 @@
+/*
+ * Softzeno Enterprise P1-R5-R8
+ * Team Page Centered Single Header + Post-Profile Description v1.0.0
+ */
+
+.internal-page--team-premium .team-premium-profiles {
+  border-block-end: 1px solid var(--softzeno-colour-border);
+  background:
+    radial-gradient(circle at 50% 0%, rgb(109 40 217 / 0.028), transparent 30%),
+    var(--softzeno-gradient-hero);
+}
+
+.internal-page--team-premium .team-premium-profiles__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 100%;
+  padding-block: 0.15rem 1.55rem;
+  text-align: center;
+}
+
+.internal-page--team-premium .team-premium-profiles__header h1 {
+  margin: 0;
+  color: var(--softzeno-colour-text);
+  font-family: var(--softzeno-font-family-sans);
+  font-size: clamp(2.15rem, 3vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.047em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.internal-page--team-premium .team-premium-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1rem, 1.35vw, 1.25rem);
+}
+
+.internal-page--team-premium .team-premium-card {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  block-size: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--softzeno-colour-border) 92%, transparent);
+  border-radius: 1.1rem;
+  background: color-mix(in srgb, var(--softzeno-colour-surface) 95%, white 5%);
+  box-shadow: 0 12px 34px rgb(17 17 20 / 0.05);
+  transition:
+    transform 190ms var(--softzeno-ease-standard),
+    border-color 190ms var(--softzeno-ease-standard),
+    box-shadow 190ms var(--softzeno-ease-standard);
+}
+
+[data-theme='dark'] .internal-page--team-premium .team-premium-card {
+  background: color-mix(in srgb, var(--softzeno-colour-surface) 92%, black 8%);
+  box-shadow: 0 14px 34px rgb(0 0 0 / 0.2);
+}
+
+.internal-page--team-premium .team-premium-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--softzeno-colour-primary) 30%, var(--softzeno-colour-border));
+  box-shadow: 0 18px 40px rgb(17 17 20 / 0.08);
+}
+
+.internal-page--team-premium .team-premium-card__media {
+  position: relative;
+  aspect-ratio: 4 / 4.6;
+  overflow: hidden;
+  background: var(--softzeno-colour-surface-subtle);
+}
+
+.internal-page--team-premium .team-premium-card__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--softzeno-colour-border) 85%, transparent);
+}
+
+.internal-page--team-premium .team-premium-card__media img {
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.96) contrast(1.015);
+  transition: transform 260ms var(--softzeno-ease-standard), filter 220ms var(--softzeno-ease-standard);
+}
+
+.internal-page--team-premium .team-premium-card--aakriti .team-premium-card__media img {
+  object-position: center 48%;
+  transform: scale(1.15);
+}
+
+.internal-page--team-premium .team-premium-card--prajwal .team-premium-card__media img {
+  object-position: center 39%;
+  transform: scale(1.02);
+}
+
+.internal-page--team-premium .team-premium-card--sarina .team-premium-card__media img {
+  object-position: center 55%;
+  transform: scale(1.07);
+}
+
+.internal-page--team-premium .team-premium-card--subasna .team-premium-card__media img {
+  object-position: center 29%;
+  transform: scale(1.02);
+}
+
+.internal-page--team-premium .team-premium-card:hover .team-premium-card__media img {
+  filter: saturate(1) contrast(1.02);
+}
+
+.internal-page--team-premium .team-premium-card--aakriti:hover .team-premium-card__media img {
+  transform: scale(1.17);
+}
+
+.internal-page--team-premium .team-premium-card--prajwal:hover .team-premium-card__media img {
+  transform: scale(1.04);
+}
+
+.internal-page--team-premium .team-premium-card--sarina:hover .team-premium-card__media img {
+  transform: scale(1.09);
+}
+
+.internal-page--team-premium .team-premium-card--subasna:hover .team-premium-card__media img {
+  transform: scale(1.04);
+}
+
+.internal-page--team-premium .team-premium-card__content {
+  display: grid;
+  gap: 0.28rem;
+  padding: 1rem 1rem 1.1rem;
+}
+
+.internal-page--team-premium .team-premium-card h2 {
+  margin: 0;
+  color: var(--softzeno-colour-text);
+  font-size: 1.17rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  transition: color 160ms var(--softzeno-ease-standard);
+}
+
+.internal-page--team-premium .team-premium-card:hover h2 {
+  color: var(--softzeno-colour-primary);
+}
+
+.internal-page--team-premium .team-premium-card__role {
+  margin: 0.06rem 0 0;
+  color: var(--softzeno-colour-primary);
+  font-size: 0.81rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+
+.internal-page--team-premium .team-premium-card__description {
+  margin: 0.3rem 0 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.internal-page--team-premium .team-premium-profiles__description {
+  max-inline-size: 54rem;
+  margin: clamp(1.45rem, 2.4vw, 2rem) auto 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.internal-page--team-premium .team-premium-method {
+  border-block-end: 1px solid var(--softzeno-colour-border);
+}
+
+.internal-page--team-premium .team-premium-method__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.08fr);
+  gap: clamp(2.25rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.internal-page--team-premium .team-premium-method__lead h2 {
+  max-inline-size: 16ch;
+  margin: 0.48rem 0 0;
+  font-size: clamp(1.78rem, 2.25vw, 2.12rem);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.internal-page--team-premium .team-premium-method__lead > p:not(.eyebrow) {
+  max-inline-size: 36rem;
+  margin: 0.9rem 0 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.93rem;
+  line-height: 1.63;
+}
+
+.internal-page--team-premium .team-premium-method__list {
+  border-block-start: 1px solid var(--softzeno-colour-border);
+}
+
+.internal-page--team-premium .team-premium-method__item {
+  display: grid;
+  grid-template-columns: 2.35rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1rem;
+  border-block-end: 1px solid var(--softzeno-colour-border);
+}
+
+.internal-page--team-premium .team-premium-method__item > span {
+  padding-block-start: 0.12rem;
+  color: var(--softzeno-colour-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.internal-page--team-premium .team-premium-method__item h3 {
+  margin: 0;
+  color: var(--softzeno-colour-text);
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.internal-page--team-premium .team-premium-method__item p {
+  max-inline-size: 39rem;
+  margin: 0.32rem 0 0;
+  color: var(--softzeno-colour-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.57;
+}
+
+@media (max-width: 68rem) {
+  .internal-page--team-premium .team-premium-grid,
+  .internal-page--team-premium .team-premium-method__inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .internal-page--team-premium .team-premium-method__inner {
+    gap: 1.9rem;
+  }
+}
+
+@media (max-width: 54rem) {
+  .internal-page--team-premium .team-premium-method__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 42rem) {
+  .internal-page--team-premium .team-premium-profiles__header {
+    padding-block-end: 1.2rem;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__header h1 {
+    font-size: clamp(2rem, 10vw, 2.55rem);
+  }
+
+  .internal-page--team-premium .team-premium-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .internal-page--team-premium .team-premium-card {
+    border-radius: 1rem;
+  }
+
+  .internal-page--team-premium .team-premium-card__content {
+    padding: 0.95rem 0.95rem 1rem;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__description {
+    margin-block-start: 1.25rem;
+    font-size: 0.92rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .internal-page--team-premium .team-premium-card,
+  .internal-page--team-premium .team-premium-card__media img,
+  .internal-page--team-premium .team-premium-card h2 {
+    transition: none !important;
+  }
+
+  .internal-page--team-premium .team-premium-card:hover {
+    transform: none;
+  }
+
+  .internal-page--team-premium .team-premium-card:hover .team-premium-card__media img {
+    transform: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* P1-R5-R9: desktop full-fold landing composition                            */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 68.001rem) {
+  .internal-page--team-premium .team-premium-profiles {
+    --team-fold-padding-block: clamp(1.6rem, 2.6dvh, 2.25rem);
+    min-block-size: calc(100dvh - var(--softzeno-header-height, 3.875rem) + 0.0625rem);
+    box-sizing: border-box;
+    padding-block: var(--team-fold-padding-block);
+  }
+
+  .internal-page--team-premium .team-premium-profiles > .app-container {
+    display: flex;
+    flex-direction: column;
+    min-block-size: calc(
+      100dvh - var(--softzeno-header-height, 3.875rem) -
+        (var(--team-fold-padding-block) * 2)
+    );
+  }
+
+  .internal-page--team-premium .team-premium-profiles__header {
+    flex: 0 0 auto;
+    padding-block: 0 1.25rem;
+  }
+
+  .internal-page--team-premium .team-premium-grid {
+    flex: 0 0 auto;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__description {
+    flex: 0 0 auto;
+    margin-block-start: auto;
+    padding-block-start: clamp(1rem, 2.15dvh, 1.45rem);
+    padding-block-end: 0.05rem;
+  }
+}
+
+/* Short desktop/laptop viewports: keep everything natural rather than
+   compressing the profile cards. The section can grow beyond one viewport,
+   while the next section still follows only after the full profile content. */
+@media (min-width: 68.001rem) and (max-height: 46rem) {
+  .internal-page--team-premium .team-premium-profiles {
+    --team-fold-padding-block: 1.4rem;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__header {
+    padding-block-end: 1rem;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__description {
+    margin-block-start: 1rem;
+    padding-block-start: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* P1-R5-R10: optical vertical centering of the complete first-fold content   */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 68.001rem) and (min-height: 46.001rem) {
+  .internal-page--team-premium .team-premium-profiles > .app-container {
+    justify-content: center;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__header {
+    flex: 0 0 auto;
+    padding-block: 0 1.1rem;
+  }
+
+  .internal-page--team-premium .team-premium-grid {
+    flex: 0 0 auto;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__description {
+    flex: 0 0 auto;
+    margin-block-start: clamp(1.15rem, 1.8dvh, 1.45rem);
+    padding-block: 0;
+  }
+}
+
+/* Short laptop screens stay content-driven so the profile cards are never
+   compressed merely to satisfy full-fold centring. */
+@media (min-width: 68.001rem) and (max-height: 46rem) {
+  .internal-page--team-premium .team-premium-profiles > .app-container {
+    justify-content: flex-start;
+  }
+
+  .internal-page--team-premium .team-premium-profiles__description {
+    margin-block-start: 1rem;
+    padding-block: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* P1-R5-R11: title breathing rhythm micro-refinement                         */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 68.001rem) and (min-height: 46.001rem) {
+  .internal-page--team-premium .team-premium-profiles__header {
+    position: relative;
+    inset-block-start: -0.7rem;
+    padding-block-end: 1.55rem;
+  }
+}
+
+/* Keep short laptop screens natural and avoid forcing the heading upward
+   where vertical room is already limited. */
+@media (min-width: 68.001rem) and (max-height: 46rem) {
+  .internal-page--team-premium .team-premium-profiles__header {
+    position: static;
+    inset-block-start: auto;
+    padding-block-end: 1rem;
+  }
+}

@@ -12,7 +12,7 @@ export function OrganizationSchema() {
         name: SITE_CONFIG.legalName,
         slogan: SITE_CONFIG.tagline,
         url: env.siteUrl,
-        logo: buildAbsoluteUrl('/brand/saras-icon-512.png', env.siteUrl),
+        logo: buildAbsoluteUrl('/brand/softzeno-icon-512.png', env.siteUrl),
       }}
     />
   );

@@ -11,7 +11,7 @@ export function FaqPage() {
   return (
     <main id="main-content">
       <Seo
-        description="Frequently asked questions about the SARAS Interactive Safety Platform."
+        description="Frequently asked questions about the Softzeno Interactive Safety Platform."
         path={ROUTE_PATHS.faq}
         title="Frequently Asked Questions"
       />
@@ -37,7 +37,7 @@ export function FaqPage() {
           <SectionHeading
             description="Select a question to reveal the answer."
             eyebrow="Platform questions"
-            title="Common questions about SARAS."
+            title="Common questions about Softzeno Tech."
           />
           <div className="faq-list">
             {faqs.map((faq) => (
@@ -61,7 +61,7 @@ export function FaqPage() {
               </p>
             </div>
             <ButtonLink to={ROUTE_PATHS.contact} variant="secondary">
-              Contact SARAS
+              Contact Softzeno Tech
             </ButtonLink>
           </div>
         </Container>

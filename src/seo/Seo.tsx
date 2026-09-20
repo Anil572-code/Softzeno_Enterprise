@@ -14,7 +14,10 @@ export function Seo({
   title,
 }: SeoMetadata) {
   const resolvedCanonicalUrl = canonicalUrl ?? buildAbsoluteUrl(path, env.siteUrl);
-  const resolvedImageUrl = buildAbsoluteUrl(imageUrl ?? '/brand/saras-icon-512.png', env.siteUrl);
+  const resolvedImageUrl = buildAbsoluteUrl(
+    imageUrl ?? '/brand/softzeno-icon-512.png',
+    env.siteUrl,
+  );
   const pageTitle = `${title} | ${SITE_CONFIG.name}`;
 
   return (

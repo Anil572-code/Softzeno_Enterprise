@@ -9,7 +9,7 @@ interface CtaBannerProps {
 }
 
 export function CtaBanner({
-  description = 'See how SARAS can help your organisation deliver more engaging and measurable workplace safety learning.',
+  description = 'See how Softzeno Tech can help your organisation deliver more engaging, measurable and scalable workplace safety learning.',
   title = 'Ready to make safety learning more effective?',
 }: CtaBannerProps) {
   return (
