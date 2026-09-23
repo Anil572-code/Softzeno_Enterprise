@@ -13,6 +13,7 @@ import { Container, SectionWrapper } from '@/components/layout';
 import { Reveal } from '@/components/marketing';
 import { ButtonLink } from '@/components/ui';
 import { ROUTE_PATHS } from '@/constants/routes';
+import { SITE_CONFIG } from '@/constants/site';
 import { industries, platformFeatures, processSteps } from '@/data/siteContent';
 import { Seo } from '@/seo';
 
@@ -104,6 +105,9 @@ export function HomePage() {
               Softzeno Tech brings interactive learning, assessment and progress visibility into one
               focused workplace safety platform.
             </p>
+            <div className="home-premium-hero__motto" aria-label="Softzeno Tech company motto">
+              <span>{SITE_CONFIG.tagline}</span>
+            </div>
 
             <div className="home-premium-hero__actions">
               <ButtonLink size="large" to={ROUTE_PATHS.demo}>

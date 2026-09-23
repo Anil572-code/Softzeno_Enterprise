@@ -2,7 +2,7 @@ export const SITE_CONFIG = {
   name: 'Softzeno Tech',
   legalName: 'Softzeno Tech',
   productName: 'Softzeno Interactive Safety Platform',
-  tagline: 'Technology for Safer Workplaces.',
+  tagline: 'Smarter Technology. Stronger Workplaces.',
   defaultTitle: 'Softzeno Tech | Interactive Workplace Safety',
   defaultDescription:
     'Softzeno Tech builds modern workplace health and safety learning experiences through interactive digital training.',
