@@ -1,385 +1,345 @@
-import { useState } from 'react';
 import {
   ArrowRight,
+  BarChart3,
   CheckCircle2,
-  ChevronRight,
+  Code2,
+  GraduationCap,
+  Layers3,
+  LineChart,
+  Palette,
   ShieldCheck,
-  Sparkles,
-  TrendingUp,
+  Target,
+  UsersRound,
+  Workflow,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-import { Container, SectionWrapper } from '@/components/layout';
+import safety360Dashboard from '@/assets/product/safety360-dashboard.png';
+import { Container } from '@/components/layout';
 import { Reveal } from '@/components/marketing';
 import { ButtonLink } from '@/components/ui';
 import { ROUTE_PATHS } from '@/constants/routes';
-import { SITE_CONFIG } from '@/constants/site';
-import { industries, platformFeatures, processSteps } from '@/data/siteContent';
+import { industries } from '@/data/siteContent';
 import { Seo } from '@/seo';
 
-type PreviewRole = 'learner' | 'coordinator' | 'manager';
-
-const rolePreviews: Record<
-  PreviewRole,
+const companyCapabilities = [
   {
-    eyebrow: string;
-    title: string;
-    description: string;
-    primaryLabel: string;
-    primaryValue: string;
-    secondaryLabel: string;
-    secondaryValue: string;
-    status: string;
-  }
-> = {
-  learner: {
-    eyebrow: 'Learner workspace',
-    title: 'A focused path through role-based safety learning.',
-    description:
-      'Learners see their current learning, continue interactive scenarios and understand what is complete without unnecessary complexity.',
-    primaryLabel: 'Current module',
-    primaryValue: 'Hazard awareness',
-    secondaryLabel: 'Progress',
-    secondaryValue: '68%',
-    status: 'Assessment ready',
+    icon: Code2,
+    title: 'Enterprise software',
+    description: 'Practical web applications built around real operational workflows and clear ownership.',
   },
-  coordinator: {
-    eyebrow: 'Coordinator workspace',
-    title: 'Coordinate training without losing visibility.',
-    description:
-      'Training coordinators can organise learning activity, follow completion and keep teams moving through a consistent programme.',
-    primaryLabel: 'Active learning',
-    primaryValue: '12 modules',
-    secondaryLabel: 'Completion view',
-    secondaryValue: 'Team level',
-    status: 'Records organised',
+  {
+    icon: GraduationCap,
+    title: 'Interactive training systems',
+    description: 'Structured digital learning experiences that turn knowledge into measurable performance.',
   },
-  manager: {
-    eyebrow: 'Manager workspace',
-    title: 'Turn training activity into a clearer operational picture.',
-    description:
-      'Managers get a concise view of participation, completion and areas that may need follow-up across teams and locations.',
-    primaryLabel: 'Reporting',
-    primaryValue: 'Centralised',
-    secondaryLabel: 'Visibility',
-    secondaryValue: 'Multi-team',
-    status: 'Insights available',
+  {
+    icon: BarChart3,
+    title: 'Data & reporting',
+    description: 'Focused dashboards and reporting that make progress, status and next actions visible.',
   },
-};
+  {
+    icon: Palette,
+    title: 'Product & UX design',
+    description: 'Clean, accessible interfaces designed to keep complex work understandable and efficient.',
+  },
+] as const;
 
-const homeCapabilityTitles = new Set([
-  'Interactive learning',
-  'Hazard identification',
-  'Progress and analytics',
-]);
+const safety360Highlights = [
+  'Immersive and scenario-led training',
+  'Progress, scores and knowledge visibility',
+  'Certificate and completion records',
+  'Leaderboards and achievement milestones',
+] as const;
 
-const homeIndustryTitles = new Set(['Warehousing', 'Manufacturing', 'Logistics']);
+const deliverySteps = [
+  {
+    number: '01',
+    title: 'Understand the problem',
+    description: 'Clarify users, business goals, operational constraints and the outcome the client needs.',
+  },
+  {
+    number: '02',
+    title: 'Design the experience',
+    description: 'Shape workflows, information architecture and interfaces before implementation becomes expensive.',
+  },
+  {
+    number: '03',
+    title: 'Build with discipline',
+    description: 'Develop the product with maintainable structure, clear validation and practical testing.',
+  },
+  {
+    number: '04',
+    title: 'Refine with feedback',
+    description: 'Use client and user feedback to improve the product before final delivery and demonstration.',
+  },
+] as const;
+
+const teamMembers = [
+  { name: 'Aakriti Bhusal', role: 'Project Manager & Requirements Lead' },
+  { name: 'Prajwal Sharma', role: 'System Analysis & Technical Lead' },
+  { name: 'Sarina Basnet', role: 'UX/UI & Marketing Lead' },
+  { name: 'Subasna Chhetri', role: 'Documentation & Delivery Operations Lead' },
+] as const;
+
+const homeIndustries = industries.filter(({ title }) =>
+  ['Warehousing', 'Manufacturing', 'Logistics', 'Operational businesses'].includes(title),
+);
 
 export function HomePage() {
-  const [previewRole, setPreviewRole] = useState<PreviewRole>('learner');
-  const activePreview = rolePreviews[previewRole];
-  const homeCapabilities = platformFeatures.filter(({ title }) => homeCapabilityTitles.has(title));
-  const homeIndustries = industries.filter(({ title }) => homeIndustryTitles.has(title));
-
   return (
-    <main className="home-page home-page--focused" id="main-content">
+    <main className="company-home" id="main-content">
       <Seo
-        description="Interactive workplace health and safety training by Softzeno Tech, with practical learning, assessments, progress tracking and reporting for modern organisations."
+        description="Softzeno Tech designs practical digital products, enterprise software and interactive training systems for safer, smarter and more efficient workplaces."
         path={ROUTE_PATHS.home}
-        title="Interactive Workplace Safety Training"
+        title="Softzeno Tech | Smarter Technology. Stronger Workplaces."
       />
 
-      <section className="home-premium-hero">
-        <Container className="home-premium-hero__inner">
-          <Reveal className="home-premium-hero__content">
-            <div className="home-premium-hero__eyebrow">
-              <ShieldCheck aria-hidden="true" size={16} />
-              Interactive workplace safety platform
+      <section className="company-hero" aria-labelledby="company-home-title">
+        <div className="company-hero__ambient" aria-hidden="true" />
+        <Container className="company-hero__inner">
+          <Reveal className="company-hero__content">
+            <div className="company-hero__eyebrow">
+              Digital products for modern operations
             </div>
 
-            <h1>
-              Build safer teams with training <span>people remember.</span>
-            </h1>
+            <div className="company-hero__headline">
+              <p>Softzeno Tech</p>
+              <h1 id="company-home-title">Smarter Technology. Stronger Workplaces.</h1>
+            </div>
 
-            <p className="home-premium-hero__lead">
-              Softzeno Tech brings interactive learning, assessment and progress visibility into one
-              focused workplace safety platform.
+            <p className="company-hero__lead">
+              We design practical digital systems that help organisations train teams, simplify
+              workflows and make performance easier to understand.
             </p>
-            <div className="home-premium-hero__motto" aria-label="Softzeno Tech company motto">
-              <span>{SITE_CONFIG.tagline}</span>
-            </div>
 
-            <div className="home-premium-hero__actions">
-              <ButtonLink size="large" to={ROUTE_PATHS.demo}>
+            <div className="company-hero__actions">
+              <ButtonLink className="company-hero__primary" size="large" to={ROUTE_PATHS.demo}>
                 Request a demonstration <ArrowRight aria-hidden="true" size={18} />
               </ButtonLink>
-              <ButtonLink size="large" to={ROUTE_PATHS.howItWorks} variant="secondary">
-                See how it works
+              <ButtonLink
+                className="company-hero__secondary"
+                size="large"
+                to={ROUTE_PATHS.safety360}
+                variant="secondary"
+              >
+                Explore Safety 360
               </ButtonLink>
             </div>
 
-            <ul className="home-premium-proof">
-              <li>
-                <CheckCircle2 aria-hidden="true" size={17} /> Interactive learning
-              </li>
-              <li>
-                <CheckCircle2 aria-hidden="true" size={17} /> Progress tracking
-              </li>
-              <li>
-                <CheckCircle2 aria-hidden="true" size={17} /> Cloud ready
-              </li>
-            </ul>
-          </Reveal>
-
-          <Reveal className="home-premium-hero__visual" delay={0.06}>
-            <div className="home-product-shell">
-              <div className="home-product-shell__topbar">
-                <span className="home-product-shell__dot" aria-hidden="true" />
-                <span>Softzeno Safety Platform</span>
-              </div>
-
-              <div className="home-product-shell__workspace">
-                <aside className="home-product-shell__rail" aria-hidden="true">
-                  <span className="is-active" />
-                  <span />
-                  <span />
-                  <span />
-                </aside>
-
-                <div className="home-product-shell__content">
-                  <div className="home-product-shell__heading">
-                    <div>
-                      <small>Current learning path</small>
-                      <strong>Warehouse hazard awareness</strong>
-                    </div>
-                    <strong className="home-product-shell__score">68%</strong>
-                  </div>
-
-                  <div className="home-product-shell__progress" aria-hidden="true">
-                    <span />
-                  </div>
-
-                  <div className="home-product-shell__cards">
-                    <article className="home-product-card home-product-card--primary">
-                      <Sparkles aria-hidden="true" size={20} />
-                      <div>
-                        <strong>Interactive scenario</strong>
-                        <p>Choose the safest action before continuing.</p>
-                      </div>
-                      <span>Continue module</span>
-                    </article>
-
-                    <article className="home-product-card home-product-card--metric">
-                      <TrendingUp aria-hidden="true" size={20} />
-                      <strong>Team progress</strong>
-                      <div className="home-product-bars" aria-hidden="true">
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                      </div>
-                    </article>
-                  </div>
-
-                  <div className="home-product-shell__activity">
-                    <span className="home-product-shell__activity-icon">
-                      <ShieldCheck aria-hidden="true" size={16} />
-                    </span>
-                    <div>
-                      <strong>Hazard recognition</strong>
-                      <small>Assessment completed</small>
-                    </div>
-                    <strong>92%</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
-
-      <section className="home-audience-strip" aria-label="Built for operational teams">
-        <Container className="home-audience-strip__inner">
-          <p>Built for operational teams</p>
-          <div className="home-audience-strip__items">
-            <span>Warehousing</span>
-            <span>Manufacturing</span>
-            <span>Automotive</span>
-            <span>Logistics</span>
-            <span>Corporate teams</span>
-          </div>
-        </Container>
-      </section>
-
-      <SectionWrapper className="home-premium-section" spacing="spacious">
-        <Container>
-          <div className="home-section-intro">
-            <div>
-              <p className="eyebrow">Platform essentials</p>
-              <h2>Three essentials for practical, measurable safety learning.</h2>
-            </div>
-            <p>
-              Engage people with practical learning, strengthen hazard awareness and keep progress
-              visible without turning the experience into a complicated training system.
-            </p>
-          </div>
-
-          <div className="home-capability-grid">
-            {homeCapabilities.map(({ description, icon: Icon, title }, index) => (
-              <Reveal delay={index * 0.04} key={title}>
-                <article className="home-capability-card">
-                  <span className="home-capability-card__icon">
-                    <Icon aria-hidden="true" size={20} strokeWidth={1.8} />
+            <div className="company-hero__capabilities" aria-label="Softzeno Tech capabilities">
+              {companyCapabilities.map(({ icon: Icon, title }) => (
+                <div className="company-hero__capability" key={title}>
+                  <span>
+                    <Icon aria-hidden="true" size={19} strokeWidth={1.8} />
                   </span>
+                  <strong>{title}</strong>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal className="company-hero__visual" delay={0.06}>
+            <div className="company-featured-product">
+              <div className="company-featured-product__frame">
+                <div className="company-featured-product__chrome" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                  <p>Safety 360 · Employee Training</p>
+                </div>
+                <img
+                  alt="Safety 360 employee dashboard showing completion, best score, knowledge accuracy and training progression"
+                  decoding="async"
+                  fetchPriority="high"
+                  src={safety360Dashboard}
+                />
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="company-solutions" aria-labelledby="company-solutions-title">
+        <Container>
+          <Reveal className="company-section-heading">
+            <p className="eyebrow">What we build</p>
+            <h2 id="company-solutions-title">Software designed around real work, not unnecessary complexity.</h2>
+            <p>
+              Softzeno Tech combines software engineering, product thinking and user-centred design
+              to create focused digital systems for organisations and operational teams.
+            </p>
+          </Reveal>
+
+          <div className="company-solutions__grid">
+            {companyCapabilities.map(({ description, icon: Icon, title }, index) => (
+              <Reveal delay={index * 0.035} key={title}>
+                <article className="company-solution-card">
+                  <span><Icon aria-hidden="true" size={22} strokeWidth={1.8} /></span>
                   <h3>{title}</h3>
                   <p>{description}</p>
                 </article>
               </Reveal>
             ))}
           </div>
-
-          <div className="home-section-action home-section-action--left">
-            <ButtonLink to={ROUTE_PATHS.features} variant="secondary">
-              Explore platform features <ArrowRight aria-hidden="true" size={17} />
-            </ButtonLink>
-          </div>
         </Container>
-      </SectionWrapper>
+      </section>
 
-      <SectionWrapper className="home-product-section" spacing="spacious">
-        <Container className="home-product-section__grid">
-          <Reveal className="home-product-section__copy">
-            <p className="eyebrow">One platform, the right view for each role</p>
-            <h2>Keep learners, coordinators and managers connected to the same training standard.</h2>
+      <section className="company-featured" aria-labelledby="company-featured-title">
+        <Container className="company-featured__inner">
+          <Reveal className="company-featured__copy">
+            <p className="eyebrow">Flagship solution</p>
+            <h2 id="company-featured-title">Safety 360 turns workplace training into a clearer, measurable experience.</h2>
             <p>
-              Softzeno presents the right level of information for each role while keeping learning
-              activity connected in one consistent platform experience.
+              Safety 360 brings structured learning, practical assessment, progress tracking,
+              certification and recognition into one focused employee training platform.
             </p>
 
-            <div className="home-role-switcher" aria-label="Preview workspace role">
-              {(Object.keys(rolePreviews) as PreviewRole[]).map((role) => (
-                <button
-                  aria-pressed={previewRole === role}
-                  className={previewRole === role ? 'is-active' : undefined}
-                  key={role}
-                  onClick={() => setPreviewRole(role)}
-                  type="button"
-                >
-                  {role.charAt(0).toUpperCase() + role.slice(1)}
-                </button>
+            <ul className="company-featured__list">
+              {safety360Highlights.map((item) => (
+                <li key={item}>
+                  <CheckCircle2 aria-hidden="true" size={17} />
+                  <span>{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
+
+            <ButtonLink to={ROUTE_PATHS.safety360}>
+              View Safety 360 <ArrowRight aria-hidden="true" size={17} />
+            </ButtonLink>
           </Reveal>
 
-          <Reveal className="home-role-preview" delay={0.06}>
-            <div className="home-role-preview__topbar">
-              <span>{activePreview.eyebrow}</span>
-              <span>Sample workspace data</span>
+          <Reveal className="company-featured__proof" delay={0.05}>
+            <div className="company-featured__proof-top">
+              <span><ShieldCheck aria-hidden="true" size={18} /> Product focus</span>
+              <strong>Workplace safety training</strong>
             </div>
-
-            <div className="home-role-preview__body" key={previewRole}>
-              <div className="home-role-preview__headline">
-                <h3>{activePreview.title}</h3>
-                <p>{activePreview.description}</p>
-              </div>
-
-              <div className="home-role-preview__metrics">
-                <article>
-                  <span>{activePreview.primaryLabel}</span>
-                  <strong>{activePreview.primaryValue}</strong>
-                </article>
-                <article>
-                  <span>{activePreview.secondaryLabel}</span>
-                  <strong>{activePreview.secondaryValue}</strong>
-                </article>
-              </div>
-
-              <div className="home-role-preview__status">
-                <CheckCircle2 aria-hidden="true" size={17} />
-                <span>{activePreview.status}</span>
-              </div>
+            <div className="company-featured__proof-grid">
+              <article>
+                <GraduationCap aria-hidden="true" size={22} />
+                <div><strong>Learn</strong><span>Structured training modules</span></div>
+              </article>
+              <article>
+                <LineChart aria-hidden="true" size={22} />
+                <div><strong>Measure</strong><span>Progress and performance</span></div>
+              </article>
+              <article>
+                <ShieldCheck aria-hidden="true" size={22} />
+                <div><strong>Record</strong><span>Certificates and status</span></div>
+              </article>
+              <article>
+                <UsersRound aria-hidden="true" size={22} />
+                <div><strong>Recognise</strong><span>Milestones and ranking</span></div>
+              </article>
             </div>
           </Reveal>
         </Container>
-      </SectionWrapper>
+      </section>
 
-      <SectionWrapper className="home-workflow-section" spacing="spacious">
+      <section className="company-process" aria-labelledby="company-process-title">
         <Container>
-          <div className="home-section-intro">
-            <div>
-              <p className="eyebrow">How it works</p>
-              <h2>From setup to continuous improvement in four clear stages.</h2>
-            </div>
-            <p>
-              A straightforward operating flow keeps implementation understandable for both
-              administrators and learners.
-            </p>
-          </div>
+          <Reveal className="company-section-heading company-section-heading--compact">
+            <p className="eyebrow">How we work</p>
+            <h2 id="company-process-title">A disciplined path from client need to finished product.</h2>
+          </Reveal>
 
-          <ol className="home-workflow">
-            {processSteps.map((step, index) => (
-              <li className="home-workflow__item" key={step.number}>
-                <Reveal delay={index * 0.035}>
-                  <article>
-                    <span>{step.number}</span>
-                    <div>
-                      <h3>{step.title}</h3>
-                      <p>{step.description}</p>
-                    </div>
-                  </article>
-                </Reveal>
-              </li>
+          <div className="company-process__grid">
+            {deliverySteps.map((step, index) => (
+              <Reveal delay={index * 0.03} key={step.number}>
+                <article className="company-process-card">
+                  <span>{step.number}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </article>
+              </Reveal>
             ))}
-          </ol>
-
-          <div className="home-section-action home-section-action--left">
-            <ButtonLink to={ROUTE_PATHS.howItWorks} variant="secondary">
-              See the complete workflow <ArrowRight aria-hidden="true" size={17} />
-            </ButtonLink>
           </div>
         </Container>
-      </SectionWrapper>
+      </section>
 
-      <SectionWrapper className="home-industry-section" spacing="spacious">
+      <section className="company-industries" aria-labelledby="company-industries-title">
         <Container>
-          <div className="home-section-intro home-section-intro--compact">
+          <Reveal className="company-section-heading company-section-heading--with-action">
             <div>
-              <p className="eyebrow">Built around operational reality</p>
-              <h2>Relevant learning for the environments your people work in.</h2>
+              <p className="eyebrow">Operational context</p>
+              <h2 id="company-industries-title">Built for environments where clarity and consistency matter.</h2>
             </div>
-            <ButtonLink to={ROUTE_PATHS.industries} variant="ghost">
-              View all industries <ChevronRight aria-hidden="true" size={17} />
+            <ButtonLink to={ROUTE_PATHS.industries} variant="secondary">
+              View industries <ArrowRight aria-hidden="true" size={16} />
             </ButtonLink>
-          </div>
+          </Reveal>
 
-          <div className="home-industry-grid">
-            {homeIndustries.map(({ description, icon: Icon, title }) => (
-              <Link className="home-industry-card" key={title} to={ROUTE_PATHS.industries}>
-                <Icon aria-hidden="true" size={21} strokeWidth={1.8} />
-                <div>
+          <div className="company-industries__grid">
+            {homeIndustries.map(({ description, icon: Icon, title }, index) => (
+              <Reveal delay={index * 0.025} key={title}>
+                <article className="company-industry-card">
+                  <span><Icon aria-hidden="true" size={21} strokeWidth={1.8} /></span>
                   <h3>{title}</h3>
                   <p>{description}</p>
-                </div>
-                <ArrowRight aria-hidden="true" size={17} />
-              </Link>
+                </article>
+              </Reveal>
             ))}
           </div>
         </Container>
-      </SectionWrapper>
+      </section>
 
-      <section className="home-final-cta">
-        <Container className="home-final-cta__inner">
-          <div>
-            <p className="eyebrow">Request a focused demonstration</p>
-            <h2>See how Softzeno can support your workplace safety training.</h2>
+      <section className="company-mission" aria-labelledby="company-mission-title">
+        <Container className="company-mission__inner">
+          <Reveal className="company-mission__statement">
+            <p className="eyebrow">Our mission</p>
+            <h2 id="company-mission-title">Build practical, reliable technology that helps organisations work smarter, safer and more effectively.</h2>
             <p>
-              Tell us about your teams, training priorities and operational environment. We will
-              shape the demonstration around what matters to your organisation.
+              We value clear requirements, dependable implementation, thoughtful user experience and
+              delivery quality that can be explained to both technical and non-technical stakeholders.
             </p>
+          </Reveal>
+
+          <Reveal className="company-mission__principles" delay={0.05}>
+            <article><Target aria-hidden="true" size={21} /><div><strong>Purpose before features</strong><span>Start with the problem and the outcome.</span></div></article>
+            <article><Layers3 aria-hidden="true" size={21} /><div><strong>Structure before noise</strong><span>Keep workflows understandable and maintainable.</span></div></article>
+            <article><Workflow aria-hidden="true" size={21} /><div><strong>Feedback before finality</strong><span>Refine the product with evidence and client input.</span></div></article>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="company-team" aria-labelledby="company-team-title">
+        <Container>
+          <Reveal className="company-section-heading company-section-heading--with-action">
+            <div>
+              <p className="eyebrow">The team behind Softzeno Tech</p>
+              <h2 id="company-team-title">Clear responsibilities. Shared delivery quality.</h2>
+            </div>
+            <ButtonLink to={ROUTE_PATHS.team} variant="secondary">
+              Meet the team <ArrowRight aria-hidden="true" size={16} />
+            </ButtonLink>
+          </Reveal>
+
+          <div className="company-team__grid">
+            {teamMembers.map((member, index) => (
+              <Reveal delay={index * 0.025} key={member.name}>
+                <article className="company-team-card">
+                  <span>{member.name.split(' ').map((part) => part[0]).join('')}</span>
+                  <div>
+                    <h3>{member.name}</h3>
+                    <p>{member.role}</p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
-          <ButtonLink size="large" to={ROUTE_PATHS.demo}>
-            Request a demonstration <ArrowRight aria-hidden="true" size={18} />
-          </ButtonLink>
+        </Container>
+      </section>
+
+      <section className="company-final-cta">
+        <Container className="company-final-cta__inner">
+          <Reveal>
+            <p className="eyebrow">Start a conversation</p>
+            <h2>Have a workflow, training challenge or digital product idea?</h2>
+            <p>Tell us what needs to work better. We will focus the conversation on the problem, users and practical outcome.</p>
+          </Reveal>
+          <Reveal className="company-final-cta__actions" delay={0.04}>
+            <ButtonLink size="large" to={ROUTE_PATHS.contact}>Contact Softzeno Tech</ButtonLink>
+            <ButtonLink size="large" to={ROUTE_PATHS.demo} variant="secondary">Request a demonstration</ButtonLink>
+          </Reveal>
         </Container>
       </section>
     </main>

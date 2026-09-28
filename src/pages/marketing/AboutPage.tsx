@@ -1,4 +1,11 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import {
+  ArrowRight,
+  BarChart3,
+  CheckCircle2,
+  ClipboardCheck,
+  GraduationCap,
+  Layers3,
+} from 'lucide-react';
 
 import { Container, SectionWrapper } from '@/components/layout';
 import { CtaBanner, PageHero, Reveal, SectionHeading } from '@/components/marketing';
@@ -7,87 +14,188 @@ import { ROUTE_PATHS } from '@/constants/routes';
 import { values } from '@/data/siteContent';
 import { BreadcrumbSchema, Seo } from '@/seo';
 
+const companyCapabilities = [
+  {
+    icon: Layers3,
+    title: 'Enterprise software',
+    description: 'Focused digital systems designed around operational workflows, clarity and dependable use.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Interactive training systems',
+    description: 'Structured learning experiences that connect practical scenarios, assessment and progress.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Data & reporting',
+    description: 'Useful visibility into completion, performance and the information teams need to act on.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Product & UX design',
+    description: 'Clear interfaces and user journeys shaped around real tasks rather than unnecessary complexity.',
+  },
+] as const;
+
+const deliveryPrinciples = [
+  {
+    number: '01',
+    title: 'Understand the requirement',
+    description: 'Clarify the client need, operating context and expected outcome before committing to the solution.',
+  },
+  {
+    number: '02',
+    title: 'Design the experience',
+    description: 'Turn requirements into a coherent workflow, interface and system structure that people can understand.',
+  },
+  {
+    number: '03',
+    title: 'Build with discipline',
+    description: 'Keep technical decisions, usability, documentation and delivery quality connected throughout implementation.',
+  },
+  {
+    number: '04',
+    title: 'Review and improve',
+    description: 'Use feedback, testing and evidence to refine the product without losing clarity or purpose.',
+  },
+] as const;
+
 export function AboutPage() {
   return (
-    <main className="internal-page internal-page--editorial internal-page--about" id="main-content">
+    <main className="internal-page internal-page--editorial internal-page--about company-authority-page" id="main-content">
       <Seo
-        description="Learn about Softzeno Tech, our mission and our approach to practical enterprise technology for safer workplaces."
+        description="Learn about Softzeno Tech, our mission, capabilities and the team approach behind practical enterprise software and workplace learning systems."
         path={ROUTE_PATHS.about}
-        title="About Softzeno Tech"
+        title="Company | Softzeno Tech"
       />
       <BreadcrumbSchema
         items={[
           { name: 'Home', path: '/' },
-          { name: 'About', path: '/about' },
+          { name: 'Company', path: '/about' },
         ]}
       />
 
       <PageHero
-        description="Softzeno Tech builds practical enterprise technology that helps organisations replace passive safety training with engaging learning experiences and better operational insight."
-        eyebrow="Softzeno Tech"
+        actions={
+          <>
+            <ButtonLink size="large" to={ROUTE_PATHS.demo}>
+              Request a demonstration <ArrowRight aria-hidden="true" size={19} />
+            </ButtonLink>
+            <ButtonLink size="large" to={ROUTE_PATHS.team} variant="secondary">
+              Meet our team <ArrowRight aria-hidden="true" size={19} />
+            </ButtonLink>
+          </>
+        }
+        description="Softzeno Tech designs practical digital systems for organisations that need clearer workflows, stronger learning experiences and useful performance visibility."
+        eyebrow="SOFTZENO TECH · COMPANY"
         visual="about"
         title={
           <>
-            Safety education should be{' '}
-            <span className="text-gradient">practical, engaging and built for people.</span>
+            Smarter Technology. <span className="text-gradient">Stronger Workplaces.</span>
           </>
         }
       />
 
-      <SectionWrapper className="internal-editorial-section" spacing="spacious">
-        <Container className="internal-editorial-split">
-          <Reveal className="internal-editorial-copy">
-            <p className="eyebrow">Our mission</p>
-            <h2>Build thoughtful technology that helps organisations learn and improve with confidence.</h2>
+      <SectionWrapper className="company-authority-foundation" spacing="spacious">
+        <Container className="company-authority-foundation__grid">
+          <Reveal className="company-authority-foundation__copy">
+            <p className="eyebrow">Who we are</p>
+            <h2>A focused software team building around real operational needs.</h2>
             <p>
-              Better operations begin with technology that respects people’s time, reflects real
-              risks and creates confidence to act. Softzeno combines thoughtful interaction, clear
-              assessment and useful progress information in one focused experience.
+              Softzeno Tech combines requirements planning, system analysis, technical implementation,
+              experience design and delivery discipline in one connected team. Our work is shaped around
+              practical outcomes: software should make a process easier to understand, easier to manage
+              and more useful to the people responsible for it.
             </p>
-            <ul className="internal-check-list">
-              <li>
-                <CheckCircle2 aria-hidden="true" size={18} />
-                Designed around real workplace decisions
-              </li>
-              <li>
-                <CheckCircle2 aria-hidden="true" size={18} />
-                Accessible to different roles and learning needs
-              </li>
-              <li>
-                <CheckCircle2 aria-hidden="true" size={18} />
-                Built to scale without adding unnecessary complexity
-              </li>
-            </ul>
+            <p>
+              Safety 360 is our flagship workplace learning solution and demonstrates this approach through
+              structured training, progress visibility, certification and recognition in one focused experience.
+            </p>
           </Reveal>
 
-          <Reveal className="internal-editorial-quote" delay={0.06}>
-            <span>Our vision</span>
+          <Reveal className="company-authority-mission" delay={0.05}>
+            <span className="company-authority-mission__label">Our mission</span>
             <blockquote>
-              Become a trusted technology partner for safer, smarter operational businesses.
+              Build practical, reliable technology that helps organisations work smarter, safer and more effectively.
             </blockquote>
-            <p>
-              Our direction includes richer simulations, deeper analytics and future immersive
-              experiences, grounded in practical outcomes and responsible technology.
-            </p>
+            <div className="company-authority-mission__signature">
+              <span />
+              <strong>Smarter Technology. Stronger Workplaces.</strong>
+            </div>
           </Reveal>
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper className="section-muted internal-values-section" spacing="spacious">
+      <SectionWrapper className="section-muted company-authority-capabilities" spacing="spacious">
         <Container>
           <SectionHeading
-            description="Five principles guide how we design the product and work with organisations."
-            eyebrow="Our values"
-            title="A clear standard for the way we build."
+            description="Our capabilities stay deliberately focused on the work required to design, build and present useful digital products."
+            eyebrow="What we build"
+            title="Practical capability across the full product experience."
           />
 
-          <div className="internal-values-list">
-            {values.map(({ description, icon: Icon, title }, index) => (
+          <div className="company-authority-capability-grid">
+            {companyCapabilities.map(({ description, icon: Icon, title }, index) => (
               <Reveal delay={index * 0.035} key={title}>
-                <article className="internal-value-item">
-                  <span className="internal-value-item__index">0{index + 1}</span>
-                  <span className="internal-value-item__icon">
-                    <Icon aria-hidden="true" size={20} strokeWidth={1.8} />
+                <article className="company-authority-capability">
+                  <span className="company-authority-capability__icon">
+                    <Icon aria-hidden="true" size={21} strokeWidth={1.8} />
+                  </span>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper className="company-authority-delivery" spacing="spacious">
+        <Container className="company-authority-delivery__grid">
+          <Reveal className="company-authority-delivery__lead">
+            <p className="eyebrow">How we work</p>
+            <h2>Clear responsibilities from requirement to delivery.</h2>
+            <p>
+              Professional delivery depends on more than implementation. We keep client requirements,
+              technical direction, interface quality, documentation and release readiness connected so
+              decisions remain understandable throughout the project.
+            </p>
+            <ButtonLink to={ROUTE_PATHS.team} variant="secondary">
+              See team responsibilities <ArrowRight aria-hidden="true" size={18} />
+            </ButtonLink>
+          </Reveal>
+
+          <div className="company-authority-delivery__list">
+            {deliveryPrinciples.map((item, index) => (
+              <Reveal delay={index * 0.03} key={item.number}>
+                <article className="company-authority-delivery__item">
+                  <span>{item.number}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper className="section-muted company-authority-values" spacing="spacious">
+        <Container>
+          <SectionHeading
+            description="These principles guide how we make product and delivery decisions."
+            eyebrow="Our values"
+            title="A professional standard for the way we build."
+          />
+
+          <div className="company-authority-values__list">
+            {values.map(({ description, icon: Icon, title }, index) => (
+              <Reveal delay={index * 0.03} key={title}>
+                <article className="company-authority-value">
+                  <span className="company-authority-value__index">0{index + 1}</span>
+                  <span className="company-authority-value__icon">
+                    <Icon aria-hidden="true" size={19} strokeWidth={1.8} />
                   </span>
                   <div>
                     <h3>{title}</h3>
@@ -100,28 +208,21 @@ export function AboutPage() {
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper className="internal-story-section" spacing="spacious">
-        <Container className="internal-story-grid">
-          <div>
-            <p className="eyebrow">Enterprise software, human outcomes</p>
-            <h2>Professional technology should make safety learning simpler, not more complicated.</h2>
-          </div>
-          <div>
+      <SectionWrapper className="company-authority-team-bridge" spacing="spacious">
+        <Container className="company-authority-team-bridge__grid">
+          <Reveal>
+            <p className="eyebrow">The people behind the work</p>
+            <h2>One multidisciplinary team with clear ownership.</h2>
+          </Reveal>
+          <Reveal delay={0.05}>
             <p>
-              The Softzeno Interactive Safety Platform is designed as a maintainable, cloud-ready
-              product with a clear experience for learners, coordinators and administrators. The
-              goal is not technology for its own sake; it is technology that helps people understand
-              risk and respond well.
+              Requirements, technical direction, experience design and delivery operations each have a clear
+              owner while the final product remains a shared responsibility across the team.
             </p>
-            <div className="internal-action-row">
-              <ButtonLink to={ROUTE_PATHS.team}>
-                Meet our team <ArrowRight aria-hidden="true" size={18} />
-              </ButtonLink>
-              <ButtonLink to={ROUTE_PATHS.howItWorks} variant="secondary">
-                See how it works <ArrowRight aria-hidden="true" size={18} />
-              </ButtonLink>
-            </div>
-          </div>
+            <ButtonLink to={ROUTE_PATHS.team}>
+              Meet our team <ArrowRight aria-hidden="true" size={18} />
+            </ButtonLink>
+          </Reveal>
         </Container>
       </SectionWrapper>
 

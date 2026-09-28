@@ -9,6 +9,13 @@ export const routeDefinitions = {
     seoTitle: 'Workplace Safety Training',
     description: 'Enterprise workplace health and safety learning by Softzeno Tech.',
   },
+  safety360: {
+    key: 'safety360',
+    label: 'Safety 360',
+    path: ROUTE_PATHS.safety360,
+    seoTitle: 'Safety 360 Workplace Safety Training',
+    description: "Explore Safety 360, Softzeno Tech's interactive workplace safety training platform.",
+  },
   about: {
     key: 'about',
     label: 'About Us',

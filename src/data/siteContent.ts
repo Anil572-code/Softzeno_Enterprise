@@ -15,7 +15,7 @@ import {
   PackageCheck,
   ScanSearch,
   ShieldCheck,
-  Sparkles,
+  Lightbulb,
   Truck,
   UsersRound,
   Video,
@@ -156,7 +156,7 @@ export const benefits = [
 
 export const values = [
   {
-    icon: Sparkles,
+    icon: Lightbulb,
     title: 'Innovation',
     description:
       'We use thoughtful technology to improve how workplace safety is learned and applied.',

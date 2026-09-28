@@ -12,6 +12,22 @@ import { cn } from '@/utils/cn';
 const DESKTOP_MEDIA_QUERY = '(min-width: 68.001rem)';
 const SCROLLED_THRESHOLD = 12;
 
+const HERO_MERGE_PATHS = new Set([
+  '/',
+  '/safety-360',
+  '/solutions',
+  '/industries',
+  '/resources',
+  '/about',
+  '/contact',
+  '/team',
+  '/features',
+  '/how-it-works',
+  '/demo',
+  '/case-studies',
+  '/faq',
+]);
+
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -97,9 +113,18 @@ export function SiteHeader() {
     setOpenDropdown(null);
   };
 
+  const normalizedPath = location.pathname.replace(/\/+$/, '') || '/';
+  const mergeWithHero = HERO_MERGE_PATHS.has(normalizedPath);
+
   return (
     <header
-      className={cn('site-header', scrolled && 'site-header--scrolled')}
+      className={cn(
+        'site-header',
+        mergeWithHero && 'site-header--hero site-header--immersive',
+        normalizedPath === ROUTE_PATHS.home && 'site-header--home',
+        normalizedPath === ROUTE_PATHS.safety360 && 'site-header--safety360',
+        scrolled && 'site-header--scrolled',
+      )}
       ref={headerRef}
     >
       <Container className="site-header__inner">

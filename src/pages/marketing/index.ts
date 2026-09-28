@@ -5,6 +5,7 @@ export * from './DemoPage';
 export * from './FaqPage';
 export * from './FeaturesPage';
 export * from './HomePage';
+export * from './Safety360Page';
 export * from './HowItWorksPage';
 export * from './IndustriesPage';
 export * from './NotFoundPage';

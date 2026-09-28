@@ -1,0 +1,393 @@
+/*
+ * Softzeno Enterprise v1.3.0
+ * Site-wide premium experience authority.
+ * Unifies hero/header behaviour, page gradients, typography, visual framing,
+ * section rhythm and light/dark presentation without changing page semantics.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Shared hero/header authority                                                */
+/* -------------------------------------------------------------------------- */
+
+.site-header--hero {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  inline-size: 100%;
+  border-block-end-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    backdrop-filter 180ms ease;
+}
+
+.site-header--hero:not(.site-header--scrolled) {
+  border-block-end-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.site-header--hero:not(.site-header--scrolled) .navigation-link,
+.site-header--hero:not(.site-header--scrolled) .navigation-group__trigger {
+  color: rgb(237 243 251 / 0.88);
+}
+
+.site-header--hero:not(.site-header--scrolled) .navigation-link:hover,
+.site-header--hero:not(.site-header--scrolled) .navigation-link.is-active,
+.site-header--hero:not(.site-header--scrolled) .navigation-group__trigger:hover,
+.site-header--hero:not(.site-header--scrolled) .navigation-group__trigger.is-active,
+.site-header--hero:not(.site-header--scrolled) .navigation-group__trigger.is-open {
+  color: #ffffff;
+  background: rgb(255 255 255 / 0.07);
+}
+
+.site-header--hero:not(.site-header--scrolled) .icon-button,
+.site-header--hero:not(.site-header--scrolled) .theme-toggle__trigger,
+.site-header--hero:not(.site-header--scrolled) .site-header__menu-button {
+  border-color: rgb(203 213 225 / 0.20);
+  color: #f8fbff;
+  background: rgb(7 20 43 / 0.18);
+}
+
+.site-header--hero.site-header--scrolled {
+  border-block-end: 1px solid rgb(148 163 184 / 0.17);
+  background: rgb(5 14 29 / 0.91);
+  box-shadow: 0 12px 34px rgb(2 8 23 / 0.18);
+  backdrop-filter: saturate(145%) blur(18px);
+  -webkit-backdrop-filter: saturate(145%) blur(18px);
+}
+
+.site-header--hero.site-header--scrolled .navigation-link,
+.site-header--hero.site-header--scrolled .navigation-group__trigger {
+  color: rgb(226 232 240 / 0.86);
+}
+
+.site-header--hero.site-header--scrolled .navigation-link:hover,
+.site-header--hero.site-header--scrolled .navigation-link.is-active,
+.site-header--hero.site-header--scrolled .navigation-group__trigger:hover,
+.site-header--hero.site-header--scrolled .navigation-group__trigger.is-active,
+.site-header--hero.site-header--scrolled .navigation-group__trigger.is-open {
+  color: #ffffff;
+  background: rgb(124 58 237 / 0.13);
+}
+
+/* -------------------------------------------------------------------------- */
+/* One premium gradient language                                               */
+/* -------------------------------------------------------------------------- */
+
+.company-hero,
+.internal-page .page-hero,
+.s360-product-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-block-end: 0;
+  background:
+    radial-gradient(circle at 82% 18%, rgb(109 40 217 / 0.28), transparent 34rem),
+    radial-gradient(circle at 10% 96%, rgb(14 116 144 / 0.15), transparent 29rem),
+    linear-gradient(118deg, #061428 0%, #071a35 48%, #0b2250 100%);
+}
+
+.internal-page .page-hero::after,
+.s360-product-hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgb(3 13 31 / 0.34), rgb(3 13 31 / 0.08) 58%, transparent 88%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.018), transparent 36%);
+  content: '';
+  pointer-events: none;
+}
+
+.internal-page .page-hero::before {
+  opacity: 0.42;
+}
+
+/* Fixed transparent header now visually belongs to every page hero. */
+.internal-page .page-hero__inner {
+  min-block-size: clamp(30rem, 64vh, 36rem);
+  padding-block-start: calc(var(--softzeno-header-height) + clamp(3.2rem, 6vh, 5rem));
+  padding-block-end: clamp(3.5rem, 6vh, 5rem);
+}
+
+.s360-product-hero__inner {
+  padding-block-start: calc(var(--softzeno-header-height) + clamp(3rem, 5vh, 4.25rem));
+}
+
+/* Contact/team deliberately remain calmer while sharing the same visual family. */
+.internal-page--team .page-hero__inner,
+.internal-page--contact .page-hero__inner {
+  min-block-size: clamp(27rem, 56vh, 32rem);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Hero typography and composition                                             */
+/* -------------------------------------------------------------------------- */
+
+.internal-page .page-hero__content {
+  gap: 1rem;
+  max-inline-size: 42rem;
+}
+
+.internal-page .page-hero__content .eyebrow {
+  color: #c4b5fd;
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.09em;
+}
+
+.internal-page .page-hero__content h1 {
+  max-inline-size: 43rem;
+  color: #ffffff;
+  font-size: clamp(2.75rem, 4.1vw, 4rem);
+  font-weight: 720;
+  letter-spacing: -0.048em;
+  line-height: 1.035;
+}
+
+.internal-page .page-hero__description {
+  max-inline-size: 40rem;
+  color: #c4d0e0;
+  font-size: clamp(0.98rem, 1.08vw, 1.08rem);
+  line-height: 1.68;
+}
+
+.internal-page .page-hero .text-gradient {
+  color: #a78bfa;
+  background: linear-gradient(110deg, #c4b5fd 0%, #8b5cf6 48%, #60a5fa 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.internal-page .page-hero__actions {
+  margin-block-start: 0.2rem;
+}
+
+.internal-page .page-hero__visual {
+  max-inline-size: 32rem;
+}
+
+.internal-page .page-hero__visual > .hero-art {
+  border-color: rgb(203 213 225 / 0.14);
+  background: linear-gradient(145deg, rgb(8 19 40 / 0.70), rgb(8 14 31 / 0.56));
+  box-shadow:
+    0 26px 70px rgb(2 8 23 / 0.28),
+    inset 0 1px 0 rgb(255 255 255 / 0.035);
+}
+
+/* Preserve the dedicated Safety 360 hierarchy but keep it less bulky. */
+.s360-product-hero__copy h1 {
+  font-size: clamp(2.7rem, 4.35vw, 4.15rem);
+  font-weight: 730;
+  letter-spacing: -0.048em;
+  line-height: 1.025;
+}
+
+.s360-product-hero__lead {
+  font-size: clamp(0.96rem, 1.05vw, 1.06rem);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Shared section rhythm and surface hierarchy                                 */
+/* -------------------------------------------------------------------------- */
+
+.internal-page {
+  background: var(--softzeno-colour-background);
+}
+
+.internal-page .section-wrapper--spacious {
+  padding-block: clamp(4.25rem, 7vw, 6.75rem);
+}
+
+.internal-page .section-heading {
+  max-inline-size: 50rem;
+}
+
+.internal-page .section-heading h2,
+.internal-page .internal-editorial-copy h2,
+.internal-page .internal-story-grid h2,
+.internal-page .internal-outcome-grid h2,
+.internal-page .internal-readiness-grid h2,
+.internal-page .internal-contact-intro h2 {
+  font-size: clamp(1.9rem, 2.8vw, 2.65rem);
+  letter-spacing: -0.042em;
+  line-height: 1.08;
+}
+
+.internal-page .section-muted {
+  background:
+    radial-gradient(circle at 86% 8%, rgb(124 58 237 / 0.055), transparent 25rem),
+    var(--softzeno-colour-surface-subtle);
+}
+
+.internal-solution-row,
+.internal-industry-item,
+.internal-resource-item,
+.internal-value-item,
+.internal-contact-form,
+.internal-editorial-quote {
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .internal-solution-row:hover,
+  .internal-industry-item:hover,
+  .internal-resource-item:hover {
+    border-color: color-mix(in srgb, var(--softzeno-colour-primary) 26%, var(--softzeno-colour-border));
+    background: color-mix(in srgb, var(--softzeno-colour-surface) 97%, var(--softzeno-colour-primary));
+    box-shadow: 0 16px 42px rgb(15 23 42 / 0.07);
+    transform: translateY(-2px);
+  }
+}
+
+/* Safety 360 inner sections inherit the same gentle visual language. */
+.s360-product-overview,
+.s360-product-story,
+.s360-product-recognition,
+.s360-product-journey {
+  border-block-end-color: color-mix(in srgb, var(--softzeno-colour-border) 80%, transparent);
+}
+
+.s360-product-story__visual,
+.s360-product-recognition figure,
+.s360-product-capability {
+  border-radius: 0.95rem;
+  box-shadow: 0 18px 48px rgb(15 23 42 / 0.08);
+}
+
+/* Footer transition: avoid a hard visual break from the page. */
+.site-footer {
+  border-block-start-color: color-mix(in srgb, var(--softzeno-colour-border) 70%, transparent);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Light theme                                                                 */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='light'] .company-hero,
+[data-theme='light'] .internal-page .page-hero,
+[data-theme='light'] .s360-product-hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgb(124 58 237 / 0.12), transparent 34rem),
+    radial-gradient(circle at 10% 96%, rgb(14 116 144 / 0.075), transparent 29rem),
+    linear-gradient(118deg, #fbfdff 0%, #f5f8fd 50%, #eef3ff 100%);
+}
+
+[data-theme='light'] .internal-page .page-hero::after,
+[data-theme='light'] .s360-product-hero::after {
+  background:
+    linear-gradient(90deg, rgb(251 253 255 / 0.66), rgb(251 253 255 / 0.22) 62%, transparent 90%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.12), transparent 42%);
+}
+
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .navigation-link,
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .navigation-group__trigger {
+  color: #29435f;
+}
+
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .navigation-link:hover,
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .navigation-link.is-active,
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .navigation-group__trigger:hover,
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .navigation-group__trigger.is-active,
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .navigation-group__trigger.is-open {
+  color: #102a48;
+  background: rgb(255 255 255 / 0.60);
+}
+
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .icon-button,
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .theme-toggle__trigger,
+[data-theme='light'] .site-header--hero:not(.site-header--scrolled) .site-header__menu-button {
+  border-color: rgb(100 116 139 / 0.18);
+  color: #173451;
+  background: rgb(255 255 255 / 0.46);
+}
+
+[data-theme='light'] .site-header--hero.site-header--scrolled {
+  border-block-end-color: rgb(203 213 225 / 0.68);
+  background: rgb(255 255 255 / 0.90);
+  box-shadow: 0 12px 30px rgb(15 23 42 / 0.075);
+}
+
+[data-theme='light'] .site-header--hero.site-header--scrolled .navigation-link,
+[data-theme='light'] .site-header--hero.site-header--scrolled .navigation-group__trigger {
+  color: #4b6078;
+}
+
+[data-theme='light'] .site-header--hero.site-header--scrolled .navigation-link:hover,
+[data-theme='light'] .site-header--hero.site-header--scrolled .navigation-link.is-active,
+[data-theme='light'] .site-header--hero.site-header--scrolled .navigation-group__trigger:hover,
+[data-theme='light'] .site-header--hero.site-header--scrolled .navigation-group__trigger.is-active,
+[data-theme='light'] .site-header--hero.site-header--scrolled .navigation-group__trigger.is-open {
+  color: #102a48;
+  background: #f3f0ff;
+}
+
+[data-theme='light'] .internal-page .page-hero__content .eyebrow {
+  color: #6d28d9;
+}
+
+[data-theme='light'] .internal-page .page-hero__content h1 {
+  color: #102a48;
+}
+
+[data-theme='light'] .internal-page .page-hero__description {
+  color: #566a83;
+}
+
+[data-theme='light'] .internal-page .page-hero__visual > .hero-art {
+  border-color: rgb(148 163 184 / 0.22);
+  background: linear-gradient(145deg, rgb(255 255 255 / 0.84), rgb(246 248 252 / 0.76));
+  box-shadow: 0 24px 64px rgb(15 23 42 / 0.10);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Responsive authority                                                        */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 68rem) {
+  .site-header--hero .site-header__navigation--open {
+    border-color: var(--softzeno-colour-border);
+    background: var(--softzeno-colour-surface);
+    box-shadow: var(--softzeno-shadow-lg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .internal-page .page-hero__inner {
+    min-block-size: auto;
+    padding-block-start: calc(var(--softzeno-header-height) + 3rem);
+  }
+
+  .internal-page .page-hero__content {
+    max-inline-size: 46rem;
+  }
+}
+
+@media (max-width: 46rem) {
+  .internal-page .page-hero__inner {
+    padding-block-start: calc(var(--softzeno-header-height) + 2.35rem);
+    padding-block-end: 3.25rem;
+  }
+
+  .internal-page .page-hero__content h1,
+  .s360-product-hero__copy h1 {
+    font-size: clamp(2.35rem, 10.6vw, 3.15rem);
+  }
+
+  .internal-page .section-wrapper--spacious {
+    padding-block: 3.75rem;
+  }
+}

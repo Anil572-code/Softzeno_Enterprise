@@ -16,7 +16,6 @@ import {
   PackageCheck,
   RadioTower,
   ShieldCheck,
-  Sparkles,
   Truck,
   Users,
   Warehouse,
@@ -81,7 +80,7 @@ function SolutionsVisual() {
 
 function FeaturesVisual() {
   const items = [
-    ['Interactive learning', Sparkles],
+    ['Interactive learning', GraduationCap],
     ['Assessments', BookOpenCheck],
     ['Hazard awareness', ShieldCheck],
     ['Certificates', FileCheck2],
@@ -338,7 +337,7 @@ function TeamVisual() {
   const functions = [
     ['Safety', ShieldCheck],
     ['Engineering', RadioTower],
-    ['Experience', Sparkles],
+    ['Experience', Layers3],
     ['Learning', GraduationCap],
   ] as const;
 

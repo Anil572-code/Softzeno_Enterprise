@@ -1,0 +1,80 @@
+.theme-control {
+  position: relative;
+}
+
+.theme-control__trigger {
+  position: relative;
+}
+
+.theme-control__menu {
+  position: absolute;
+  z-index: 80;
+  inset-block-start: calc(100% + 0.65rem);
+  inset-inline-end: 0;
+  display: grid;
+  inline-size: 11.25rem;
+  padding: 0.45rem;
+  border: 1px solid var(--softzeno-colour-border);
+  border-radius: 0.8rem;
+  background: var(--softzeno-colour-surface);
+  box-shadow: var(--softzeno-shadow-lg);
+}
+
+.theme-control__menu::before {
+  position: absolute;
+  inset-block-start: -0.42rem;
+  inset-inline-end: 0.82rem;
+  inline-size: 0.75rem;
+  block-size: 0.75rem;
+  border-block-start: 1px solid var(--softzeno-colour-border);
+  border-inline-start: 1px solid var(--softzeno-colour-border);
+  background: var(--softzeno-colour-surface);
+  content: '';
+  transform: rotate(45deg);
+}
+
+.theme-control__menu > p {
+  padding: 0.45rem 0.62rem 0.35rem;
+  color: var(--softzeno-colour-text-soft);
+  font-size: 0.68rem;
+  font-weight: 760;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.theme-control__menu > button {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.65rem;
+  min-block-size: 2.35rem;
+  padding: 0.5rem 0.62rem;
+  border: 0;
+  border-radius: 0.56rem;
+  color: var(--softzeno-colour-text-muted);
+  background: transparent;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 620;
+  text-align: start;
+  cursor: pointer;
+}
+
+.theme-control__menu > button:hover,
+.theme-control__menu > button:focus-visible,
+.theme-control__menu > button.is-selected {
+  color: var(--softzeno-colour-primary);
+  background: var(--softzeno-colour-surface-subtle);
+  outline: none;
+}
+
+.theme-control__menu > button svg:last-child {
+  color: var(--softzeno-colour-primary);
+}
+
+@media (max-width: 68rem) {
+  .theme-control__menu {
+    inset-inline: auto 0;
+  }
+}

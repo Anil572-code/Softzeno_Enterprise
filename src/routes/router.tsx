@@ -11,6 +11,7 @@ export const router = createBrowserRouter([
     ErrorBoundary: RouteErrorBoundary,
     children: [
       { index: true, lazy: () => import('@/routes/modules/home.route') },
+      { path: ROUTE_PATHS.safety360, lazy: () => import('@/routes/modules/safety-360.route') },
       { path: ROUTE_PATHS.about, lazy: () => import('@/routes/modules/about.route') },
       { path: ROUTE_PATHS.solutions, lazy: () => import('@/routes/modules/solutions.route') },
       { path: ROUTE_PATHS.features, lazy: () => import('@/routes/modules/features.route') },

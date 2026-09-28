@@ -1,5 +1,6 @@
 export const ROUTE_PATHS = {
   home: '/',
+  safety360: '/safety-360',
   about: '/about',
   solutions: '/solutions',
   features: '/features',
